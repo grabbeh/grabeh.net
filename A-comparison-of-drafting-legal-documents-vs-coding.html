@@ -1,0 +1,49 @@
+
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="container">
+<div id="title">
+<h3>A comparison of drafting legal documents vs coding</h3>
+</div>
+<div id="textbody"><p>Having done a lot of legal drafting in my time and a little <a href="https://github.com/grabbeh">coding</a> also, I started to notice a few similarities between the two processes which I thought I&#39;d write about. I also talk about one way in which the two processes diverge.</p><p><strong>Avoiding repetition and keeping things DRY</strong></p><p>When drafting legal documents, I&#39;ll sometimes find myself repeating a specific phrase or collection of words. To remove this repetition, you can create a defined term and then use the same defined term throughout the agreement. </p><p>For example &quot;Confidential Information&quot; can be defined and then re-used throughout the agreement (making it as broad or as narrow as you might like, subject to enforceability).</p><p>This could be broadly analogous to using functions to collect together a specific area of functionality which can then be re-used without repeating the original code. </p><p><strong>Separation of concerns</strong></p><p>When you&#39;re working in an organisation with agreements that will be re-used frequently and by non-lawyers, it&#39;s good to separate out firstly as much as possible content that will need to change each time the document is used, and secondly content that is standard and is therefore unlikely in the first instance to change. Although sending it over to the other side&#39;s lawyers is a different matter. </p><p>This can be done by moving changeable terms (price, delivery schedule, licence period etc) from the main body of the agreement into a schedule. This way when it comes to be re-used the user will only need to update the schedule and will not have to get involved with the main body of the agreement. Overall this hopefully means that the time to get a contract out to the other side is greatly reduced, or at least that&#39;s the plan.</p><p>This has parallels with avoiding the use of CSS and Javascript inline in HTML. If for example you&#39;re allowing a user to customise a simple layout, then there isn&#39;t necessarily a need to have the user interact with the HTML itself as, depending on the circumstances of course. </p><p>If everything is inline and a jumble of CSS, JS and HTML I would argue this increases the chances of a particular style update being missed (as is the case with an agreement, where the risk of missing an update to a changeable term is increased if everything is within the body of the agreement).</p><p><strong>Straining the analogy</strong></p><p>You could go as far as to say that the main body of an agreement is the view, the schedule with variables is the model, and the definitions section is the controller/router, providing the glue between the model and the view, defining how the terms in the schedule (price, payment terms, work period) are used in the view.</p><p><img src="legalmvc.png" title="It&apos;s MVC, but not as we know it, Jim"></p><p><strong>User feedback</strong></p><p>A little trite, but both from a legal and a coding perspective, it&#39;s really important to have the results of your efforts reviewed by those who will be actually using the end result. Within my organisation, after I&#39;ve drafted the document it will go out to the people who asked me to draft it in the first place for comments. </p><p>As a side-note, whether or not they&#39;ll give it a thorough read-through depends a) on the person&#39;s dedication to ensuring the terms of the proposed work are accurately reflected in the agreement and b) their trust in the abilities of the legal department!</p><p>In both cases you&#39;ll quickly find out what the important parts are and where improvements are desired, even if perhaps the full extent of the work isn&#39;t thoroughly assessed. If you&#39;re working for a services-based organisation, the expenses clause is generally the most important aspect of the agreement.</p><p><strong>Modularity</strong></p><p>Most agreements will have a set of standard clauses which you will find in most agreements, like choice of law, limitation of liability, assignment, waiver, and variation. Being able to slot these in and not have to worry about drafting new clauses each time takes time out the drafting process. This leaves time to focus on the elements unique to the agreement.</p><p>In the same way, when coding web applications, you will most likely have standard pieces of functionality like user authentication and file uploads, or frameworks like <a href="http://foundation.zurb.com/">Foundation</a>, <a href="http://getbootstrap.com/">Bootstrap</a>and <a href="http://purecss.io/">Pure.CSS</a> for the appearance of an app. Mozilla&#39;s Brick and Google&#39;s Polymer also open up the possibility of packaging up discrete elements of functionality.</p><p><strong>But where do they differ?</strong></p><p>It&#39;s fair to say there&#39;s one pretty glaring way in which the two processes differ. If I want to draft a document I&#39;m much more restricted in the way I can go out and grab existing examples that are free to use. </p><p>This is in stark contract to the many open source options that are available to help a person to quickly incorporate functionality into an app (at least in my experience in using <a href="http://nodejs.org">Node.js</a> and <a href="http://expressjs.com">Express</a>).</p><p>Some folks including <a href="http://www.legalzoom.com">Legal Zoom</a> and <a href="http://www.docracy.com">Docracy</a> are taking steps to simplify the process for many users of legal services (in the case of the former and the latter) and to allow lawyers to provide and comment on agreements (in the case of the latter). </p><p>However at present there isn&#39;t a widely-used service like Github where to extend the analogy and in the context of open source code, lawyers from different firms collaborate on improving documents used by all or used by many different people<sup id="fnref1"><a href="#fn1">1</a></sup> (perhaps an overly broad definition) or lawyers might develop a set of wording internally and decide to release it for general consumption.</p><p>Whether this will change in the future remains to be seen however, there are good reasons for this reduced participation:</p>
+<ul>
+<li>unlike software companies, law firms are less likely to gain goodwill as a result of making available clauses</li><li>even standard clauses can need to be changed depending on the specific circumstances of a deal, reducing the benefit of open sourcing them in the first place</li><li>confidentiality issues are more likely to be an issue</li><li>perhaps most importantly, law firms act for clients who may take umbrage at releasing work (even if completely anonymised) as a third party could still benefit from the work, particularly bespoke drafting</li></ul>
+<p>I&#39;m not saying that many of these reasons cannot be overcome but at present the above barriers are sufficient to prevent wider participation by lawyers in open sourcing of legal documentation<sup id="fnref2"><a href="#fn2">2</a></sup>. </p><p>As for the future, it will be interesting to see whether start-ups operating in the legal sector will be able to exert sufficient influence or make it attractive enough for large volumes of lawyers to start doing this.</p>
+<div class="footnotes">
+<hr>
+<ol>
+
+<li id="fn1">
+<p>There are movements in certain niche areas where lawyers do collaborate to improve documents to a standard like <a href="http://www2.isda.org/">ISDA</a> (for financial swaps and derivatives) and the <a href="http://www.jctltd.co.uk/">JCT</a> for construction contracts but this is still a relatively closed system and is the exception rather than the rule.&nbsp;<a href="#fnref1">&#8617;</a></p></li>
+
+<li id="fn2">
+<p>One counter-example is the <a href="https://github.com/twitter/innovators-patent-agreement/blob/master/innovators-patent-agreement.md">Innovators Patent Agreement</a>.&nbsp;<a href="#fnref2">&#8617;</a></p></li>
+
+</ol>
+</div>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-43666889-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>

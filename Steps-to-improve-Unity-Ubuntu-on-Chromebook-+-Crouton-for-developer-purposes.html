@@ -1,0 +1,81 @@
+
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="container">
+<div id="title">
+<h3>Steps to improve Unity Ubuntu on Chromebook + Crouton for developer purposes</h3>
+</div>
+<div id="textbody"><p>I recently bought an Acer C270 Chromebook and having undertaken the straightforward process of using Crouton to install Ubuntu/Unity, I found I had to take a few more steps to make the machine usable for Node.js development. </p><p>I thought I'd outline the steps below I took. Clearly some steps may not be applicable depending on the preferred setup.</p><p><strong>Terminal</strong></p>
+<pre class="prettyprint">sudo apt-get install gnome-terminal</pre>
+<p><strong>Google Chrome</strong></p>
+<pre class="prettyprint">wget https://dl.google.com/linux/direct/google-chrome-  stable_current_amd64.deb</pre>
+
+<pre class="prettyprint">sudo dpkg -i google-chrome*.deb</pre>
+
+<pre class="prettyprint">sudo apt-get -f install</pre>
+<p>You may need to add '--user-data-dir' to the end of the /usr/bin/google-chrome file also so that Chrome runs. </p><p>Also 'python -c "import gnomekeyring;gnomekeyring.change_password_sync('login', 'MYPASSWORD', '');"' can be used to disable the request for a keyring password.</p><p><strong>Node.js</strong> </p>
+<pre class="prettyprint">wget http://nodejs.org/dist/v0.10.22/node-v0.10.22.tar.gz</pre>
+
+<pre class="prettyprint">tar -xvzf node-v0.10.22.tar.gz</pre>
+
+<pre class="prettyprint">cd node-v0.10.22</pre>
+
+<pre class="prettyprint">apt-get install build-essential g++</pre>
+
+<pre class="prettyprint">./configure</pre>
+
+<pre class="prettyprint">make</pre>
+
+<pre class="prettyprint">sudo make install</pre>
+
+<pre class="prettyprint">node -v</pre>
+<p><strong>Git</strong></p>
+<pre class="prettyprint">sudo apt-get install git</pre>
+<p><strong>Fonts</strong></p><p>The font on Gnome Terminal was bunched up. This was fixed by installing a new font package as follows:</p>
+<pre class="prettyprint">sudo apt-get install ttf-ubuntu-font-family</pre>
+<p><strong>Sublime Text 2</strong></p>
+<pre class="prettyprint">sudo add-apt-repository ppa:webupd8team/sublime-text-2</pre>
+
+<pre class="prettyprint">sudo apt-get update</pre>
+
+<pre class="prettyprint">sudo apt-get install sublime-text</pre>
+<p><strong>Switching to Chromebook keyboard</strong></p><p>The key mappings in Ubuntu 12.04 are different to the default ones for the Chromebook. I therefore used xmodmap to update/switch around certain keys.</p>
+<pre class="prettyprint">xmodmap -e "keycode 94 shift = backslash bar"</pre>
+
+<pre class="prettyprint">xmodmap -e "keycode 51 shift = numbersign asciitilde"</pre>
+
+<pre class="prettyprint">xmodmap -e  "keycode 11 shift = 2 quotedbl"</pre>
+
+<pre class="prettyprint">xmodmap -e "keycode 48 shift = apostrophe at"</pre>
+<p>I also added a delete key and made the search key into caps lock with the following:</p>
+<pre class="prettyprint">xmodmap -e "keycode 22 shift = BackSpace Delete"</pre>
+
+<pre class="prettyprint">xmodmap -e "keycode 133 = Caps_Lock"</pre>
+<p>Bear in mind that the above commands are session specific so to persist them you should create a file called '.xinitrc' file in your home directory, with 'xmodmap .Xmodmap' in, then xmodmap -pke &gt; .Xmodmap in same directory to save revised .Xmodmap file in that directory.</p><p>Alternatively, you can just call .xmodmap ~/Xmodmap on each session startup.</p><p>On remapping the Delete key I couldn't get the Alt + Backspace combination to work so used shift instead.</p><p>I also mapped delete in Sublime Text 2 to shift + backspace by editing the existing binding in .sublime-keymap to the following:</p>
+<pre class="prettyprint">{ "keys": ["shift+backspace"], "command": "right_delete" }</pre>
+<p>I'm very happy with the new Chromebook and the above additions have helped no end to make using Unity/Ubuntu via Crouton a good environment for me to develop in (maybe one day I'll master Vim but not today).</p></div>
+</div>
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-43666889-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>

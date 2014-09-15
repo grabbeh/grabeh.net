@@ -1,0 +1,72 @@
+
+<html>
+<head>
+<title>Blog - Automated publising on a VPS using Draftin webhooks and Node.js</title>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="container">
+<div id="title">
+<h3>Automated publishing on a VPS using Draftin webhooks and Node.js</h3>
+</div>
+<div id="textbody"><p>Draftin.com is a great tool I&#39;ve been using lately to do some writing. Whilst I&#39;m not utilising many of its more advanced features, the care and attention that its creator has put into the product shines through.</p><p>Once I&#39;d written something my previous process of getting onto this site was to copy and paste the contents into a template file within the VPS I&#39;m using to host this blog, and then name it appropriately. Although this isn&#39;t a particularly burdensome process, I thought there may be a simpler process.</p><p>Having a gander at Draftin I saw reference to <a href="https://draftin.com/features#webhooks">Webhooks</a>. Webhooks give you the ability to specify a url to which the content will be published using a simple POST request.</p><p>I thought it would be interesting to try to integrate this into the VPS so you could post data and automatically create a html file in the folder from which the html files making up this blog are served from via Nginx.</p><p>I initially created a basic Express server to test the data that was being sent. After some issues with accessing the data, I realised I need to parse the JSON to make it accessible. </p><p>Once that was done, I wrote the &#39;content_html&#39; to a file in the relevant folder. However the issue was obviously that the only content being posted was the blog post itself. In addition to the content, it also needed surrounding container elements and the head element to specify css etc.</p><p>To remedy this, I created a template.html file which is then read in when post data is received. Using the excellent <a href="https://github.com/MatthewMueller/cheerio">Cheerio</a> I then load in the template html and then manipulate it using simple jQuery-like functionality to add in a title and the content from the POST data from Draftin.</p><p>Once completed, the amended file is then saved as a new file with the stated title then accessible at blog.grabeh.net/[title]. Draftin also allows you to provide a location url in your response which is then captured by Draftin which is then displayed by your post.</p><p>The whole basic Express server is below for the curious. As the documentation on Draftin notes, the URL used to post data to should be sufficiently obscure.</p>
+<pre class="prettyprint">
+var express = require('express')
+, fs = require('fs')
+, cheerio = require('cheerio')
+, app = express();
+
+app.configure(function(){
+  app.use(express.bodyParser());
+  app.use(app.router);
+});
+
+app.post('/', function(req, res){
+    
+var payload = req.body.payload;
+var parsedResponse = JSON.parse(payload);
+var title = parsedResponse.name;
+var htitle = title.replace(/\s+/g, '-').toLowerCase();
+var parsedhtml = parsedResponse.content_html;
+
+    fs.readFile('/usr/local/nginx/html/blog/template.html', function(err, data){
+       
+       $ = cheerio.load(data);
+       $('h3').text(title);
+       $('#textbody').html(parsedhtml);
+       var updatedhtml = $.html();
+    
+       fs.writeFile('/usr/local/nginx/html/blog/' + htitle + '.html', updatedhtml, function(err){
+            if (!err) {
+                 res.set('location', 'http://blog.grabeh.net/' + htitle);
+                 res.send();                 
+                }
+            });
+         })
+    });
+
+app.listen(3010);
+
+</pre>
+<p>I do need to resolve a few minor points like inserting a title in the head and also updating the index.html of the blog, but I think the above system creates a nice flow for automatically posting content to the blog from Draftin.</p><p>The only issue now of course is to keep focused on writing in the first place.</p></div>
+</div>
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-43666889-1']);
+  _gaq.push(['_setDomainName', 'grabeh.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script></html>
+

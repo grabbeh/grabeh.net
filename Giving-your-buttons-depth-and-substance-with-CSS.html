@@ -1,0 +1,58 @@
+
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="button.css">
+</head>
+
+<body>
+
+<div id="container">
+<div id="title">
+<h3>Giving your buttons depth and substance with CSS</h3>
+</div>
+<div id="textbody"><p>You know how it goes. What with all the fuss over flat design, sometimes you feel the need to stand out from the crowd just a little. Chunks of colour are nice but sometimes it's good to give a bit of depth to your site.</p><p>One way to do this is how the guys at <a href="http://teamtreehouse.com">Treehouse</a> have done them on their homepage. I really liked the look of them and wondered how they created them. Basically the button moves down when clicked mimicking the appearance of an actual button being pressed down.</p><p>Without rooting around in their html and CSS I must admit I initially presumed that it would be a matter of adding an event to change the CSS class on click. However, I thought that maybe there was a more straightforward way. Turns out there is.</p><p>Using the :active suffix for the applicable CSS property, you can detail what will happen with the style when the element is active, which with our button is when it's clicked.</p><p>The first step was to set up the button itself in its pre-clicked state. Using box-shadow you can give the bottom-border of the button a shadow to help give the impression of depth.</p><p>Using :active you can then reduce the size of the box-shadow when active, so for example from 15px to 10px. This deals with reducing the bottom of the button but what about shifting the top border down you might ask? I experimented with applying a top-border, which would then be removed on :active, however the easiest method is to use the 'top' attribute together with 'position: relative'. Using relative means the top attribute will be relative to the element immediately above rather to the window as a whole.</p><p>The relevant CSS is and the button it creates are below (you'll also need some additional classes for the positioning of the text within the button, and removing default options for the a class. You'll also need to add in the moz and webkit pre-fixes to help cross-browswer compatibility.</p>
+<pre class="prettyprint">
+.button {
+    height: 120px;  
+    padding: 0px;
+    margin: 0px; 
+    background: #e00000;
+    width: 300px;
+    box-shadow: 0 15px 0 0 #b00000;
+    position: relative;
+}
+
+.button:active {
+    box-shadow: 0 10px 0 0 #b00000;
+    top: 5px;
+}
+</pre>
+
+<div id="buttontext">
+         <div class="button">
+             <a class="fill-div" href="#">Click me</a>
+        </div>
+</div>
+<br>
+<p>Admittedly, this is fairly straightforward stuff, but for me, it's good to see what you can do with CSS suffixes. Also, never let it be said that basic content should be a bar to a blog post!</p></div>
+</div>
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-43666889-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>
