@@ -1,32 +1,70 @@
-
+<!DOCTYPE html>
 <html>
+
 <head>
-<title></title>
-<meta charset="UTF-8">
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
-<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Grabeh.net</title>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/dracula.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+  <style>
+    body {
+      font-family: 'Roboto', serif;
+    }
+
+    .grey {
+      color: rgba(0, 0, 0, .4)
+    }
+  </style>
 </head>
 
-<body>
+<body class="bg-light-red" id="container">
+  <div class="pa2 f5 bg-white mb4 tc w3 shadow-5">
+    <a class="b link black underline-hover" href='/'><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+  </div>
+  <div class="pl5-l pr5-l mh4-ns mh2">
+    <div class="fl w-70-l w-100">
+      <div class="cf shadow-5 mb3 pa3 bg-white">
+        <div class="f2 b">Setting up HTTPS with Express Apps using Nginx and Digital Ocean</div>
+      </div>
+      <div class="mb4-l shadow-5 bg-white ph5-ns ph3 pv1">
+        <div class="f4-ns f5 w-100  lh-copy">
+          <p>This is a quick list of the steps I took to get https up and running with a new app I've been working on called
+            <a href="https://instok.net">Instok</a>. Although https is of course a good idea in general, the main motivation
+            was to make sure I could use Stripe.</p>
+          <p>Without further ado, the steps are as follows (which are provided mainly as an aide memoire):</p>
+          <ul>
+            <li>Using OpenSSL, generate an RSA private key and a certificate signing request using <a href="http://www.rackspace.com/knowledge_center/article/generate-a-csr-with-openssl">these instructions</a>              (excerpted below).</li>
+          </ul>
 
-<div id="container">
-<div id="title">
-<h3>Setting up HTTPS with Express Apps using Nginx and Digital Ocean</h3>
-</div>
-<div id="textbody"><p>This is a quick list of the steps I took to get https up and running with a new app I've been working on called <a href="https://instok.net">Instok</a>. Although https is of course a good idea in general, the main motivation was to make sure I could use Stripe.</p><p>Without further ado, the steps are as follows (which are provided mainly as an aide memoire):</p>
-<ul><li>Using OpenSSL, generate an RSA private key and a certificate signing request using <a href="http://www.rackspace.com/knowledge_center/article/generate-a-csr-with-openssl">these instructions</a> (excerpted below).</li></ul>
+          <pre><code class="f5">openssl genrsa -out domain.com.key 2048</code></pre>
+          <pre><code class="f5">openssl req -new -key domain.com.key -out domain.csr</code></pre>
+          <p>If you're planning on testing SSL you can also generate your own certificates using the below (after you've created
+            your key and your CSR).</p>
+          <pre><code class="f5">openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.pem</code></pre>
 
-<pre class="prettyprint">openssl genrsa -out domain.com.key 2048</pre>
-<pre class="prettyprint">openssl req -new -key domain.com.key -out domain.csr</pre>
-<p>If you're planning on testing SSL you can also generate your own certificates using the below (after you've created your key and your CSR).</p>
-<pre class="prettyprint">openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.pem</pre>
-
-<ul>
-<li>Purchase a security certificate (or get one for <a href="https://konklone.com/post/switch-to-https-now-for-free">free</a>). I used <a href="http://www.namecheap.com">NameCheap</a> as suggested by <a href="https://stripe.com/help/ssl">Stripe</a>. As part of the process, you will need to submit the certificate signing request generated in the above step.</li>
-<li>Once you have got access to your certificates (mine were emailed to me) copy and paste the certificate(s) into a txt file and store wherever they'll be needed on the VPS or elsewhere.</li>
-</ul><p>In addition to the main certificate, I was emailed an intermediate certificate. If this is the case for you, you can incorporate reference to this intermediate certificate in the 'ca' array referenced below in your node app.</p>
-<ul><li>Incorporate a HTTPS server into your app, principally with the below code. If you're wondering, the pem format is nothing particularly special and can be enabled just be saving a file as 'rsakey.pem' for example provided it has -----BEGIN CERTIFICATE----- at the start and -----END CERTIFICATE----- you guessed it at the end. It is also important to retain the format they are provided in.</li></ul><pre class="prettyprint">
+          <ul>
+            <li>Purchase a security certificate (or get one for <a href="https://konklone.com/post/switch-to-https-now-for-free">free</a>).
+              I used <a href="http://www.namecheap.com">NameCheap</a> as suggested by <a href="https://stripe.com/help/ssl">Stripe</a>.
+              As part of the process, you will need to submit the certificate signing request generated in the above step.</li>
+            <li>Once you have got access to your certificates (mine were emailed to me) copy and paste the certificate(s) into
+              a txt file and store wherever they'll be needed on the VPS or elsewhere.</li>
+          </ul>
+          <p>In addition to the main certificate, I was emailed an intermediate certificate. If this is the case for you, you
+            can incorporate reference to this intermediate certificate in the 'ca' array referenced below in your node app.</p>
+          <ul>
+            <li>Incorporate a HTTPS server into your app, principally with the below code. If you're wondering, the pem format
+              is nothing particularly special and can be enabled just be saving a file as 'rsakey.pem' for example provided
+              it has -----BEGIN CERTIFICATE----- at the start and -----END CERTIFICATE----- you guessed it at the end. It
+              is also important to retain the format they are provided in.</li>
+          </ul>
+          <pre><code class="f5">
 var options = {
     // The RSA private key generated above
     key: fs.readFileSync('./config/rsakey.pem'),
@@ -36,9 +74,17 @@ var options = {
 };
 
 https.createServer(options, app).listen(port of your choosing);
-</pre>
-<p>One point that I got stuck on (for about a day alas) was that I initially had the https server listening on 443. I subsequently realised that this meant that Nginx could not use 443 to route requests as this was locked up by the Express app. This meant that Nginx couldn't do its job properly in terms of signposting requests to the various apps running on the VPS nor redirecting http requests to https.</p>
-<ul><li>Once the app is running on your VPS, you'll need to update your nginx.conf file. The server module for https is similar to your usual modules for http but with a reference to port 443 and to the location of your RSA key and your main certificate as per the below. I found I didn't need to reference the intermediate certificate.</li></ul><pre class="prettyprint">
+</code></pre>
+          <p>One point that I got stuck on (for about a day alas) was that I initially had the https server listening on 443.
+            I subsequently realised that this meant that Nginx could not use 443 to route requests as this was locked up
+            by the Express app. This meant that Nginx couldn't do its job properly in terms of signposting requests to the
+            various apps running on the VPS nor redirecting http requests to https.</p>
+          <ul>
+            <li>Once the app is running on your VPS, you'll need to update your nginx.conf file. The server module for https
+              is similar to your usual modules for http but with a reference to port 443 and to the location of your RSA
+              key and your main certificate as per the below. I found I didn't need to reference the intermediate certificate.</li>
+          </ul>
+          <pre><code class="f5">
 server {
    listen 443 ssl default_server;
   
@@ -46,29 +92,55 @@ server {
    ssl_certificate_key  /path/to/your/app/domain.pem;
 
 }
-</pre>
+</code></pre>
 
-<ul><li>Once you reload the conf file, requests to <a href="https://widget.com">https://widget.com</a> should be encrypted. You'll probably want to redirect http requests to https. This can be done in several ways but the most straight-forward method appears to be:</li></ul><pre class="prettyprint">
+          <ul>
+            <li>Once you reload the conf file, requests to <a href="https://widget.com">https://widget.com</a> should be encrypted.
+              You'll probably want to redirect http requests to https. This can be done in several ways but the most straight-forward
+              method appears to be:</li>
+          </ul>
+          <pre><code class="f5">
 server {
     listen 80;
     server_name http://widget.com;
     return 301 https://widget.com;
 }
-</pre>
-<p>All in all I found the process relatively straightforward albeit with a few issues caused by my misunderstanding of how ports work. </p></div>
-</div>
+</code></pre>
+          <p>All in all I found the process relatively straightforward albeit with a few issues caused by my misunderstanding
+            of how ports work. </p>
+        </div>
+      </div>
+    </div>
+    <div class="mb3 mt0-l mt3 pl4-l fl w-30-l w-100">
+      <div class="bg-white f4 pa3 shadow-5">
+        <ul class="pa0 ma0 list">
+          <li class="pv1"><a class="underline link black" href="https://twitter.com/grabbeh"><i class="mr2 fa fa-twitter "aria-hidden="true"></i>Twitter</a></li>
+          <li class="pv1"><a class="underline  link black " href="https://github.com/grabbeh"><i class="mr2 fa fa-github" aria-hidden="true"></i>GitHub</a></li>
+          <li class="pv1"><a class="underline  link black " href="/about"><i class="mr2 fa fa-user" aria-hidden="true"></i>About</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
-<script type="text/javascript">
+<script>
+  var arr = [
+    "bg-red",
+    "bg-purple",
+    "bg-light-purple",
+    "bg-green",
+    "bg-navy",
+    "bg-dark-blue",
+    "bg-blue",
+    "bg-light-blue",
+    "bg-lightest-blue",
+    "bg-light-pink",
+    "bg-light-yellow",
+    "bg-light-red"]
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-43666889-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+      /* var color = arr[Math.floor(Math.random()*arr.length)]
+      var el = document.getElementById("container")
+      el.className = color*/
 
 </script>
+
 </html>

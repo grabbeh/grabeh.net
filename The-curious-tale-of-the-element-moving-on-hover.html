@@ -1,37 +1,90 @@
+<!DOCTYPE html>
 
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Blog - The curious tale of the element moving on hover</title>
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
-<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Grabeh.net</title>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/dracula.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+  <style>
+    body {
+      font-family: 'Roboto', serif;
+    }
+
+    .grey {
+      color: rgba(0, 0, 0, .4)
+    }
+  </style>
 </head>
 
-<body>
-
-<div id="container">
-<div id="title">
-<h3>The curious tale of the element moving on hover</h3>
-</div>
-<div id="textbody"><p>Things were going so smoothly. You see part of a site that may be of interest. You go to move your cursor over it and click in the hopes of being transported away to a new part of the site to satiate your curiosity.</p><p>Perhaps a multitude of emotions course through you, excitement, trepidation, anticipation, guilt. </p><p>Your cursor hits the element but for some unexplained reason the element in question moves out your way. What is going on? Why would someone do that? Is it a malicious attempt to provoke? Still, you want to see the content so you move your cursor to the element&#39;s new position accordingly.</p><p>But why would you deliberately place a hurdle, albeit a small one, in the way of accessing content? One specific example can be found on the BBC's homepage (at least in the UK), as shown below. </p><p>Basic usability principles (and common sense) would dictate that you shouldn&#39;t do something which the user isn&#39;t expecting. When the user moves their cursor over an element it&#39;s usually because they expect to be able to interact with it, usually by clicking or dragging. Moving the element breaks this natural flow.</p><p>Whilst the above observation is trite, I'd be interested to know if there was any rationale behind the BBC's decision.</p>
-<p>
-<video autoplay loop><source src="/bbc.mp4" type='video/mp4'/>Download <a href="/bbc.mp4">here</a> if the video isn't showing</video>
-</p>
-</div>
-</div>
+<body class="bg-light-red" id="container">
+  <div class="pa2 f5 bg-white mb4 tc w3 shadow-5">
+    <a class="b link black underline-hover" href='/'><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+  </div>
+  <div class="pl5-l pr5-l mh4-ns mh2">
+    <div class="fl w-70-l w-100">
+      <div class="cf shadow-5 mb3 pa3 bg-white">
+        <div class="f2 b">The curious tale of the element moving on hover</div>
+      </div>
+      <div class="mb4-l shadow-5 bg-white ph5-ns ph3 pv1">
+        <div class="f4-ns f5 w-100  lh-copy">
+          <p>Things were going so smoothly. You see part of a site that may be of interest. You go to move your cursor over
+            it and click in the hopes of being transported away to a new part of the site to satiate your curiosity.</p>
+          <p>Perhaps a multitude of emotions course through you, excitement, trepidation, anticipation, guilt. </p>
+          <p>Your cursor hits the element but for some unexplained reason the element in question moves out your way. What is
+            going on? Why would someone do that? Is it a malicious attempt to provoke? Still, you want to see the content
+            so you move your cursor to the element&#39;s new position accordingly.</p>
+          <p>But why would you deliberately place a hurdle, albeit a small one, in the way of accessing content? One specific
+            example can be found on the BBC's homepage (at least in the UK), as shown below. </p>
+          <p>Basic usability principles (and common sense) would dictate that you shouldn&#39;t do something which the user
+            isn&#39;t expecting. When the user moves their cursor over an element it&#39;s usually because they expect to
+            be able to interact with it, usually by clicking or dragging. Moving the element breaks this natural flow.</p>
+          <p>Whilst the above observation is trite, I'd be interested to know if there was any rationale behind the BBC's decision.</p>
+          <p>
+            <video autoplay loop>
+              <source src="/bbc.mp4" type='video/mp4' />Download <a href="/bbc.mp4">here</a> if the video isn't showing</video>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mb3 mt0-l mt3 pl4-l fl w-30-l w-100">
+      <div class="bg-white f4 pa3 shadow-5">
+        <ul class="pa0 ma0 list">
+          <li class="pv1"><a class="underline link black" href="https://twitter.com/grabbeh"><i class="mr2 fa fa-twitter "aria-hidden="true"></i>Twitter</a></li>
+          <li class="pv1"><a class="underline  link black " href="https://github.com/grabbeh"><i class="mr2 fa fa-github" aria-hidden="true"></i>GitHub</a></li>
+          <li class="pv1"><a class="underline  link black " href="/about"><i class="mr2 fa fa-user" aria-hidden="true"></i>About</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
-<script type="text/javascript">
+<script>
+  var arr = [
+    "bg-red",
+    "bg-purple",
+    "bg-light-purple",
+    "bg-green",
+    "bg-navy",
+    "bg-dark-blue",
+    "bg-blue",
+    "bg-light-blue",
+    "bg-lightest-blue",
+    "bg-light-pink",
+    "bg-light-yellow",
+    "bg-light-red"]
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-43666889-1']);
-  _gaq.push(['_setDomainName', 'grabeh.net']);
-  _gaq.push(['_trackPageview']);
+      /* var color = arr[Math.floor(Math.random()*arr.length)]
+      var el = document.getElementById("container")
+      el.className = color*/
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+</script>
 
-</script></html>
+</html>
