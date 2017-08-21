@@ -20,6 +20,14 @@ export default () => (
             <i className='mr2 fa fa-github' aria-hidden='true' />GitHub
           </a>
         </li>
+        <li className='pv1'>
+          <a
+            className='underline  link black '
+            href='/posts'
+          >
+            <i className='mr2 fa fa-github' aria-hidden='true' />Writings
+          </a>
+        </li>
       </ul>
     </div>
   </div>
