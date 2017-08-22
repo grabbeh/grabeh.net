@@ -9,9 +9,7 @@ export default () => (
     <div>I make Internet things that no one looks at except my parents:</div>
     <HomeSection nb>
       <div className='b'>OTTGNaaS</div>
-      <Text>
-        Turn online terms into graphic novels at the flick of a switch (results may vary!)
-      </Text>
+      <Text children=' Turn online terms into graphic novels at the flick of a switch (results may vary!)' />
       <Image mt={2} src='/static/demo.PNG' />
       <Link href='https://github.com/grabbeh/OTTGNaaS' children='Source' />
       <div>Tools</div>
@@ -22,9 +20,7 @@ export default () => (
     </HomeSection>
     <HomeSection>
       <div className='b mt3'>Case law emoji bot</div>
-      <div>
-        Emoji but not as you know it - possibly the future of fostering youth engagement with the law
-      </div>
+      <Text children='Emoji but not as you know it - possibly the future of fostering youth engagement with the law' />
       <Image mt={2} src='/static/emoji.PNG' />
       <Link href='https://twitter.com/caselawemoji' children='Site' />
       <Box>
@@ -43,7 +39,7 @@ export default () => (
     </HomeSection>
     <HomeSection>
       <div className='mt3 b'>Fennec</div>
-      <Text>Trade mark portfolio analysis and management</Text>
+      <Text children='Trade mark portfolio analysis and management' />
       <Image mt={2} className='w-100 ' src='/static/fennec.png ' />
       <Link href='https://github.com/grabbeh/fennec' children='Source' />
       <Text>Tools</Text>
@@ -56,7 +52,7 @@ export default () => (
     </HomeSection>
     <HomeSection>
       <div className='mt3 b'>Instok</div>
-      <Text>Send reminders to customers when stock is back in</Text>
+      <Text children='Send reminders to customers when stock is back in' />
       <Image mt={2} src='/static/instok.png ' />
       <Link href=' https://github.com/grabbeh/instok' children='Source' />
       <Text>Tools</Text>
@@ -69,9 +65,7 @@ export default () => (
     </HomeSection>
     <HomeSection>
       <div className='mt3 b'>Geophoto</div>
-      <Text>
-        Satisfy your virtual wanderlust by looking at photos from places it'd be just dandy to go to
-      </Text>
+      <Text children="Satisfy your virtual wanderlust by looking at photos from places it'd be just dandy to go to" />
       <Image mt={3} src='/static/geophoto.png ' />
       <Link href='https://github.com/grabbeh/geophoto' children='Source' />
       <div>Tools</div>
@@ -84,9 +78,7 @@ export default () => (
 
     <HomeSection>
       <div className='b'>Mapopho</div>
-      <Text>
-        Finally, a way to find out which part of the world has the best photos of subject matter X
-      </Text>
+      <Text children='Finally, a way to find out which part of the world has the best photos of subject matter X' />
       <Image mt={2} src='/static/mapopho.png' />
       <Link href='https://github.com/grabbeh/mapopho' children='Source' />
       <Text>Tools</Text>
@@ -98,9 +90,7 @@ export default () => (
     </HomeSection>
     <HomeSection>
       <div className='mt3 b'>Routebop</div>
-      <Text>
-        Shares routes with people you do or don't love or feel any kind of emotion for
-      </Text>
+      <Text children="Shares routes with people you do or don't love or feel any kind of emotion for" />
       <Image mt={2} src='/static/routebop.png' />
       <Link href='https://github.com/grabbeh/routebop' children='Source' />
       <div>Tools</div>

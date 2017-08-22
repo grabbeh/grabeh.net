@@ -37,6 +37,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+.next/
 
 config/
 
@@ -60,5 +61,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
-compiled/

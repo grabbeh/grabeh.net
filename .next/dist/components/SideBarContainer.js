@@ -14,7 +14,7 @@ var _jsxFileName = 'C:\\Users\\mbg\\Documents\\grabeh.net\\components\\SideBarCo
 
 exports.default = function (_ref) {
   var children = _ref.children;
-  return _react2.default.createElement('div', { className: 'mb3 mt0-l mt3 pl4-l fl w-30-l w-100', __source: {
+  return _react2.default.createElement('div', { className: 'mb3 mt0-l pl4-l fl w-30-l w-100', __source: {
       fileName: _jsxFileName,
       lineNumber: 4
     }

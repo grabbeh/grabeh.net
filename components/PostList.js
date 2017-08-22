@@ -6,7 +6,7 @@ export default ({ titles }) => {
     let i = t.search('.md')
     let cleanTitle = t.slice(0, i).replace(/-/gi, ' ')
     return (
-      <li className='lh-copy pv3 ba bl-0 bt-0 br-0  b--black-30'>
+      <li className='lh-copy pv3 bb bl-0 bt-0 br-0 b--black-30'>
         <Link href={{ pathname: '/post', query: { title: t } }}>
           <a className='f4 db black'>{cleanTitle}</a>
         </Link>
