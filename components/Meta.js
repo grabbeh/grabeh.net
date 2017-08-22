@@ -4,6 +4,9 @@ import React from 'react'
 export default () => (
   <div>
     <Head>
+      <meta name='theme-color' content='#f94f44' />
+      <meta name='msapplication-navbutton-color' content='#f94f44' />
+      <meta name='apple-mobile-web-app-status-bar-style' content='#f94f44' />
       <meta charset='utf-8' />
       <meta name='viewport' content='width=device-width' />
       <title>Grabeh.net</title>
