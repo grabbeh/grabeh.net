@@ -9,7 +9,7 @@ export default () => (
       <meta name='apple-mobile-web-app-status-bar-style' content='#f94f44' />
       <meta charSet='utf-8' />
       <meta name='viewport' content='width=device-width' />
-      <title>Grabeh.net</title>
+      <title>grabeh.net</title>
       <link
         rel='stylesheet'
         href='https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css'
@@ -38,11 +38,6 @@ export default () => (
     body {
       font-family: 'Roboto', serif;
       background-color:  #ff725c;
-    }
-
-    p {
-      margin: 0;
-      padding: 0;
     }
 
     img {
