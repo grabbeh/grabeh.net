@@ -7,7 +7,7 @@ export default () => (
       <meta name='theme-color' content='#f94f44' />
       <meta name='msapplication-navbutton-color' content='#f94f44' />
       <meta name='apple-mobile-web-app-status-bar-style' content='#f94f44' />
-      <meta charset='utf-8' />
+      <meta charSet='utf-8' />
       <meta name='viewport' content='width=device-width' />
       <title>Grabeh.net</title>
       <link
@@ -18,6 +18,7 @@ export default () => (
         href='https://fonts.googleapis.com/css?family=Roboto:400,700'
         rel='stylesheet'
       />
+
       <link
         href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'
         rel='stylesheet'
@@ -39,9 +40,20 @@ export default () => (
       background-color:  #ff725c;
     }
 
-    .grey {
-      color: rgba(0, 0, 0, .4)
+    p {
+      margin: 0;
+      padding: 0;
     }
+
+    img {
+      margin: 0;
+      padding: 0;
+    }
+
+    .grey {
+      color: rgba(0, 0, 0, .4);
+    }
+
     `}
     </style>
   </div>

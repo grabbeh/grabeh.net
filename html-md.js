@@ -9,10 +9,3 @@ postsTitles.forEach(p => {
   const markdown = toMarkdown(html)
   fs.writeFileSync('./markdown/' + p + '.md', markdown)
 })
-
-var code = {
-  filter: 'code',
-  replacement: function (content) {
-    return '`' + content + '`'
-  }
-}

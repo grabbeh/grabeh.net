@@ -2,7 +2,7 @@ import React from 'react'
 import Tool from './Tool'
 import ClearFix from './ClearFix'
 import HomeSection from './HomeSection'
-import { Image, Box, Text, Link } from 'rebass'
+import { Image, Text, Link } from 'rebass'
 
 export default () => (
   <div className='f4-ns f5 w-100 pv3 lh-copy'>
@@ -16,37 +16,37 @@ export default () => (
       <ClearFix>
         <Tool>Google Cloud Vision API</Tool>
         <Tool>Node</Tool>
+        <Tool>React</Tool>
       </ClearFix>
+
     </HomeSection>
     <HomeSection>
       <div className='b mt3'>Case law emoji bot</div>
       <Text children='Emoji but not as you know it - possibly the future of fostering youth engagement with the law' />
-      <Image mt={2} src='/static/emoji.PNG' />
+      <Image src='/static/emoji.PNG' />
       <Link href='https://twitter.com/caselawemoji' children='Site' />
-      <Box>
-        <Link
-          href='https://github.com/grabbeh/case-law-emoji-bot'
-          children='Source'
-        />
-      </Box>
+      <Link
+        href='https://github.com/grabbeh/case-law-emoji-bot'
+        children='Source'
+      />
       <div>Tools</div>
       <ClearFix>
         <Tool>Twitter API</Tool>
         <Tool>Node</Tool>
         <Tool>IBM Watson</Tool>
-        <Tool last>Dango</Tool>
+        <Tool>Dango</Tool>
       </ClearFix>
     </HomeSection>
     <HomeSection>
       <div className='mt3 b'>Fennec</div>
       <Text children='Trade mark portfolio analysis and management' />
-      <Image mt={2} className='w-100 ' src='/static/fennec.png ' />
+      <Image mt={2} src='/static/fennec.png ' />
       <Link href='https://github.com/grabbeh/fennec' children='Source' />
       <Text>Tools</Text>
       <ClearFix>
         <Tool>Angular</Tool>
         <Tool>Node</Tool>
-        <Tool last>MongoDB</Tool>
+        <Tool>MongoDB</Tool>
       </ClearFix>
 
     </HomeSection>
@@ -60,24 +60,24 @@ export default () => (
         <Tool>Stripe API</Tool>
         <Tool>Twilio API</Tool>
         <Tool>Angular</Tool>
-        <Tool last>Node</Tool>
+        <Tool>Node</Tool>
       </ClearFix>
     </HomeSection>
     <HomeSection>
       <div className='mt3 b'>Geophoto</div>
       <Text children="Satisfy your virtual wanderlust by looking at photos from places it'd be just dandy to go to" />
-      <Image mt={3} src='/static/geophoto.png ' />
+      <Image mt={2} src='/static/geophoto.png ' />
       <Link href='https://github.com/grabbeh/geophoto' children='Source' />
       <div>Tools</div>
       <ClearFix>
         <Tool>Flickr API</Tool>
         <Tool>Angular</Tool>
-        <Tool last>Node</Tool>
+        <Tool>Node</Tool>
       </ClearFix>
     </HomeSection>
 
     <HomeSection>
-      <div className='b'>Mapopho</div>
+      <div className='mt3 b'>Mapopho</div>
       <Text children='Finally, a way to find out which part of the world has the best photos of subject matter X' />
       <Image mt={2} src='/static/mapopho.png' />
       <Link href='https://github.com/grabbeh/mapopho' children='Source' />
@@ -85,7 +85,7 @@ export default () => (
       <ClearFix>
         <Tool>Flickr API</Tool>
         <Tool>Angular</Tool>
-        <Tool last>Node</Tool>
+        <Tool>Node</Tool>
       </ClearFix>
     </HomeSection>
     <HomeSection>
@@ -97,7 +97,7 @@ export default () => (
       <ClearFix>
         <Tool>jQuery</Tool>
         <Tool>Node</Tool>
-        <Tool last>MongoDB</Tool>
+        <Tool>MongoDB</Tool>
       </ClearFix>
     </HomeSection>
     <div className='mt4'>I also wrote some stuff <a href='/posts'>here</a></div>

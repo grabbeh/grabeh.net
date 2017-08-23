@@ -38,7 +38,7 @@ build/Release
 node_modules/
 jspm_packages/
 .next/
-
+build/
 config/
 
 # Typescript v1 declaration files
