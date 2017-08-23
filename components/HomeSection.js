@@ -11,7 +11,7 @@ export default ({
   siteUrl,
   tools
 }) => (
-  <div className='mt3 mb4 bt'>
+  <div className='mt3 mb3 bb pb4'>
     <div className='b'>{projectName}</div>
     <Text children={description} />
     <Image mt={2} src={imageUrl} />
