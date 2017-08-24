@@ -5,7 +5,7 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 const fs = require('fs')
 const read = require('read-file')
-var projects = require('./data/projects.json')
+const projects = require('./data/projects.json')
 
 app.prepare().then(() => {
   const server = express()
@@ -15,7 +15,12 @@ app.prepare().then(() => {
   })
 
   server.get('/api/posts', (req, res) => {
-    const postTitles = fs.readdirSync('./markdown')
+    const postTitles = fs.readdirSync('./markdown').map((p, i) => {
+      return {
+        title: p,
+        key: i
+      }
+    })
     res.json(postTitles)
   })
 

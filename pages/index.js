@@ -10,7 +10,6 @@ export default class extends React.Component {
     const fullUrl = `${baseUrl}/api/projects`
     const res = await fetch(fullUrl)
     const projects = await res.json()
-    console.log(projects)
     return { projects }
   }
 
