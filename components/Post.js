@@ -4,8 +4,7 @@ import Title from './Title'
 import Body from './Body'
 
 export default ({ title, body }) => {
-  let i = title.search('.md')
-  let cleanTitle = title.slice(0, i).replace(/-/gi, ' ')
+  let cleanTitle = title.slice(0, title.search('.md')).replace(/-/gi, ' ')
   return (
     <div>
       <Title title={cleanTitle} />
