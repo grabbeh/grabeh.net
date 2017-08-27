@@ -1,4 +1,5 @@
 import React from 'react'
+import LazyLoad from 'react-lazyload'
 import { Image, Text, Link } from 'rebass'
 import Tool from './Tool'
 import ClearFix from './ClearFix'
@@ -14,10 +15,12 @@ export default ({
   <div className='mt3 mb3 bb pb4'>
     <div className='b'>{projectName}</div>
     <Text children={description} />
-    <Image mt={2} src={imageUrl} />
+    <LazyLoad height={200}>
+      <Image mt={2} src={imageUrl} />
+    </LazyLoad>
     <Link href={sourceUrl} children='Source' />
     <div>Tools</div>
-    {tools.map(t => <Tool>{t}</Tool>)}
+    {tools.map(t => <Tool key={t.id}>{t.tool}</Tool>)}
     <ClearFix />
   </div>
 )

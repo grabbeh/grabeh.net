@@ -43,6 +43,7 @@ export default () => (
     img {
       margin: 0;
       padding: 0;
+ 
     }
 
     .grey {

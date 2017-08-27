@@ -14,5 +14,5 @@ export default ({ titles }) => {
       </li>
     )
   })
-  return <ul className='list'>{fullUrls}</ul>
+  return <ul className='list pa1'>{fullUrls}</ul>
 }

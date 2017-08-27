@@ -5,23 +5,44 @@
     "imageUrl": "/static/demo.jpg",
     "sourceUrl": "https://github.com/grabbeh/OTTGNaaS",
     "tools": [
-      "Google Cloud Vision API",
-      "Node",
-      "React"
+      {
+        "tool": "Google Cloud Vision API",
+        "id": 0
+      },
+      {
+        "tool": "Node",
+        "id": 1
+      },
+      {
+        "tool": "React",
+        "id": 2
+      }
     ],
     "id": 0
   },
   {
     "projectName": "Case law emoji bot",
     "description": "Emoji but not as you know it - possibly the future of fostering youth engagement with the law",
-    "imageUrl": "/static/emoji.jpg",
+    "imageUrl": "/static/emoji.png",
     "sourceUrl": "https://github.com/grabbeh/case-law-emoji-bot",
     "siteUrl": "https://twitter.com/caselawemoji",
     "tools": [
-      "Twitter API",
-      "Node",
-      "IBM Watson",
-      "Dango"
+      {
+        "tool": "Twitter API",
+        "id": 0
+      },
+      {
+        "tool": "IBM Watson",
+        "id": 1
+      },
+      {
+        "tool": "Dango",
+        "id": 2
+      },
+      {
+        "tool": "Node",
+        "id": 3
+      }
     ],
     "id": 1
   },
@@ -31,9 +52,18 @@
     "imageUrl": "/static/fennec.jpg",
     "sourceUrl": "https://github.com/grabbeh/fennec",
     "tools": [
-      "Angular",
-      "Node",
-      "MongoDB"
+      {
+        "tool": "Angular",
+        "id": 0
+      },
+      {
+        "tool": "Node",
+        "id": 1
+      },
+      {
+        "tool": "MongoDb",
+        "id": 2
+      }
     ],
     "id": 2
   },
@@ -43,10 +73,22 @@
     "imageUrl": "/static/instok.jpg",
     "sourceUrl": "https://github.com/grabbeh/instok",
     "tools": [
-      "Stripe API",
-      "Twilio API",
-      "Angular",
-      "Node"
+      {
+        "tool": "Stripe API",
+        "id": 0
+      },
+      {
+        "tool": "Twilio API",
+        "id": 1
+      },
+      {
+        "tool": "Angular",
+        "id": 2
+      },
+      {
+        "tool": "Node",
+        "id": 3
+      }
     ],
     "id": 3
   },
@@ -56,9 +98,18 @@
     "imageUrl": "/static/geophoto.jpg",
     "sourceUrl": "https://github.com/grabbeh/geophoto",
     "tools": [
-      "Flickr API",
-      "Angular",
-      "Node"
+      {
+        "tool": "Flickr API",
+        "id": 0
+      },
+      {
+        "tool": "Angular",
+        "id": 1
+      },
+      {
+        "tool": "Node",
+        "id": 2
+      }
     ],
     "id": 4
   },
@@ -68,9 +119,18 @@
     "imageUrl": "/static/mapopho.jpg",
     "sourceUrl": "https://github.com/grabbeh/mapopho",
     "tools": [
-      "Flickr API",
-      "Angular",
-      "Node"
+      {
+        "tool": "Flickr API",
+        "id": 0
+      },
+      {
+        "tool": "Angular",
+        "id": 1
+      },
+      {
+        "tool": "Node",
+        "id": 2
+      }
     ],
     "id": 5
   },
@@ -80,9 +140,18 @@
     "imageUrl": "/static/routebop.jpg",
     "sourceUrl": "https://github.com/grabbeh/routebop",
     "tools": [
-      "jQuery",
-      "Node",
-      "MongoDB"
+      {
+        "tool": "jQuery",
+        "id": 0
+      },
+      {
+        "tool": "Node",
+        "id": 1
+      },
+      {
+        "tool": "MongoDb",
+        "id": 2
+      }
     ],
     "id": 6
   }
