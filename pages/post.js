@@ -14,7 +14,6 @@ export default class extends React.Component {
 
   render () {
     const { post } = this.props
-
     return (
       <Page>
         <Post {...post} />

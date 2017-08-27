@@ -13,19 +13,19 @@ To recreate Google maps in Angular I simply wrapped all the necessary functional
 
 That way the controller could simply take that data and use it, without getting too involved with the map directive:
 
-        $.$on('coords.change', function(e, l){     
-            flickr.search({ 
-                lat: l.lat, 
-                lon: l.lon, 
-                tags: $.tag, 
-                licenses: returnSelectedBoxesFilter($scope.licenses) })
-                .success(function(data){
-                    $.arrayOfPhotos = data;
-                })
-                .error(function(err){
-                    console.log(err);
-                })
-            });
+    $.$on('coords.change', function(e, l){     
+        flickr.search({ 
+            lat: l.lat, 
+            lon: l.lon, 
+            tags: $.tag, 
+            licenses: returnSelectedBoxesFilter($scope.licenses) })
+            .success(function(data){
+                $.arrayOfPhotos = data;
+            })
+            .error(function(err){
+                console.log(err)
+        })
+    })
 
 **multiple select boxes**
 

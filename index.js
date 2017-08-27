@@ -18,7 +18,7 @@ app.prepare().then(() => {
     const postTitles = fs.readdirSync('./markdown').map((p, i) => {
       return {
         title: p,
-        key: i
+        id: i
       }
     })
     res.json(postTitles)
@@ -31,7 +31,7 @@ app.prepare().then(() => {
     })
     const post = {
       title: req.query.title,
-      body: markdown
+      text: markdown
     }
     res.json(post)
   })
