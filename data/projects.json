@@ -23,7 +23,7 @@
   {
     "projectName": "Case law emoji bot",
     "description": "Emoji but not as you know it - possibly the future of fostering youth engagement with the law",
-    "imageUrl": "/static/emoji.png",
+    "imageUrl": "/static/emoji.jpg",
     "sourceUrl": "https://github.com/grabbeh/case-law-emoji-bot",
     "siteUrl": "https://twitter.com/caselawemoji",
     "tools": [
