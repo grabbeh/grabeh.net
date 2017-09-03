@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default ({ children, ...props }) => (
   <li className='pv1'>
-    <Link href={props.url}>
+    <Link prefetch href={props.url}>
       <a className='underline link black'>
         {children}
         {props.item}
