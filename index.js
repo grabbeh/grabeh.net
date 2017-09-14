@@ -43,5 +43,5 @@ app.prepare().then(() => {
   server.get('*', (req, res) => {
     handle(req, res)
   })
-  server.listen(3000)
+  server.listen(3001)
 })
