@@ -4,6 +4,7 @@
     "description": "Open source contract management platform",
     "imageUrl": "/static/attest.png",
     "sourceUrl": "https://github.com/grabbeh/attest",
+    "siteUrl": "https://tryattest.com",
     "tools": [
       {
         "tool": "Next.js",
@@ -16,6 +17,14 @@
       {
         "tool": "Node",
         "id": 2
+      },
+      {
+        "tool":"MongoDB",
+        "id": 3
+      },
+      {
+        "tool": "GraphQl",
+        "id": 4
       }
     ],
     "id": 0
