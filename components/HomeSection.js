@@ -18,6 +18,7 @@ export default ({
     <LazyLoad height={200}>
       <Image mt={2} src={imageUrl} />
     </LazyLoad>
+    {siteUrl && <div><Link href={siteUrl} children='Site' /></div>}
     <Link href={sourceUrl} children='Source' />
     <div>Tools</div>
     {tools.map(t => <Tool key={t.id}>{t.tool}</Tool>)}
