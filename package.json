@@ -11,7 +11,7 @@
     "next": "4.2.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-highlight": "^0.10.0",
+    "react-highlight": "briancappello/react-highlight#react-v16-compiled",
     "react-lazyload": "^2.2.7",
     "read-file": "^0.2.0",
     "rebass": "^1.0.4",
