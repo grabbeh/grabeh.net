@@ -3,7 +3,7 @@ import HomeSection from './HomeSection'
 
 export default ({ projects }) => (
   <div className='f4-ns f5 w-100 pv3 lh-copy'>
-    <div>I make Internet things that always help me learn new technologies but are arguably of limited value!:</div>
+    <div>I make Internet things to help me learn new technologies:</div>
     <div>
       {projects.map(project => {
         return <HomeSection key={project.id} {...project} />
