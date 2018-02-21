@@ -7,9 +7,6 @@ import SideBarIcon from './SideBarIcon'
 export default () => (
   <SideBarContainer>
     <List>
-      <SideBarItem item='Twitter' url='https://twitter.com/grabbeh'>
-        <SideBarIcon twitter />
-      </SideBarItem>
       <SideBarItem item='Github' url='https://github.com/grabbeh'>
         <SideBarIcon github />
       </SideBarItem>
