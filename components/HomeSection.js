@@ -15,8 +15,9 @@ export default ({
   <div className='mt3 mb3 bb pb4'>
     <div className='b'>{projectName}</div>
     <Text children={description} />
+
     <LazyLoad height={200}>
-      <Image mt={2} src={imageUrl} />
+      <Image className='shadow-5 mb2' mt={2} src={imageUrl} />
     </LazyLoad>
     {siteUrl && <div><Link href={siteUrl} children='Site' /></div>}
     <Link href={sourceUrl} children='Source' />
