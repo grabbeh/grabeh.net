@@ -1,7 +1,7 @@
 [
   {
     "projectName": "Attest",
-    "description": "Open source contract management platform. Like an excel spreadsheet with less functionality but far prettier.",
+    "description": "Open source contract management platform. Like an excel spreadsheet with less functionality but marginally prettier.",
     "imageUrl": "/static/attest.png",
     "sourceUrl": "https://github.com/grabbeh/attest",
     "siteUrl": "https://tryattest.com",
