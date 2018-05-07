@@ -1,13 +1,9 @@
-import React from 'react'
 import PostList from './PostList'
 import Title from './Title'
-import BodyContainer from './BodyContainer'
 
 export default ({ titles }) => (
-  <div>
+  <div className='pa3'>
     <Title title='Posts' />
-    <BodyContainer>
-      <PostList titles={titles} />
-    </BodyContainer>
+    <PostList titles={titles} />
   </div>
 )

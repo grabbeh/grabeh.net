@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from '../components/Page'
-import 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch'
 import Posts from '../components/Posts'
 
 export default class extends React.Component {

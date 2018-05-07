@@ -1,9 +1,21 @@
-import React from 'react'
+import SideBarIcon from './SideBarIcon'
+import SideBarItem from './SideBarItem'
+import ClearFix from './ClearFix'
+import { Fragment } from 'react'
 
 export default () => (
-  <div className='pa2 f5 bg-white mb4 tc w3 shadow-5'>
-    <a className='b link black underline-hover' href='/'>
-      <i className='fa fa-home fa-2x' aria-hidden='true' />
-    </a>
-  </div>
+  <Fragment>
+    <div className='mt3 ml3 fr f4'>
+      <SideBarItem item='Home' url='/'>
+        <SideBarIcon home />
+      </SideBarItem>
+      <SideBarItem item='Github' url='https://github.com/grabbeh'>
+        <SideBarIcon github />
+      </SideBarItem>
+      <SideBarItem item='Writings' url='/posts'>
+        <SideBarIcon pencil />
+      </SideBarItem>
+    </div>
+    <ClearFix />
+  </Fragment>
 )

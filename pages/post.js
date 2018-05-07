@@ -1,7 +1,7 @@
 import React from 'react'
 import Page from '../components/Page'
 import Post from '../components/Post'
-import 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch'
 
 export default class extends React.Component {
   static async getInitialProps ({ req, query }) {

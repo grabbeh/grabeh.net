@@ -1,8 +1,6 @@
-import styled from 'tachyons-components'
-
-const Tool = styled('div')`
-mt2 fl ba pa2
-${props => (props.last ? 'mr0' : 'mr2')}
-`
-
+const Tool = ({ children }) => (
+  <div className='br3 mt2 mr2 fl pv2 ph3 bg-light-yellow'>
+    {children}
+  </div>
+)
 export default Tool

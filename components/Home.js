@@ -2,11 +2,17 @@ import React from 'react'
 import HomeSection from './HomeSection'
 
 export default ({ projects }) => (
-  <div className='f4-ns f5 w-100 pv3 lh-copy'>
-    <div>I make Internet things:</div>
-    <div>
+  <div className='mw8 center f4 pa3'>
+    <div className='mb2 f3'>
+      Hi, my name's Michael and I make Internet things:
+    </div>
+    <div className='flex flex-wrap'>
       {projects.map(project => {
-        return <HomeSection key={project.id} {...project} />
+        return (
+          <div className='w-33-l w-50-ns w-100'>
+            <HomeSection key={project.id} {...project} />
+          </div>
+        )
       })}
     </div>
     <div className='mt4'>

@@ -12,16 +12,16 @@ export default ({
   siteUrl,
   tools
 }) => (
-  <div className='mt3 mb3 bb pb4'>
-    <div className='b'>{projectName}</div>
-    <Text children={description} />
-
+  <div className='mr5-ns bt b--black-30 bw1 pb3'>
+    <div className='b pv2 font f3 ttl'>{projectName}</div>
+    <Text className='lh-copy' children={description} />
     <LazyLoad height={200}>
-      <Image className='shadow-5 mb2' mt={2} src={imageUrl} />
+      <Image className='mb2' mt={2} src={imageUrl} />
     </LazyLoad>
-    {siteUrl && <div><Link href={siteUrl} children='Site' /></div>}
-    <Link href={sourceUrl} children='Source' />
-    <div>Tools</div>
+    {siteUrl &&
+      <div className='pv2'><Link href={siteUrl} children='Site' /></div>}
+    <Link className='pv2' href={sourceUrl} children='Source' />
+    <div className='pt2'>Tools</div>
     {tools.map(t => <Tool key={t.id}>{t.tool}</Tool>)}
     <ClearFix />
   </div>

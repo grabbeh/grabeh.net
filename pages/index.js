@@ -2,7 +2,6 @@ import React from 'react'
 import fetch from 'isomorphic-fetch'
 import Page from '../components/Page'
 import Home from '../components/Home'
-import BodyContainer from '../components/BodyContainer'
 
 export default class extends React.Component {
   static async getInitialProps ({ req }) {
@@ -14,12 +13,9 @@ export default class extends React.Component {
   }
 
   render () {
-    const { projects } = this.props
     return (
       <Page>
-        <BodyContainer>
-          <Home projects={projects} />
-        </BodyContainer>
+        <Home {...this.props} />
       </Page>
     )
   }

@@ -7,12 +7,12 @@ export default ({ titles }) => {
     let i = title.search('.md')
     let cleanTitle = title.slice(0, i).replace(/-/gi, ' ')
     return (
-      <li key={t.id} className='lh-copy pv3 bb bl-0 bt-0 br-0 b--black-30'>
+      <li key={t.id} className='lh-copy pb2 bl-0 bt-0 br-0'>
         <Link prefetch href={{ pathname: '/post', query: { title: title } }}>
-          <a className='f4 db black'>{cleanTitle}</a>
+          <a className='f4 db'>{cleanTitle}</a>
         </Link>
       </li>
     )
   })
-  return <ul className='list pa1'>{fullUrls}</ul>
+  return <ul className='list ma0 pa0'>{fullUrls}</ul>
 }
