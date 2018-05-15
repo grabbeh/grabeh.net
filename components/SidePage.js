@@ -31,7 +31,7 @@ class SidePage extends Component {
 export default SidePage
 
 const MenuAnimation = styled.div.attrs({
-  className: 'h100 height bg-white pa3 w-50 front fixed'
+   className: '.overflow-y-scroll h100 height bg-white pa3 w-50 front fixed'
 })`
 transform: translateX(${props => (props.showSidePage ? '0px' : '-100%')});
 transition: transform .5s ease-in;
