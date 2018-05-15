@@ -16,11 +16,11 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <meta name='theme-color' content='#f94f44' />
-          <meta name='msapplication-navbutton-color' content='#f94f44' />
+          <meta name='theme-color' content='#fff1e0' />
+          <meta name='msapplication-navbutton-color' content='#fff1e0' />
           <meta
             name='apple-mobile-web-app-status-bar-style'
-            content='#f94f44'
+            content='#fff1e0'
           />
           <meta charSet='utf-8' />
           <meta name='viewport' content='width=device-width' />
@@ -48,7 +48,7 @@ export default class MyDocument extends Document {
           <style
             dangerouslySetInnerHTML={{
               __html: `
-
+             
               .font {
                 font-family: 'PT Serif';
               }
@@ -65,6 +65,10 @@ export default class MyDocument extends Document {
      
     }
 
+    .bg-ft {
+      background: #fff1e0;
+    }
+
     .font {
       font-family: 'PT Serif';
     }
@@ -73,11 +77,17 @@ export default class MyDocument extends Document {
       margin: 0;
       padding: 0;
     }
+    
+    .height {
+      height: 100vh;
+      top: 0;
+      bottom: 0;
+    }
 
     `}
           </style>
         </Head>
-        <body className='bg-washed-yellow dark-gray'>
+        <body className='bg-ft dark-gray'>
           <Main />
           <NextScript />
         </body>

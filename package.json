@@ -5,18 +5,22 @@
   "main": "index.js",
   "dependencies": {
     "classnames": "^2.2.5",
-    "express": "^4.15.4",
+    "express": "^4.16.3",
     "fs": "0.0.1-security",
-    "marked": "^0.3.6",
+    "marked": "^0.3.19",
     "next": "4.2.3",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-highlight": "briancappello/react-highlight#react-v16-compiled",
-    "react-lazyload": "^2.2.7",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-highlight": "github:briancappello/react-highlight#react-v16-compiled",
+    "react-lazyload": "^2.3.0",
     "read-file": "^0.2.0",
-    "rebass": "^1.0.4",
+    "rebass": "^1.0.7",
     "tachyons-components": "^1.0.0-1",
-    "to-markdown": "^3.1.0"
+    "to-markdown": "^3.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-styled-components": "^1.5.1"
   },
   "scripts": {
     "dev": "node index.js",
