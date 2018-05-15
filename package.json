@@ -24,7 +24,7 @@
   },
   "scripts": {
     "dev": "node index.js",
-    "build": "next build",
+    "package": "next build",
     "start": "NODE_ENV=production node index.js",
     "forever": "NODE_ENV=production forever start index.js"
   },
