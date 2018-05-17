@@ -53,6 +53,9 @@ export default class MyDocument extends Document {
                 font-family: 'PT Serif';
               }
 
+              .bg-ft {
+                background: #fff1e0;
+              }
 
               `
             }}
