@@ -47,7 +47,7 @@ The next step was to determine how to get the app to display via a subdomain on 
 A brief visit to Stackoverflow showed the way, and it wasn't long before the Nginx 'proxy_pass' and 'upstream' directives were identified as being necessary via this [Stackoverflow question](http://stackoverflow.com/questions/5009324/node-js-nginx-and-now).
 
 After some tinkering I used the following configuration file to specify port 3000 as the upstream location for the Express app, and then using proxy_pass and proxy_set_... to specify what should happen with requests to, in this case, helloworld.grabeh.net.
-```javascript
+```
       worker_processes 1;
 
       events {

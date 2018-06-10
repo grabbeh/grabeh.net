@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react'
 
 class SidePage extends Component {
   render () {
-    let { project: { imageUrl, projectName, longDescription } } = this.props
+    let { project } = this.props
     return (
       <MenuAnimation showSidePage={this.props.showSidePage}>
         {this.props.project &&
@@ -12,10 +12,10 @@ class SidePage extends Component {
               <i className='fr pb2 fa fa-times fa-lg' />
             </div>
             <div className='b bb bw1 b--black-30 pb2 mb3 font f3'>
-              {projectName.toLowerCase()}
+              {project.projectName.toLowerCase()}
             </div>
-            <img src={imageUrl} />
-            <div className='pt2 pb4 f4 lh-copy'>{longDescription}</div>
+            <img src={project.imageUrl} />
+            <div className='pt2 pb4 f4 lh-copy'>{project.longDescription}</div>
           </Fragment>}
       </MenuAnimation>
     )

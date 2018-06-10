@@ -78,7 +78,7 @@ This was definitely a lazy way of doing things, and in future, I hope to do more
 
 In addition to the main map.js file I also created separate files to cover distinct functionality on the site. This includes image upload handling and geocoding. I think this is a fairly common practice. As part of this, I created a init() function which is then the only function called to add the functionality to the page, as it incorporates calls to all the necessary functions.
 
-In summary, when it comes to code refactoring, I don't really know what I doing. However although the above may not be (i) the most efficient in terms of code re-use or (ii) implement a design pattern correctly, it is definitely a leap forward for me from the JS-per-page approach used previously.
+In summary, when it comes to code refactoring, I don't really know what I'm doing. However although the above may not be (i) the most efficient in terms of code re-use or (ii) implement a design pattern correctly, it is definitely a leap forward for me from the JS-per-page approach used previously.
 
 In future I hope to use the code I've written to help me improve my usage of design patterns and write better JavaScript generally.
 
