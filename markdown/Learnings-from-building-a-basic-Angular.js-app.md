@@ -1,4 +1,7 @@
-
+---
+path: '/Learnings-from-building-a-basic-Angular.js-app'
+title: 'Learnings from building a basic Angular.js app'
+---
 
 I have recently been tinkering with Angular.js to build a basic application called Instok. Although I haven't really scratched the surface when it comes to Angular.js, I definitely learned a good amount about the framework and thought I'd share that in a post:
 

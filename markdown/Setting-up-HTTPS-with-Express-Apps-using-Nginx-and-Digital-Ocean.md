@@ -1,4 +1,7 @@
-
+---
+path: '/Setting-up-HTTPS-with-Express-Apps-using-Nginx-and-Digital-Ocean'
+title: 'Setting up HTTPS with Express Apps using Nginx and Digital Ocean'
+---
 
 This is a quick list of the steps I took to get https up and running with a new app I've been working on called [Instok](https://instok.net). Although https is of course a good idea in general, the main motivation was to make sure I could use Stripe.
 

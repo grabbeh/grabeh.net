@@ -1,3 +1,8 @@
+---
+path: '/The-journey-from-curious-outsider-to-beginner'
+title: 'The Journey from curious outside to beginner'
+---
+
 
 Starting something completely new creates a whole load of different feelings. Hesitancy, fear, excitement and definitely for me the sense of being a little overwhelmed by it all (sometimes that's just getting out of bed in the morning).
 

@@ -1,3 +1,8 @@
+---
+title: 'A comparison of drafting legal documents vs coding'
+path: '/A-comparison-of-drafting-legal-documents-vs-coding'
+---
+
 Having done a lot of legal drafting in my time and a little [coding](https://github.com/grabbeh) also, I started to notice a few similarities between the two processes which I thought I'd write about. I also talk about one way in which the two processes diverge.
 
 **Avoiding repetition and keeping things DRY**
@@ -22,7 +27,7 @@ If everything is inline and a jumble of CSS, JS and HTML I would argue this incr
 
 You could go as far as to say that the main body of an agreement is the view, the schedule with variables is the model, and the definitions section is the controller/router, providing the glue between the model and the view, defining how the terms in the schedule (price, payment terms, work period) are used in the view.
 
-![](/static/legalmvc.png "It's MVC, but not as we know it, Jim")
+![](/legalmvc.png "It's MVC, but not as we know it, Jim")
 
 **User feedback**
 

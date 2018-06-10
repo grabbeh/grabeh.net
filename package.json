@@ -7,10 +7,17 @@
     "classnames": "^2.2.5",
     "express": "^4.16.3",
     "fs": "0.0.1-security",
+    "gatsby": "^1.9.247",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-react-helmet": "^2.0.10",
+    "gatsby-remark-prismjs": "^2.0.3",
+    "gatsby-source-filesystem": "^1.5.36",
+    "gatsby-transformer-remark": "^1.7.42",
     "marked": "^0.3.19",
-    "next": "4.2.3",
+    "prismjs": "^1.14.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-helmet": "^5.2.0",
     "react-highlight": "github:briancappello/react-highlight#react-v16-compiled",
     "react-lazyload": "^2.3.0",
     "read-file": "^0.2.0",
@@ -19,14 +26,15 @@
     "to-markdown": "^3.1.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-styled-components": "^1.5.1"
+    "prettier": "^1.12.0"
   },
   "scripts": {
-    "dev": "node index.js",
-    "package": "next build",
-    "start": "NODE_ENV=production node index.js",
-    "forever": "NODE_ENV=production forever start index.js"
+    "forever": "NODE_ENV=production forever start index.js",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve public/"
   },
   "repository": {
     "type": "git",

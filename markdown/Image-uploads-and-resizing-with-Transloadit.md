@@ -1,4 +1,7 @@
-
+---
+path: '/Image-uploads-and-resizing-with-Transloadit'
+title: 'Image uploads and resizing with Transloadit'
+---
 
 Giving people the ability to upload photos has been on my mind for a while because photos are a great way to help evoke memories and also to give others a better idea of what a route involves (although I guess there’s always Google Street View for that).
 

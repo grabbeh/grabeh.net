@@ -40,6 +40,7 @@ jspm_packages/
 .next/
 build/
 config/
+public/
 
 # Typescript v1 declaration files
 typings/

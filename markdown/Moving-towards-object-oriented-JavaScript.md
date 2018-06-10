@@ -1,4 +1,7 @@
-
+---
+path: '/Moving-towards-object-oriented-JavaScript'
+title: 'Moving towards object oriented JavaScript'
+---
 
         971 additions and 3,493 deletions
 

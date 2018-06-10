@@ -1,3 +1,7 @@
+---
+path: '/The-myth-of-mandatory-trade-mark-enforcement'
+title: 'The myth of mandatory trade mark enforcement'
+---
 
 Trade mark disputes pop up all the time. Often it's a David v Goliath affair with a large incumbent with an equally large legal budget seeking to squish a plucky start-up.
 
@@ -29,7 +33,7 @@ It's also worth remembering that a trade mark owner is also not restricted from 
 
 In example B, the grounds for taking action would be far more limited. It is not so clear cut however at its heart, there is a very low chance that a potential customer of a kindergarten would consider that there is a connection between the kindergarten and the hardware manufacturer<sup id="fnref1">[1](#fn1)</sup> even one where Arnie works.
 
-![](/static/arnie.jpg)
+![](/arnie.jpg)
 
 Whilst it is appreciated that a trade mark owner does not always have to pursue only those infringements it has a cast-iron case in relation to, there is certainly room for some nuance on the part of the trade mark owner in determining which perceived infringements to pursue.
 

@@ -1,3 +1,8 @@
+---
+path: '/Refactoring-from-jQuery-to-Angular.js'
+title: 'Refactoring from jQuery to Angular'
+---
+
 
 I recently transferred a site recently written predominantly using jQuery to Angular. The site is [Geophoto](http://geophoto.grabeh.net) and simply allows a user to be shown photos of a particular place. The user can click on a map, provide a location or let the browser geolocate them.
 
@@ -12,7 +17,7 @@ There are a few issues that I faced in transferring but overall it was a relativ
 To recreate Google maps in Angular I simply wrapped all the necessary functionality in a Google maps-specific directive. However to limit the amount of functionality that interacted with the map, I had the directive $.broadcast out the necessary information to the parent controller.
 
 That way the controller could simply take that data and use it, without getting too involved with the map directive:
-
+```javascript
     $.$on('coords.change', function(e, l){     
         flickr.search({ 
             lat: l.lat, 
@@ -26,7 +31,7 @@ That way the controller could simply take that data and use it, without getting 
                 console.log(err)
         })
     })
-
+```
 **multiple select boxes**
 
 I use a range of select boxes in the app to allow the user to specify a range of licences applicable to their search. With jQuery I iterated over the boxes and extracted the selected ones to go to the server (Flickr's API takes an array of numbers corresponding to the different licences). The select boxes were then manually referenced in the HTML.

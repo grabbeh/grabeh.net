@@ -1,6 +1,9 @@
+---
+path: '/Adventures-with-CouchDB-Nano-and-Pjax'
+title: 'Adventures with CouchDB, Nano and Pjax'
+---
 
-
-It seemed somehow fitting to write the first blog on here about the process of creating the blog itself, so whilst I hope to write on a broader range of topics on the above in future, what follows below is some comment on the tools used to build this blog.
+It seemed fitting to write the first blog on here about the process of creating the blog itself, so whilst I hope to write on a broader range of topics on the above in future, what follows below is some comment on the tools used to build this blog.
 
 **CouchDB and Nano**
 

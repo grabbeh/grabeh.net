@@ -1,4 +1,7 @@
-
+---
+path: '/Digital-Ocean-VPS-Nginx-Express-apps'
+title: 'Digital Ocean VPS, Nginx and Express apps'
+---
 
 I recently started investigating the murky (at least for me) world of VPSs. I was previously hosting a few pet projects on Nodejitsu but although their service is excellent, the nature of my projects didn't really warrant using the platform.
 
@@ -44,7 +47,7 @@ The next step was to determine how to get the app to display via a subdomain on 
 A brief visit to Stackoverflow showed the way, and it wasn't long before the Nginx 'proxy_pass' and 'upstream' directives were identified as being necessary via this [Stackoverflow question](http://stackoverflow.com/questions/5009324/node-js-nginx-and-now).
 
 After some tinkering I used the following configuration file to specify port 3000 as the upstream location for the Express app, and then using proxy_pass and proxy_set_... to specify what should happen with requests to, in this case, helloworld.grabeh.net.
-
+```javascript
       worker_processes 1;
 
       events {
@@ -102,7 +105,7 @@ After some tinkering I used the following configuration file to specify port 300
           }  
           }
       }
-
+```
 If you use this you'll obviously have to update the domain name 'grabeh.net' to your own domain.
 
 Testing your .conf before sending it live is important. If I'm making any changes to nginx.conf I first use 'cp nginx.conf test.conf' and make changes to test.conf rather than the live file. Testing the file is done by ./nginx -t -c [location of test.conf]. If tests pass, then using 'mv test.conf nginx.conf' will switch in the new conf for the existing one.

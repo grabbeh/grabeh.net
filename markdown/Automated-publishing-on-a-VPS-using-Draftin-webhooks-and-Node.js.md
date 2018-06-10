@@ -1,4 +1,7 @@
-
+---
+path: '/Automated-publishing-on-a-VPS-using-Draftin-webhooks-and-Node.js'
+title: 'Automated publishing on a VPS using Drafting webhooks and Node.js'
+---
 
 Draftin.com is a great tool I've been using lately to do some writing. Whilst I'm not utilising many of its more advanced features, the care and attention that its creator has put into the product shines through.
 

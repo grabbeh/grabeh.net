@@ -1,3 +1,8 @@
+---
+path: '/Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes'
+title: 'Steps to improve Unity Ubuntu on Chromebook Crouton for developer purposes'
+---
+
 I recently bought an Acer C270 Chromebook and having undertaken the straightforward process of using Crouton to install Ubuntu/Unity, I found I had to take a few more steps to make the machine usable for Node.js development.
 
 I thought I'd outline the steps below I took. Clearly some steps may not be applicable depending on the preferred setup.

@@ -1,4 +1,7 @@
-
+---
+path: '/Online-terms-better-with-notice'
+title: 'Online terms - better with notice'
+---
 
 In some countries in the world, laws are in place to help protect the consumer against the imposition of unfair contract terms.
 
