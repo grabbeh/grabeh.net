@@ -8,6 +8,10 @@ body {
   font-family: 'PT Serif';
 }
 
+strong {
+  font-family: 'PT Serif'
+}
+
 .bg-ft {
   background: #fff1e0;
 }
