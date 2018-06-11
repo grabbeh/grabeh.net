@@ -18,7 +18,7 @@ export default class extends React.Component {
     return (
       <div className='mw7 f4 mt2 center pa3'>
         <div className='b ttu'>{frontmatter.title}</div>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div className='lh-copy' dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     )
   }

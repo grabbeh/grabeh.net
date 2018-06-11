@@ -1,23 +1,13 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
-      "layout": "index",
-      "jsonName": "dev-404-page.json",
-      "internalComponentName": "ComponentDev404Page",
       "path": "/dev-404-page/",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/.cache/dev-404-page.js",
-      "componentChunkName": "component---cache-dev-404-page-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin dev-404-page",
-      "pluginCreatorId": "Plugin dev-404-page",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/.cache/dev-404-page.js",
       "id": "SitePage /dev-404-page/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "45e5297fed6e711fa3fd78136234ebcf",
-        "description": "Plugin dev-404-page",
+        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
         "owner": "internal-data-bridge"
       }
     },
@@ -933,16 +923,14 @@
           }
         ]
       },
-      "port": "8000",
-      "host": "localhost",
       "pathPrefix": "/public",
       "polyfill": true,
-      "buildTime": "2018-06-10T23:00:44.938Z",
+      "buildTime": "2018-06-11T22:00:34.957Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "f07a7d934433e24141e7d949a1ac0abb",
+        "contentDigest": "f5d6aa84e6db2b6522750c9fe2c2b042",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -1822,363 +1810,6 @@
       "rawMarkdownBody": "\nI have recently been tinkering with Angular.js to build a basic application called Instok. Although I haven't really scratched the surface when it comes to Angular.js, I definitely learned a good amount about the framework and thought I'd share that in a post:\n\n**Authentication**\n\nHaving worked with pure-server side authentication (in the sense that all authentication happened on the server, and if a request was successful there would be a redirect with a full page re-render) it was definitely a hurdle for me to manage authentication in Angular.\n\nThe main issue was that instead of there being a full page re-render on authentication, the server would notify the client that authentication was successful.\n\nHowever, initially I tried to stick as closely as possible to the existing server-side method as possible. This involved setting the user as a local variable (using app.locals in Express) which would be passed when the initial index.html template was rendered on the client side.\n\nHowever, this technique proved to be a little problematic for me on the basis that when a user logged out on the client-side, the change did not immediately follow through in the entirety of the app.\n\nSpecifically, conditional views using ng-show would continue to display as if the user was still logged in. I think this may have been solved with a full page re-render but on the basis that I was using ng-view to display the bulk of the app (with the ng-show elements sitting outside the ng-view), I didn't necessarily want to do this.\n\nI think I then read about an alternative which would be to create a service to fetch the authenticated user from the server on a successful authentication. As a result, when the user logs in, on a successful request, the server responds with a 200 status, and the client then subsequently requests the logged in user's details.\n\nOn a successful request, the user is then attached to the rootScope, and therefore accessible through the Angular app.\n\nAs a side note, I tried to simply send the authed user back with the login request, but for reasons I couldn't fathom this didn't work as desired. I also realise I should potentially use http interceptors to deal with the incoming requests, rather than waiting to deal with them in a service however at this stage I think I'm just pleased I've got authentication to work ok!\n\n**Restricting routes**\n\nInitially in each controller for a particular route that I wanted to restrict access to I would make a call to the server to check if there was an authenticated user on the server-side. If there was no authed user I would redirect to a login page.\n\nI then realised I could make use of the resolve feature on the $routeProvider to check whether the user was present and if not, redirect. In relation to the latter point, this was achieved using the following:\n\n    $rootScope.$on('$routeChangeError', function(){\n        $location.path('/login')\n    });\n\nThis works quite nicely however it's not immediately clear to me why this is necessary on the basis that the user should be attached to the $rootScope on the client-side and so I should be able to monitor whether or not there is an authenticated user without going to the server. One for a future tinkering perhaps.\n\n**Caching**\n\nOne problem that stumped me for some time was that in Internet Explorer 10, fetching data from the server appeared not to work as old data kept on appearing, even if a client-side input had resulted in the data changing.\n\nBeing a bit of a novice, it took a while to realise that the client was displaying cached data. After some digging, I found out that adding the following properties to the response headers would instruct the client-side not to cache results, meaning that fresh data would be displayed in each instance.\n\n    res.set('Cache-Control', 'no-cache, no-store');\n\n**Logging**\n\nNot Angular.js related, however, building the app gave me an appreciation for the art of logging. When attempting to login I was periodically faced with 502 Bad Gateway errors from Nginx. I think the periodic error as opposed to the consistent error is possibly the most frustrating especially for a beginner because it makes it that much harder to track down.\n\nAlthough I began to log errors arising from the Express app, and also with Nginx, this got me no closer to a solution. Eventually, I realised that because I was using Forever to keep the Express app up, there might be a solution within Forever's logs.\n\nSure enough, it became clear that the issue was with the MongoDB instance I was using throwing an error. Having identified the source of the problem I switched to a new instance and have had no problems since that point.\n\n**Passport.js**\n\nBeing a novice and also not wishing to reinvent the wheel, I initially used passport.js for authentication within Express. This worked like a charm however as in perhaps a lot of cases, it seemed ever so slightly magical. I appreciate that I could have dug into the underlying code but as I'm a beginner this was a little daunting.\n\nUsing Passport.js was great, however where I wanted to deviate from the functionality made available by passport things were a little tricky. I stumbled across an example of authentication on [Runnable](http://runnable.com/UTlPPF-f2W1TAAEY/login-auth-using-sessions-in-express-for-node-js-and-authentication). The 'authenticate' function in particular made a great deal more sense to me than the passport LocalStrategy example shown [here](http://passportjs.org/guide/username-password/).\n\nSpecifically, the usage of 'fn' as a callback to pass in either the error or the user seemed much clearer than the abstraction used by passport (It wasn't immediately clear to me where the 'done' callback was actually called - although I think this may be done internally with the user automatically added to 'req.user'). This is absolutely a reflection on my status as a beginner rather than passport however.\n\nConsequently, on the basis that my needs were relatively simple, I replaced passport with the authenticate function. I think all in all this has been working well for me thus far although I appreciate that passport can really come into its own when multiple authentication routes As a bonus, I have also been using the pattern of returning a function with either the error, or the result as a means of building up more complex functions by incorporating existing functions using this pattern.\n\n    // Function\n    function authenticate(name, pass, fn) {\n       User.find({name: name}, function(err, user){\n           if (err) { return fn(err);}\n           else  { return fn(null, user); }\n       })\n    }\n\n    // Usage\n    authenticate(\"username\", \"password\", function(err, user){\n        if (user){\n              req.session.regenerate(function(){\n                req.session.user = user;\n                res.status(200).send();\n              })\n          }\n          else {\n            res.status(401).send({message: \"Error\"})\n          }\n    }\n\n**Conclusion**\n\nAll in all, the development process was fairly smooth and I very much enjoy using Angular and being forced to compartmentalise functionality in separate controllers and services. As outlined above, there were some moments which resulted in long delays (and scouring of Stackoverflow of course) but I am pleased with the end result.\n\n",
       "fileAbsolutePath": "/mnt/c/Users/mbg/Documents/grabeh.net/markdown/Learnings-from-building-a-basic-Angular.js-app.md"
     },
-    "SitePage /Adventures-with-CouchDB-Nano-and-Pjax": {
-      "layout": "index",
-      "jsonName": "adventures-with-couch-db-nano-and-pjax.json",
-      "internalComponentName": "ComponentAdventuresWithCouchDbNanoAndPjax",
-      "path": "/Adventures-with-CouchDB-Nano-and-Pjax",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /Adventures-with-CouchDB-Nano-and-Pjax",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "2fdb87c1c6eabf8f75f288a1f160ff18",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /Moving-towards-object-oriented-JavaScript": {
-      "layout": "index",
-      "jsonName": "moving-towards-object-oriented-java-script.json",
-      "internalComponentName": "ComponentMovingTowardsObjectOrientedJavaScript",
-      "path": "/Moving-towards-object-oriented-JavaScript",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /Moving-towards-object-oriented-JavaScript",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "eedd013e686a6de773b92bfa01f1c642",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /Online-terms-better-with-notice": {
-      "layout": "index",
-      "jsonName": "online-terms-better-with-notice.json",
-      "internalComponentName": "ComponentOnlineTermsBetterWithNotice",
-      "path": "/Online-terms-better-with-notice",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /Online-terms-better-with-notice",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "e44e5a4abdf542647a31b43fb9dffbf5",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /A-comparison-of-drafting-legal-documents-vs-coding": {
-      "layout": "index",
-      "jsonName": "a-comparison-of-drafting-legal-documents-vs-coding.json",
-      "internalComponentName": "ComponentAComparisonOfDraftingLegalDocumentsVsCoding",
-      "path": "/A-comparison-of-drafting-legal-documents-vs-coding",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /A-comparison-of-drafting-legal-documents-vs-coding",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "4c4bf6df57e4a0a0c42e5a9766f45ae0",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /Refactoring-from-jQuery-to-Angular.js": {
-      "layout": "index",
-      "jsonName": "refactoring-from-j-query-to-angular-js.json",
-      "internalComponentName": "ComponentRefactoringFromJQueryToAngularJs",
-      "path": "/Refactoring-from-jQuery-to-Angular.js",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /Refactoring-from-jQuery-to-Angular.js",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "33ab748f02fa5cbc83af24358b25552a",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /Setting-up-HTTPS-with-Express-Apps-using-Nginx-and-Digital-Ocean": {
-      "layout": "index",
-      "jsonName": "setting-up-https-with-express-apps-using-nginx-and-digital-ocean.json",
-      "internalComponentName": "ComponentSettingUpHttpsWithExpressAppsUsingNginxAndDigitalOcean",
-      "path": "/Setting-up-HTTPS-with-Express-Apps-using-Nginx-and-Digital-Ocean",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /Setting-up-HTTPS-with-Express-Apps-using-Nginx-and-Digital-Ocean",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "864e2609e9c06fcbe748fe428a84a444",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes": {
-      "layout": "index",
-      "jsonName": "steps-to-improve-unity-ubuntu-on-chromebook-crouton-for-developer-purposes.json",
-      "internalComponentName": "ComponentStepsToImproveUnityUbuntuOnChromebookCroutonForDeveloperPurposes",
-      "path": "/Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "2a80faad4fa0ac065325652b768ea1d0",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /The-journey-from-curious-outsider-to-beginner": {
-      "layout": "index",
-      "jsonName": "the-journey-from-curious-outsider-to-beginner.json",
-      "internalComponentName": "ComponentTheJourneyFromCuriousOutsiderToBeginner",
-      "path": "/The-journey-from-curious-outsider-to-beginner",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /The-journey-from-curious-outsider-to-beginner",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "7c30f460378d3def1e0ea1dacda58dd6",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /Automated-publishing-on-a-VPS-using-Draftin-webhooks-and-Node.js": {
-      "layout": "index",
-      "jsonName": "automated-publishing-on-a-vps-using-draftin-webhooks-and-node-js.json",
-      "internalComponentName": "ComponentAutomatedPublishingOnAVpsUsingDraftinWebhooksAndNodeJs",
-      "path": "/Automated-publishing-on-a-VPS-using-Draftin-webhooks-and-Node.js",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /Automated-publishing-on-a-VPS-using-Draftin-webhooks-and-Node.js",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "e564ae48b94eef42749b61d9b1b160a1",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /The-myth-of-mandatory-trade-mark-enforcement": {
-      "layout": "index",
-      "jsonName": "the-myth-of-mandatory-trade-mark-enforcement.json",
-      "internalComponentName": "ComponentTheMythOfMandatoryTradeMarkEnforcement",
-      "path": "/The-myth-of-mandatory-trade-mark-enforcement",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /The-myth-of-mandatory-trade-mark-enforcement",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "580cafc8e9e7a53c6ded6a69b4020d3a",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /Image-uploads-and-resizing-with-Transloadit": {
-      "layout": "index",
-      "jsonName": "image-uploads-and-resizing-with-transloadit.json",
-      "internalComponentName": "ComponentImageUploadsAndResizingWithTransloadit",
-      "path": "/Image-uploads-and-resizing-with-Transloadit",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /Image-uploads-and-resizing-with-Transloadit",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "c73146c94623a2ce60812a5667fda3f3",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /Learnings-from-building-a-basic-Angular.js-app": {
-      "layout": "index",
-      "jsonName": "learnings-from-building-a-basic-angular-js-app.json",
-      "internalComponentName": "ComponentLearningsFromBuildingABasicAngularJsApp",
-      "path": "/Learnings-from-building-a-basic-Angular.js-app",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /Learnings-from-building-a-basic-Angular.js-app",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "f6fbd9f5fa0f613b8d82ca6adac5bd7f",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /Digital-Ocean-VPS-Nginx-Express-apps": {
-      "layout": "index",
-      "jsonName": "digital-ocean-vps-nginx-express-apps.json",
-      "internalComponentName": "ComponentDigitalOceanVpsNginxExpressApps",
-      "path": "/Digital-Ocean-VPS-Nginx-Express-apps",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "componentChunkName": "component---src-templates-post-template-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin default-site-plugin",
-      "pluginCreatorId": "Plugin default-site-plugin",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
-      "id": "SitePage /Digital-Ocean-VPS-Nginx-Express-apps",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "5ceb057c08c72a0b16d540a5bf22afdc",
-        "description": "Your site's \"gatsby-node.js\"",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /404/": {
-      "layout": "index",
-      "jsonName": "404.json",
-      "internalComponentName": "Component404",
-      "path": "/404/",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/404.js",
-      "componentChunkName": "component---src-pages-404-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin component-page-creator",
-      "pluginCreatorId": "Plugin component-page-creator",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/404.js",
-      "id": "SitePage /404/",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "123be803317c526a02a13af1a1dadb05",
-        "description": "Plugin component-page-creator",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /": {
-      "layout": "index",
-      "jsonName": "index.json",
-      "internalComponentName": "ComponentIndex",
-      "path": "/",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/index.js",
-      "componentChunkName": "component---src-pages-index-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin component-page-creator",
-      "pluginCreatorId": "Plugin component-page-creator",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/index.js",
-      "id": "SitePage /",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "fbd0616f13ed6acad22ea9c6535fa42f",
-        "description": "Plugin component-page-creator",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /posts/": {
-      "layout": "index",
-      "jsonName": "posts.json",
-      "internalComponentName": "ComponentPosts",
-      "path": "/posts/",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/posts.js",
-      "componentChunkName": "component---src-pages-posts-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin component-page-creator",
-      "pluginCreatorId": "Plugin component-page-creator",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/posts.js",
-      "id": "SitePage /posts/",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "fa21b5b95411445664fff04c12ce0204",
-        "description": "Plugin component-page-creator",
-        "owner": "internal-data-bridge"
-      }
-    },
-    "SitePage /404.html": {
-      "layout": "index",
-      "jsonName": "404-html.json",
-      "internalComponentName": "Component404Html",
-      "path": "/404.html",
-      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/404.js",
-      "componentChunkName": "component---src-pages-404-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin prod-404",
-      "pluginCreatorId": "Plugin prod-404",
-      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/404.js",
-      "id": "SitePage /404.html",
-      "parent": "SOURCE",
-      "children": [],
-      "internal": {
-        "type": "SitePage",
-        "contentDigest": "0a73427caadbf423698c014b52ee1338",
-        "description": "Plugin prod-404",
-        "owner": "internal-data-bridge"
-      }
-    },
     "/mnt/c/Users/mbg/Documents/grabeh.net/markdown/Moving-towards-object-oriented-JavaScript.md absPath of file >>> MarkdownRemark": {
       "id": "/mnt/c/Users/mbg/Documents/grabeh.net/markdown/Moving-towards-object-oriented-JavaScript.md absPath of file >>> MarkdownRemark",
       "children": [],
@@ -2218,6 +1849,363 @@
       "excerpt": "",
       "rawMarkdownBody": "\nI recently started investigating the murky (at least for me) world of VPSs. I was previously hosting a few pet projects on Nodejitsu but although their service is excellent, the nature of my projects didn't really warrant using the platform.\n\nAt the same time, I was interested in learning more about using linux commands and investigating how straightforward it was for a beginner to get Express apps running on a VPS and accessible via a specified subdomain.\n\n[Digital Ocean](http://digitalocean.com) provides a basic option at $5 per month and I spun up an instance running Ubuntu 12.04 based in Amsterdam no less.\n\nYou'll access your VPS by using a SSH client. As I'm on Windows I use [PuTTY](http://www.chiark.greenend.org.uk/%7Esgtatham/putty/). Through this you'll input your login details for the VPS and you should be able to start on the road to getting your Express app running.\n\n[Nginx](http://wiki.nginx.org/Main) is an open source http/reverse proxy server software and is being increasingly used on the basis that it offers simplified but powerful functionality for running servers in comparison to Apache (as I understand it at least!).\n\nThe first steps was to get Nginx running. This was fairly straightforward and I followed the steps in [Nginx HTTP Server](http://www.packtpub.com/nginx-http-server/book) by Clement Nedelcu. Nginx runs by using a central configuration file, but you can incorporate other conf files with the simple use of 'include'. On my installation the conf files were located in the following folder /usr/local/nginx/conf/ on the VPS.\n\nSo following installation I had a basic http server up and running serving a index.html file at grabeh.net (adding a domain through Digital Ocean and updating the nameservers to point at the VPS was simple enough).\n\n**_Installing node.js and your Express app_**\n\nThe next step was to identify how to get Express apps running on the VPS. Installing node.js itself was obviously key!\n\nThe most straightforward way I identified was the following:\n\n*   apt-get install python-software-properties\n*   apt-add-repository ppa:chris-lea/node.js\n*   apt-get update\n*   apt-get install nodejs\n\nAfter this point I was able to type in 'node' and get access to the REPL. Typing in 2 + 2 did indeed give me 4 which was a pleasure to see (particularly owing to my deficient maths skills). As a bonus, you'll also get npm for package control.\n\nThe next step was to get a small Express app running on the VPS. The easiest way I found was to git clone a basic app into the VPS. You can use the one [here](http://github.com/Grabbeh/express-hello-world) on Github if you want. (Using apt-get install git-core will give you access to git commands).\n\nThen simply 'npm install' to install the Express dependency. After that 'node app' should have the app running on port 3000.\n\nAs you will see using node app means the app is running in the foreground which means we cannot do anything else on the command line whilst the app is running. This simply will not do!\n\nI recalled a while ago reading about Nodejitsu's Forever tool which allows you to set a node app running in the background. This [link](http://blog.nodejitsu.com/keep-a-nodejs-server-up-with-forever) on Nodejitsu's site provides step-by-step instructions, however basically just use 'npm install forever -g' and then in your app's directory you can use 'forever start app.js' and your app will be running in the background. If you're planning on running multiple apps you may want to remain the app.js file to be more descriptive.\n\nThis is because 'forever list' will specify the apps running and for me things got confusing when I was using app.js for all apps.\n\n**_Getting your Express app displaying on a subdomain_**\n\nThe next step was to determine how to get the app to display via a subdomain on grabeh.net.\n\nA brief visit to Stackoverflow showed the way, and it wasn't long before the Nginx 'proxy_pass' and 'upstream' directives were identified as being necessary via this [Stackoverflow question](http://stackoverflow.com/questions/5009324/node-js-nginx-and-now).\n\nAfter some tinkering I used the following configuration file to specify port 3000 as the upstream location for the Express app, and then using proxy_pass and proxy_set_... to specify what should happen with requests to, in this case, helloworld.grabeh.net.\n```\n      worker_processes 1;\n\n      events {\n        worker_connections 1024;\n      }\n      http {\n\n          include       mime.types;\n          default_type  application/octet-stream;\n          sendfile      on;\n          tcp_nopush    on;\n\n      # specify the location of the Express app you want to serve up\n\n      upstream helloworld {\n        server localhost:3000;\n      }\n\n      # calls to www.grabeh.net will be rewritten to grabeh.net\n\n      server {\n        listen 80;\n          server_name www.grabeh.net *.grabeh.net;\n          rewrite ^(.*) http://grabeh.net$1 permanent;\n      } \n\n      # specify what will happen when a request to helloworld.[your domain] is made. \n      # Here we are proxying the Express app through.\n\n      server {\n        listen 80;\n        server_name helloworld.grabeh.net;\n\n        location / {\n          try_files $uri @helloworld;\n      }\n\n        location @helloworld {\n          proxy_set_header X-Real-IP $remote_addr;\n          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n          proxy_set_header Host $proxy_host;\n          proxy_set_header X-NginX-Proxy true;\n          proxy_pass http://helloworld;\n          }\n      }\n\n      # basic element where we're sending index.html for requests to grabeh.net/\n      server {\n        listen 80; \n        server_name grabeh.net;\n\n        location / {\n          root html/home;\n          index index.html index.htm;\n          }  \n          }\n      }\n```\nIf you use this you'll obviously have to update the domain name 'grabeh.net' to your own domain.\n\nTesting your .conf before sending it live is important. If I'm making any changes to nginx.conf I first use 'cp nginx.conf test.conf' and make changes to test.conf rather than the live file. Testing the file is done by ./nginx -t -c [location of test.conf]. If tests pass, then using 'mv test.conf nginx.conf' will switch in the new conf for the existing one.\n\nAfter switching in the modified .conf file using './nginx -s reload' should result in 'Hello World' showing when you navigate to 'helloworld.[yourdomain].[tld].\n\nHopefully the above or at least parts of it are useful. It's always good for me to get thoughts down to help cement my understanding. I'm still getting to grips with Nginx and whilst there was lots of good information on Digital Ocean's site and Stackoverflow of course, there didn't seem to be a full step-by-step guide to the entire process.\n\n",
       "fileAbsolutePath": "/mnt/c/Users/mbg/Documents/grabeh.net/markdown/Digital-Ocean-VPS-Nginx-Express-apps.md"
+    },
+    "SitePage /Adventures-with-CouchDB-Nano-and-Pjax": {
+      "layout": "index",
+      "jsonName": "adventures-with-couch-db-nano-and-pjax.json",
+      "internalComponentName": "ComponentAdventuresWithCouchDbNanoAndPjax",
+      "path": "/Adventures-with-CouchDB-Nano-and-Pjax",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /Adventures-with-CouchDB-Nano-and-Pjax",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "b15bc64e0c31ecdde0b456c8d8590306",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /Online-terms-better-with-notice": {
+      "layout": "index",
+      "jsonName": "online-terms-better-with-notice.json",
+      "internalComponentName": "ComponentOnlineTermsBetterWithNotice",
+      "path": "/Online-terms-better-with-notice",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /Online-terms-better-with-notice",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "a6324b0f2741be5d05640ece86efb082",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /A-comparison-of-drafting-legal-documents-vs-coding": {
+      "layout": "index",
+      "jsonName": "a-comparison-of-drafting-legal-documents-vs-coding.json",
+      "internalComponentName": "ComponentAComparisonOfDraftingLegalDocumentsVsCoding",
+      "path": "/A-comparison-of-drafting-legal-documents-vs-coding",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /A-comparison-of-drafting-legal-documents-vs-coding",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "0a2110701c8605355a11d975c23ea4a8",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /Refactoring-from-jQuery-to-Angular.js": {
+      "layout": "index",
+      "jsonName": "refactoring-from-j-query-to-angular-js.json",
+      "internalComponentName": "ComponentRefactoringFromJQueryToAngularJs",
+      "path": "/Refactoring-from-jQuery-to-Angular.js",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /Refactoring-from-jQuery-to-Angular.js",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "85fbbe9691821b25f7ab76f807d81220",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /Setting-up-HTTPS-with-Express-Apps-using-Nginx-and-Digital-Ocean": {
+      "layout": "index",
+      "jsonName": "setting-up-https-with-express-apps-using-nginx-and-digital-ocean.json",
+      "internalComponentName": "ComponentSettingUpHttpsWithExpressAppsUsingNginxAndDigitalOcean",
+      "path": "/Setting-up-HTTPS-with-Express-Apps-using-Nginx-and-Digital-Ocean",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /Setting-up-HTTPS-with-Express-Apps-using-Nginx-and-Digital-Ocean",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "b07abd4c4e8185a0cce6e5d31be0c6ae",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes": {
+      "layout": "index",
+      "jsonName": "steps-to-improve-unity-ubuntu-on-chromebook-crouton-for-developer-purposes.json",
+      "internalComponentName": "ComponentStepsToImproveUnityUbuntuOnChromebookCroutonForDeveloperPurposes",
+      "path": "/Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "7e553761a4fee64b422e1791dd59fc7b",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /The-journey-from-curious-outsider-to-beginner": {
+      "layout": "index",
+      "jsonName": "the-journey-from-curious-outsider-to-beginner.json",
+      "internalComponentName": "ComponentTheJourneyFromCuriousOutsiderToBeginner",
+      "path": "/The-journey-from-curious-outsider-to-beginner",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /The-journey-from-curious-outsider-to-beginner",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "2c04202930c3ae544259e08503890346",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /Automated-publishing-on-a-VPS-using-Draftin-webhooks-and-Node.js": {
+      "layout": "index",
+      "jsonName": "automated-publishing-on-a-vps-using-draftin-webhooks-and-node-js.json",
+      "internalComponentName": "ComponentAutomatedPublishingOnAVpsUsingDraftinWebhooksAndNodeJs",
+      "path": "/Automated-publishing-on-a-VPS-using-Draftin-webhooks-and-Node.js",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /Automated-publishing-on-a-VPS-using-Draftin-webhooks-and-Node.js",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "9988b3c7d4e7828328ddbf0aa9658bfc",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /The-myth-of-mandatory-trade-mark-enforcement": {
+      "layout": "index",
+      "jsonName": "the-myth-of-mandatory-trade-mark-enforcement.json",
+      "internalComponentName": "ComponentTheMythOfMandatoryTradeMarkEnforcement",
+      "path": "/The-myth-of-mandatory-trade-mark-enforcement",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /The-myth-of-mandatory-trade-mark-enforcement",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "c66acec1196cd83d5bccf7d9e779336c",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /Image-uploads-and-resizing-with-Transloadit": {
+      "layout": "index",
+      "jsonName": "image-uploads-and-resizing-with-transloadit.json",
+      "internalComponentName": "ComponentImageUploadsAndResizingWithTransloadit",
+      "path": "/Image-uploads-and-resizing-with-Transloadit",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /Image-uploads-and-resizing-with-Transloadit",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "2bb0876fd40be02f2afa5c9c1e9bc969",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /Learnings-from-building-a-basic-Angular.js-app": {
+      "layout": "index",
+      "jsonName": "learnings-from-building-a-basic-angular-js-app.json",
+      "internalComponentName": "ComponentLearningsFromBuildingABasicAngularJsApp",
+      "path": "/Learnings-from-building-a-basic-Angular.js-app",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /Learnings-from-building-a-basic-Angular.js-app",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "93809a9e6068ba40a0bd025b1d9c601b",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /Moving-towards-object-oriented-JavaScript": {
+      "layout": "index",
+      "jsonName": "moving-towards-object-oriented-java-script.json",
+      "internalComponentName": "ComponentMovingTowardsObjectOrientedJavaScript",
+      "path": "/Moving-towards-object-oriented-JavaScript",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /Moving-towards-object-oriented-JavaScript",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "ec1b9b40ab3045a1235aa837b79d2ede",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /Digital-Ocean-VPS-Nginx-Express-apps": {
+      "layout": "index",
+      "jsonName": "digital-ocean-vps-nginx-express-apps.json",
+      "internalComponentName": "ComponentDigitalOceanVpsNginxExpressApps",
+      "path": "/Digital-Ocean-VPS-Nginx-Express-apps",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "componentChunkName": "component---src-templates-post-template-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin default-site-plugin",
+      "pluginCreatorId": "Plugin default-site-plugin",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js",
+      "id": "SitePage /Digital-Ocean-VPS-Nginx-Express-apps",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "a81499c98cae77efb47158862b14ca0b",
+        "description": "Your site's \"gatsby-node.js\"",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /404/": {
+      "layout": "index",
+      "jsonName": "404.json",
+      "internalComponentName": "Component404",
+      "path": "/404/",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/404.js",
+      "componentChunkName": "component---src-pages-404-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "pluginCreatorId": "Plugin component-page-creator",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/404.js",
+      "id": "SitePage /404/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "02cc1a3d549ffb94cd85d72940a43893",
+        "description": "Plugin component-page-creator",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /": {
+      "layout": "index",
+      "jsonName": "index.json",
+      "internalComponentName": "ComponentIndex",
+      "path": "/",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/index.js",
+      "componentChunkName": "component---src-pages-index-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "pluginCreatorId": "Plugin component-page-creator",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/index.js",
+      "id": "SitePage /",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "0d011136870c60cb00c3c34c03283fa7",
+        "description": "Plugin component-page-creator",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /posts/": {
+      "layout": "index",
+      "jsonName": "posts.json",
+      "internalComponentName": "ComponentPosts",
+      "path": "/posts/",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/posts.js",
+      "componentChunkName": "component---src-pages-posts-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin component-page-creator",
+      "pluginCreatorId": "Plugin component-page-creator",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/posts.js",
+      "id": "SitePage /posts/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "4ee81f942679028e56579a318458a65d",
+        "description": "Plugin component-page-creator",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /404.html": {
+      "layout": "index",
+      "jsonName": "404-html.json",
+      "internalComponentName": "Component404Html",
+      "path": "/404.html",
+      "component": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/404.js",
+      "componentChunkName": "component---src-pages-404-js",
+      "context": {},
+      "pluginCreator___NODE": "Plugin prod-404",
+      "pluginCreatorId": "Plugin prod-404",
+      "componentPath": "/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/404.js",
+      "id": "SitePage /404.html",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "29edbd0b714dc22c2c264a0272501e6d",
+        "description": "Plugin prod-404",
+        "owner": "internal-data-bridge"
+      }
     }
   },
   "status": {

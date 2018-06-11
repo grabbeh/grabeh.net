@@ -10,13 +10,6 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "moving-towards-object-oriented-java-script.json",
-        "path": "/Moving-towards-object-oriented-JavaScript"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "online-terms-better-with-notice.json",
         "path": "/Online-terms-better-with-notice"
     },
@@ -87,15 +80,15 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "digital-ocean-vps-nginx-express-apps.json",
-        "path": "/Digital-Ocean-VPS-Nginx-Express-apps"
+        "jsonName": "moving-towards-object-oriented-java-script.json",
+        "path": "/Moving-towards-object-oriented-JavaScript"
     },
     {
-        "componentChunkName": "component---cache-dev-404-page-js",
+        "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "dev-404-page.json",
-        "path": "/dev-404-page/"
+        "jsonName": "digital-ocean-vps-nginx-express-apps.json",
+        "path": "/Digital-Ocean-VPS-Nginx-Express-apps"
     },
     {
         "componentChunkName": "component---src-pages-404-js",

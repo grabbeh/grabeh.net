@@ -2,45 +2,58 @@ import HomeSection from './HomeSection'
 import React, { Component, Fragment } from 'react'
 import SidePage from './SidePage'
 import cn from 'classnames'
+import styled from 'styled-components'
+import Link from 'gatsby-link'
 
 class Home extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      showSidePage: false,
       project: false
     }
   }
 
   toggle = project => {
-    if (!this.state.showSidePage) {
+    if (!this.state.project) {
       this.setState({
-        project,
-        showSidePage: true
+        project
       })
     } else {
       this.setState({
-        showSidePage: false
+        project: false
       })
     }
   }
 
   render () {
     let { projects } = this.props
-    let { showSidePage, project } = this.state
+    let { project } = this.state
     let { toggle } = this
-
     return (
       <Fragment>
-        <SidePage
-          toggle={this.toggle}
-          project={project}
-          showSidePage={showSidePage}
-        />
+        <MenuAnimation
+          className={cn(
+            project && 'ml0',
+            !project && 'off-screen',
+            'overflow-y-scroll',
+            'h-100',
+            'height',
+            'bg-white',
+            'pa3',
+            'w-60-l',
+            'w-80-ns',
+            'w-100',
+            'front',
+            'fixed'
+          )}
+          hide={!project}
+        >
+          <SidePage toggle={this.toggle} project={project} />
+        </MenuAnimation>
         <div className='mw8 center f4 pa3'>
           <div className='mb4 mt3 font f3'>
             <p>
-              Hi, my name's Michael. I work as an in-house lawyer in London. However in my spare time I make Internet things.
+              Hi, my name's Michael. I work as an in-house lawyer in London. In my spare time I make Internet things.
             </p>
             <p>
               In part I'm inspired by the interface between the law and programming but also in part because I just enjoy learning new technologies.
@@ -61,7 +74,7 @@ class Home extends Component {
             })}
           </div>
           <div className='mt4'>
-            I also wrote some stuff <a href='/posts'>here</a>
+            I also wrote some stuff <Link to='/posts'>here</Link>
           </div>
         </div>
       </Fragment>
@@ -70,3 +83,7 @@ class Home extends Component {
 }
 
 export default Home
+
+const MenuAnimation = styled.div`
+transition: margin-left 500ms ease-in;
+`

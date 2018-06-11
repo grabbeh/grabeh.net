@@ -1,32 +1,24 @@
-import styled from 'styled-components'
 import React, { Component, Fragment } from 'react'
 
 class SidePage extends Component {
   render () {
-    let { project } = this.props
+    let { project, toggle } = this.props
     return (
-      <MenuAnimation showSidePage={this.props.showSidePage}>
-        {this.props.project &&
-          <Fragment>
-            <div onClick={this.props.toggle}>
-              <i className='fr pb2 fa fa-times fa-lg' />
+      <Fragment>
+        {project &&
+          <div>
+            <div onClick={toggle}>
+              <i className='pointer fr pb2 fa fa-times fa-lg' />
             </div>
-            <div className='b bb bw1 b--black-30 pb2 mb3 font f3'>
-              {project.projectName.toLowerCase()}
+            <div className='ttl b bb bw1 b--black-30 pb2 mb3 font f3'>
+              {project.projectName}
             </div>
             <img src={project.imageUrl} />
             <div className='pt2 pb4 f4 lh-copy'>{project.longDescription}</div>
-          </Fragment>}
-      </MenuAnimation>
+          </div>}
+      </Fragment>
     )
   }
 }
 
 export default SidePage
-
-const MenuAnimation = styled.div.attrs({
-  className: 'overflow-y-scroll h-100 height bg-white pa3 w-60-l w-80-ns w-100 front fixed'
-})`
-transform: translateX(${props => (props.showSidePage ? '0px' : '-100%')});
-transition: transform .5s ease-in;
-`
