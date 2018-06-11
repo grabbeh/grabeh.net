@@ -8,10 +8,12 @@ export default class extends React.Component {
     if (/<code>/.test(html)) {
       return (
         <div className='mw7 f4 mt2 center pa3'>
-          <div className='b ttu'>{frontmatter.title}</div>
-          <Highlight innerHTML>
-            {html}
-          </Highlight>
+          <div className='b font ttl'>{frontmatter.title}</div>
+          <div className='lh-copy'>
+            <Highlight innerHTML>
+              {html}
+            </Highlight>
+          </div>
         </div>
       )
     }

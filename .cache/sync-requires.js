@@ -8,6 +8,7 @@ exports.layouts = {
 
 exports.components = {
   "component---src-templates-post-template-js": preferDefault(require("/mnt/c/Users/mbg/Documents/grabeh.net/src/templates/postTemplate.js")),
+  "component---cache-dev-404-page-js": preferDefault(require("/mnt/c/Users/mbg/Documents/grabeh.net/.cache/dev-404-page.js")),
   "component---src-pages-404-js": preferDefault(require("/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/404.js")),
   "component---src-pages-index-js": preferDefault(require("/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/index.js")),
   "component---src-pages-posts-js": preferDefault(require("/mnt/c/Users/mbg/Documents/grabeh.net/src/pages/posts.js"))
@@ -28,6 +29,7 @@ exports.json = {
   "learnings-from-building-a-basic-angular-js-app.json": require("/mnt/c/Users/mbg/Documents/grabeh.net/.cache/json/learnings-from-building-a-basic-angular-js-app.json"),
   "moving-towards-object-oriented-java-script.json": require("/mnt/c/Users/mbg/Documents/grabeh.net/.cache/json/moving-towards-object-oriented-java-script.json"),
   "digital-ocean-vps-nginx-express-apps.json": require("/mnt/c/Users/mbg/Documents/grabeh.net/.cache/json/digital-ocean-vps-nginx-express-apps.json"),
+  "dev-404-page.json": require("/mnt/c/Users/mbg/Documents/grabeh.net/.cache/json/dev-404-page.json"),
   "404.json": require("/mnt/c/Users/mbg/Documents/grabeh.net/.cache/json/404.json"),
   "index.json": require("/mnt/c/Users/mbg/Documents/grabeh.net/.cache/json/index.json"),
   "posts.json": require("/mnt/c/Users/mbg/Documents/grabeh.net/.cache/json/posts.json"),
