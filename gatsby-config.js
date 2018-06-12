@@ -43,7 +43,7 @@ module.exports = {
         title: 'Setting up HTTPS with Express Apps using Nginx and Digital Ocean'
       },
       {
-        path: 'Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes',
+        path: '/Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes',
         title: 'Steps to improve Unity Ubuntu on Chromebook Crouton for developer purposes'
       },
       {
