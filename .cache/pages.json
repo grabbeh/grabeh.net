@@ -3,8 +3,22 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "adventures-with-couch-db-nano-and-pjax.json",
-        "path": "/Adventures-with-CouchDB-Nano-and-Pjax"
+        "jsonName": "a-comparison-of-drafting-legal-documents-vs-coding.json",
+        "path": "/A-comparison-of-drafting-legal-documents-vs-coding"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "digital-ocean-vps-nginx-express-apps.json",
+        "path": "/Digital-Ocean-VPS-Nginx-Express-apps"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "moving-towards-object-oriented-java-script.json",
+        "path": "/Moving-towards-object-oriented-JavaScript"
     },
     {
         "componentChunkName": "component---src-templates-post-template-js",
@@ -17,15 +31,8 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "a-comparison-of-drafting-legal-documents-vs-coding.json",
-        "path": "/A-comparison-of-drafting-legal-documents-vs-coding"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "refactoring-from-j-query-to-angular-js.json",
-        "path": "/Refactoring-from-jQuery-to-Angular.js"
+        "jsonName": "steps-to-improve-unity-ubuntu-on-chromebook-crouton-for-developer-purposes.json",
+        "path": "/Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes"
     },
     {
         "componentChunkName": "component---src-templates-post-template-js",
@@ -38,8 +45,8 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "steps-to-improve-unity-ubuntu-on-chromebook-crouton-for-developer-purposes.json",
-        "path": "/Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes"
+        "jsonName": "refactoring-from-j-query-to-angular-js.json",
+        "path": "/Refactoring-from-jQuery-to-Angular.js"
     },
     {
         "componentChunkName": "component---src-templates-post-template-js",
@@ -66,8 +73,8 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "image-uploads-and-resizing-with-transloadit.json",
-        "path": "/Image-uploads-and-resizing-with-Transloadit"
+        "jsonName": "adventures-with-couch-db-nano-and-pjax.json",
+        "path": "/Adventures-with-CouchDB-Nano-and-Pjax"
     },
     {
         "componentChunkName": "component---src-templates-post-template-js",
@@ -80,15 +87,8 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "moving-towards-object-oriented-java-script.json",
-        "path": "/Moving-towards-object-oriented-JavaScript"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "digital-ocean-vps-nginx-express-apps.json",
-        "path": "/Digital-Ocean-VPS-Nginx-Express-apps"
+        "jsonName": "image-uploads-and-resizing-with-transloadit.json",
+        "path": "/Image-uploads-and-resizing-with-Transloadit"
     },
     {
         "componentChunkName": "component---cache-dev-404-page-js",
