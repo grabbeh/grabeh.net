@@ -3,6 +3,10 @@ module.exports = {
   siteMetadata: {
     posts: [
       {
+        title: 'Coding meets drafting',
+        path: '/Coding-meets-drafting'
+      },
+      {
         title: 'A comparison of drafting legal documents vs coding',
         path: '/A-comparison-of-drafting-legal-documents-vs-coding'
       },

@@ -37,12 +37,12 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-.next/
+
 build/
 config/
 public/
 .cache/
-.cache
+.vscode
 
 # Typescript v1 declaration files
 typings/
