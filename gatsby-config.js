@@ -3,8 +3,8 @@ module.exports = {
   siteMetadata: {
     posts: [
       {
-        title: 'Coding meets drafting',
-        path: '/Coding-meets-drafting'
+        title: 'react-based contract components',
+        path: '/react-based-contract-components'
       },
       {
         title: 'A comparison of drafting legal documents vs coding',

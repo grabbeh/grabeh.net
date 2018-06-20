@@ -7,7 +7,9 @@ export default class extends React.Component {
 
     return (
       <div className='mw7 f4 mt2 center pa3'>
-        <div className='b font ttl'>{frontmatter.title}</div>
+        <div className='b font ttu'>{frontmatter.title}</div>
+        <div className='fr'>{frontmatter.date}</div>
+        <div className='cf' />
         <div className='lh-copy' dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     )

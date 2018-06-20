@@ -51,7 +51,7 @@ class Home extends Component {
           <SidePage toggle={this.toggle} project={project} />
         </MenuAnimation>
         <div className='mw8 center f4 pa3'>
-          <div className='mb4 mt3 font f3'>
+          <div className='mb4 mt3 font f3-ns f4'>
             <p>
               Hi, my name's Michael. I work as an in-house lawyer in London. In my spare time I make Internet things.
             </p>
@@ -59,6 +59,11 @@ class Home extends Component {
               In part I'm inspired by the interface between the law and programming but also in part because I just enjoy learning new technologies.
             </p>
             <p> Here's some of my work:</p>
+            <p>
+              <Link to='/React-based-contract-components'>
+                React-based contract components
+              </Link>
+            </p>
           </div>
           <div className='flex flex-wrap'>
             {projects.map(project => {
