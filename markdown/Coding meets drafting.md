@@ -42,7 +42,7 @@ const Confidentiality = ({
 ```
 
 ```jsx
-<Confidentiality periodOfProtection={5} typeOfPeriod="years" mutual />
+<Confidentiality periodOfProtection={5} mutual />
 ```
 
 ```
