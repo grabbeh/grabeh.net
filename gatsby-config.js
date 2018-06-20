@@ -261,7 +261,6 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          'gatsby-remark-use-jsx',
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
