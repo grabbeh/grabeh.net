@@ -23,9 +23,11 @@ Nano exposes a .use method to specify which database you are going to use. This 
 
 Coming from MongoDB/Mongoose, it took me a while to realise that CouchDB uses the concept of views to process and display data from the database. A view can be as simple as the below:
 
-    function(doc) {
-      emit(doc._id, doc);
-    }
+```javascript
+function(doc) {
+    emit(doc._id, doc);
+}
+```
 
 This will simply map over the specified database and output an object for each row in the database, with that object containing the stored values. In addition to this basic functionality, you can of course do a much greater range of operations including reducing queries. More information on views can be found in this [great answer](http://stackoverflow.com/a/7112722/1242579) on Stack Overflow. It is worth noting that the view must be stored directly in your CouchDB instance using the Futon manager.
 
