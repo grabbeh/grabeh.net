@@ -29,9 +29,11 @@ Initially in each controller for a particular route that I wanted to restrict ac
 
 I then realised I could make use of the resolve feature on the $routeProvider to check whether the user was present and if not, redirect. In relation to the latter point, this was achieved using the following:
 
-    $rootScope.$on('$routeChangeError', function(){
-        $location.path('/login')
-    });
+```javascript
+$rootScope.$on('$routeChangeError', function(){
+    $location.path('/login')
+});
+```
 
 This works quite nicely however it's not immediately clear to me why this is necessary on the basis that the user should be attached to the $rootScope on the client-side and so I should be able to monitor whether or not there is an authenticated user without going to the server. One for a future tinkering perhaps.
 
@@ -61,26 +63,28 @@ Specifically, the usage of 'fn' as a callback to pass in either the error or the
 
 Consequently, on the basis that my needs were relatively simple, I replaced passport with the authenticate function. I think all in all this has been working well for me thus far although I appreciate that passport can really come into its own when multiple authentication routes As a bonus, I have also been using the pattern of returning a function with either the error, or the result as a means of building up more complex functions by incorporating existing functions using this pattern.
 
-    // Function
-    function authenticate(name, pass, fn) {
-       User.find({name: name}, function(err, user){
-           if (err) { return fn(err);}
-           else  { return fn(null, user); }
-       })
-    }
+```javascript
+// Function
+function authenticate(name, pass, fn) {
+    User.find({name: name}, function(err, user){
+        if (err) { return fn(err);}
+        else  { return fn(null, user); }
+    })
+}
 
-    // Usage
-    authenticate("username", "password", function(err, user){
-        if (user){
-              req.session.regenerate(function(){
-                req.session.user = user;
-                res.status(200).send();
-              })
-          }
-          else {
-            res.status(401).send({message: "Error"})
-          }
-    }
+// Usage
+authenticate("username", "password", function(err, user){
+    if (user){
+            req.session.regenerate(function(){
+            req.session.user = user;
+            res.status(200).send();
+            })
+        }
+        else {
+        res.status(401).send({message: "Error"})
+        }
+}
+```
 
 **Conclusion**
 

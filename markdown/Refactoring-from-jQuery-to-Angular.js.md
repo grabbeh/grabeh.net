@@ -18,19 +18,19 @@ To recreate Google maps in Angular I simply wrapped all the necessary functional
 
 That way the controller could simply take that data and use it, without getting too involved with the map directive:
 ```javascript
-    $.$on('coords.change', function(e, l){     
-        flickr.search({ 
-            lat: l.lat, 
-            lon: l.lon, 
-            tags: $.tag, 
-            licenses: returnSelectedBoxesFilter($scope.licenses) })
-            .success(function(data){
-                $.arrayOfPhotos = data;
-            })
-            .error(function(err){
-                console.log(err)
+$.$on('coords.change', function(e, l){     
+    flickr.search({ 
+        lat: l.lat, 
+        lon: l.lon, 
+        tags: $.tag, 
+        licenses: returnSelectedBoxesFilter($scope.licenses) })
+        .success(function(data){
+            $.arrayOfPhotos = data;
         })
+        .error(function(err){
+            console.log(err)
     })
+})
 ```
 **multiple select boxes**
 
@@ -50,23 +50,25 @@ As part of creating the service, I became more acquainted with promises and the 
 
 Using promises in services basically allows you to create a 'thennable' methods. When the method is called it will have a 'then' method to which you can provide two functions as arguments. The first what will happen in the event of a successful resolution (i.e. exposing the returned data), and the second in the event of a failed call (showing a suitable error message for example).
 
-    .factory('geoCoder', ['$q', function($q){
-             geocoder = new google.maps.Geocoder();
-              geocodeAddress: function(address){
-                     var deferred = $q.defer();
-                     geocoder.geocode({
-                        address: address
-                     }, function(results, status){
-                        if (status == google.maps.GeocoderStatus.OK){
-                            return deferred.resolve(results);
-                        }
-                        return deferred.reject();
-                     })
-                     return deferred.promise;
-                }
+```javascript
+.factory('geoCoder', ['$q', function($q){
+            geocoder = new google.maps.Geocoder();
+            geocodeAddress: function(address){
+                    var deferred = $q.defer();
+                    geocoder.geocode({
+                    address: address
+                    }, function(results, status){
+                    if (status == google.maps.GeocoderStatus.OK){
+                        return deferred.resolve(results);
+                    }
+                    return deferred.reject();
+                    })
+                    return deferred.promise;
             }
-            return geoCoder;
-        }])
+        }
+        return geoCoder;
+    }])
+```
 
 **geolocation via $window**
 

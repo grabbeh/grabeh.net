@@ -47,64 +47,65 @@ The next step was to determine how to get the app to display via a subdomain on 
 A brief visit to Stackoverflow showed the way, and it wasn't long before the Nginx 'proxy_pass' and 'upstream' directives were identified as being necessary via this [Stackoverflow question](http://stackoverflow.com/questions/5009324/node-js-nginx-and-now).
 
 After some tinkering I used the following configuration file to specify port 3000 as the upstream location for the Express app, and then using proxy_pass and proxy_set_... to specify what should happen with requests to, in this case, helloworld.grabeh.net.
-```
-      worker_processes 1;
 
-      events {
-        worker_connections 1024;
-      }
-      http {
+```nginx
+worker_processes 1;
 
-          include       mime.types;
-          default_type  application/octet-stream;
-          sendfile      on;
-          tcp_nopush    on;
+events {
+  worker_connections 1024;
+}
+http {
 
-      # specify the location of the Express app you want to serve up
+    include       mime.types;
+    default_type  application/octet-stream;
+    sendfile      on;
+    tcp_nopush    on;
 
-      upstream helloworld {
-        server localhost:3000;
-      }
+# specify the location of the Express app you want to serve up
 
-      # calls to www.grabeh.net will be rewritten to grabeh.net
+upstream helloworld {
+  server localhost:3000;
+}
 
-      server {
-        listen 80;
-          server_name www.grabeh.net *.grabeh.net;
-          rewrite ^(.*) http://grabeh.net$1 permanent;
-      } 
+# calls to www.grabeh.net will be rewritten to grabeh.net
 
-      # specify what will happen when a request to helloworld.[your domain] is made. 
-      # Here we are proxying the Express app through.
+server {
+  listen 80;
+    server_name www.grabeh.net *.grabeh.net;
+    rewrite ^(.*) http://grabeh.net$1 permanent;
+} 
 
-      server {
-        listen 80;
-        server_name helloworld.grabeh.net;
+# specify what will happen when a request to helloworld.[your domain] is made. 
+# Here we are proxying the Express app through.
 
-        location / {
-          try_files $uri @helloworld;
-      }
+server {
+  listen 80;
+  server_name helloworld.grabeh.net;
 
-        location @helloworld {
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header Host $proxy_host;
-          proxy_set_header X-NginX-Proxy true;
-          proxy_pass http://helloworld;
-          }
-      }
+  location / {
+    try_files $uri @helloworld;
+}
 
-      # basic element where we're sending index.html for requests to grabeh.net/
-      server {
-        listen 80; 
-        server_name grabeh.net;
+  location @helloworld {
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $proxy_host;
+    proxy_set_header X-NginX-Proxy true;
+    proxy_pass http://helloworld;
+    }
+}
 
-        location / {
-          root html/home;
-          index index.html index.htm;
-          }  
-          }
-      }
+# basic element where we're sending index.html for requests to grabeh.net/
+server {
+  listen 80; 
+  server_name grabeh.net;
+
+  location / {
+    root html/home;
+    index index.html index.htm;
+    }  
+    }
+}
 ```
 If you use this you'll obviously have to update the domain name 'grabeh.net' to your own domain.
 

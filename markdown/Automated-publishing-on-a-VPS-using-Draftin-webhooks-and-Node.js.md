@@ -21,39 +21,40 @@ Once completed, the amended file is then saved as a new file with the stated tit
 
 The whole basic Express server is below for the curious. As the documentation on Draftin notes, the URL used to post data to should be sufficiently obscure.
 
-
-      var express = require('express'),
-        fs = require('fs'),
-        cheerio = require('cheerio'),
-        app = express()
-      app.configure(function () {
-        app.use(express.bodyParser())
-        app.use(app.router)
-      })
-      app.post('/', function (req, res) {
-        var payload = req.body.payload
-        var parsedResponse = JSON.parse(payload)
-        var title = parsedResponse.name
-        var htitle = title.replace(/\s+/g, '-').toLowerCase()
-        var parsedhtml = parsedResponse.content_html
-        fs.readFile('/usr/local/nginx/html/blog/template.html', function (err, data) {
-          $ = cheerio.load(data)
-          $('h3').text(title)
-          $('#textbody').html(parsedhtml)
-          var updatedhtml = $.html()
-          fs.writeFile(
-            '/usr/local/nginx/html/blog/' + htitle + '.html',
-            updatedhtml,
-            function (err) {
-              if (!err) {
-                res.set('location', 'http://blog.grabeh.net/' + htitle)
-                res.send()
-              }
-            }
-          )
-        })
-      })
-      app.listen(3010)
+```javascript
+var express = require('express'),
+  fs = require('fs'),
+  cheerio = require('cheerio'),
+  app = express()
+app.configure(function () {
+  app.use(express.bodyParser())
+  app.use(app.router)
+})
+app.post('/', function (req, res) {
+  var payload = req.body.payload
+  var parsedResponse = JSON.parse(payload)
+  var title = parsedResponse.name
+  var htitle = title.replace(/\s+/g, '-').toLowerCase()
+  var parsedhtml = parsedResponse.content_html
+  fs.readFile('/usr/local/nginx/html/blog/template.html', function (err, data) {
+    $ = cheerio.load(data)
+    $('h3').text(title)
+    $('#textbody').html(parsedhtml)
+    var updatedhtml = $.html()
+    fs.writeFile(
+      '/usr/local/nginx/html/blog/' + htitle + '.html',
+      updatedhtml,
+      function (err) {
+        if (!err) {
+          res.set('location', 'http://blog.grabeh.net/' + htitle)
+          res.send()
+        }
+      }
+    )
+  })
+})
+app.listen(3010)
+```
 
 I do need to resolve a few minor points like inserting a title in the head and also updating the index.html of the blog, but I think the above system creates a nice flow for automatically posting content to the blog from Draftin.
 

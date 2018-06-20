@@ -258,13 +258,26 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          'gatsby-remark-use-jsx',
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              classPrefix: 'gatsby-code-'
+            }
+          }
+        ]
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/markdown`,
         name: 'markdown-pages'
       }
     },
-    'gatsby-plugin-react-helmet',
-    `gatsby-transformer-remark`
+    'gatsby-plugin-react-helmet'
   ]
 }

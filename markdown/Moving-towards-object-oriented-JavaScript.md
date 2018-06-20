@@ -3,7 +3,9 @@ path: '/Moving-towards-object-oriented-JavaScript'
 title: 'Moving towards object oriented JavaScript'
 ---
 
-        971 additions and 3,493 deletions
+```javascript
+971 additions and 3,493 deletions
+```
 
 The above statistic from Github from the repository for one of my apps [Routebop](https://github.com/grabbeh/routebop) showing the changes to the repo following a few days of editing is gratifying to me<sup id="fnref1">[1](#fn1)</sup>.
 
@@ -19,20 +21,22 @@ When I decided to refactor the code I first selected the page which I felt had t
 
 On the basis that the POSTing to the server element would be repeated, I split out this functionality and put a small wrapper around it to pass through transaction specific arguments into the function as follows:
 
-    this.sendToServer = function(postdata, posturl, completefunction){
-    $.ajax({
-        url: posturl,
-        type: "POST",
-        contentType: "application/json",
-        processData: false,
-        data: JSON.stringify(postdata),
-        success: completefunction
-        });
-    };
-    this.sendToServer(postdata, "/show", function(data){
-        $('#result').html(data.message);
-        });
-    };
+```javascript
+this.sendToServer = function(postdata, posturl, completefunction){
+$.ajax({
+    url: posturl,
+    type: "POST",
+    contentType: "application/json",
+    processData: false,
+    data: JSON.stringify(postdata),
+    success: completefunction
+    });
+};
+this.sendToServer(postdata, "/show", function(data){
+    $('#result').html(data.message);
+    });
+};
+```
 
 This way, the function could be re-used passing in different arguments depending on what was necessary in the circumstances. In respect of the 'completefunction' and as per the above I use an anonymous function when the function is actually called to specify what will happen when the POST request is successful (displaying a success message, or processing the data onto a map for example).
 
@@ -46,25 +50,27 @@ Essentially, this means that to use the JavaScript I create an instance of the C
 
 At the same time as creating a public interface using 'new', I also included local variables within the Constructor which are only able to be accessed by public methods on the instance. An example is as follows:
 
-    function Map(){
-        var mapmarkers = [];
-        this.returnMapMarkers = function(){
-        	return mapmarkers;
-        }; 
-        this.addMarkersToMap = function(array){
-        // function to place marker on map & push into mapmarkersarray
-        };
+```javascript
+function Map(){
+    var mapmarkers = [];
+    this.returnMapMarkers = function(){
+        return mapmarkers;
+    }; 
+    this.addMarkersToMap = function(array){
+    // function to place marker on map & push into mapmarkersarray
     };
+};
 
-    // Instantiation
+// Instantiation
 
-    var map = new Map;
+var map = new Map;
 
-    map.mapmarkers;
-    >> undefined
+map.mapmarkers;
+>> undefined
 
-    map.returnMapMarkers()
-    >> [ array of markers ]
+map.returnMapMarkers()
+>> [ array of markers ]
+```
 
 In this way, the mapmarkers private variable can only be accessed and updated using public methods (as I understand it).<sup id="fnref3">[3](#fn3)</sup>.
 

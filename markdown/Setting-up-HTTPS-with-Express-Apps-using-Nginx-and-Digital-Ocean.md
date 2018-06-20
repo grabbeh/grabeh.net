@@ -9,14 +9,16 @@ Without further ado, the steps are as follows (which are provided mainly as an a
 
 *   Using OpenSSL, generate an RSA private key and a certificate signing request using [these instructions](http://www.rackspace.com/knowledge_center/article/generate-a-csr-with-openssl) (excerpted below).
 
-```
-    openssl genrsa -out domain.com.key 2048
+```nginx
+openssl genrsa -out domain.com.key 2048
 
-    openssl req -new -key domain.com.key -out domain.csr
+openssl req -new -key domain.com.key -out domain.csr
 ```
 If you're planning on testing SSL you can also generate your own certificates using the below (after you've created your key and your CSR).
 
+```nginx
     openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.pem
+```
 
 *   Purchase a security certificate (or get one for [free](https://konklone.com/post/switch-to-https-now-for-free)). I used [NameCheap](http://www.namecheap.com) as suggested by [Stripe](https://stripe.com/help/ssl). As part of the process, you will need to submit the certificate signing request generated in the above step.
 *   Once you have got access to your certificates (mine were emailed to me) copy and paste the certificate(s) into a txt file and store wherever they'll be needed on the VPS or elsewhere.
