@@ -60,7 +60,7 @@ class Home extends Component {
             </p>
             <p> Here's some of my work:</p>
             <p>
-              <Link to='/React-based-contract-components'>
+              <Link to='/react-based-contract-components'>
                 React-based contract components
               </Link>
             </p>
