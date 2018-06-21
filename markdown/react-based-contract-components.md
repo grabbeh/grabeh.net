@@ -16,7 +16,7 @@ One aspect of React is that you can determine what is displayed to a user based 
 
 ```jsx
 const Hello = ({name}) => (
-  <div>Hello {this.props.name}</div>
+  <div>Hello {name}</div>
 ) 
 ```
 
