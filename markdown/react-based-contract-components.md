@@ -16,7 +16,7 @@ One aspect of React is that you can determine what is displayed to a user based 
 
 ```jsx
 const Hello = ({name}) => (
-  <div>Hello {this.props.name}</div>
+  <div>Hello {name}</div>
 ) 
 ```
 
@@ -77,10 +77,10 @@ results in:
 
 1. Interpretation
 2. Services
-3. IntellectualProperty
+3. Intellectual Property
 4. Liability
 5. Termination
-6. DataProtection
+6. Data Protection
 7. General
 ```
 
