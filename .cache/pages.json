@@ -87,13 +87,6 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "react-based-contract-components.json",
-        "path": "/react-based-contract-components"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "adventures-with-couch-db-nano-and-pjax.json",
         "path": "/Adventures-with-CouchDB-Nano-and-Pjax"
     },
@@ -101,8 +94,8 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "coding-meets-drafting.json",
-        "path": "/Coding-meets-drafting"
+        "jsonName": "react-based-contract-components.json",
+        "path": "/react-based-contract-components"
     },
     {
         "componentChunkName": "component---cache-dev-404-page-js",
