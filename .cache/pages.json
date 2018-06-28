@@ -3,64 +3,8 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "a-comparison-of-drafting-legal-documents-vs-coding.json",
-        "path": "/A-comparison-of-drafting-legal-documents-vs-coding"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "online-terms-better-with-notice.json",
-        "path": "/Online-terms-better-with-notice"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "moving-towards-object-oriented-java-script.json",
-        "path": "/Moving-towards-object-oriented-JavaScript"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "image-uploads-and-resizing-with-transloadit.json",
         "path": "/Image-uploads-and-resizing-with-Transloadit"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "refactoring-from-j-query-to-angular-js.json",
-        "path": "/Refactoring-from-jQuery-to-Angular.js"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "setting-up-https-with-express-apps-using-nginx-and-digital-ocean.json",
-        "path": "/Setting-up-HTTPS-with-Express-Apps-using-Nginx-and-Digital-Ocean"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "steps-to-improve-unity-ubuntu-on-chromebook-crouton-for-developer-purposes.json",
-        "path": "/Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "the-myth-of-mandatory-trade-mark-enforcement.json",
-        "path": "/The-myth-of-mandatory-trade-mark-enforcement"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-template-js",
-        "layout": "layout---index",
-        "layoutComponentChunkName": "component---src-layouts-index-js",
-        "jsonName": "digital-ocean-vps-nginx-express-apps.json",
-        "path": "/Digital-Ocean-VPS-Nginx-Express-apps"
     },
     {
         "componentChunkName": "component---src-templates-post-template-js",
@@ -73,8 +17,22 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "online-terms-better-with-notice.json",
+        "path": "/Online-terms-better-with-notice"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "the-journey-from-curious-outsider-to-beginner.json",
         "path": "/The-journey-from-curious-outsider-to-beginner"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "moving-towards-object-oriented-java-script.json",
+        "path": "/Moving-towards-object-oriented-JavaScript"
     },
     {
         "componentChunkName": "component---src-templates-post-template-js",
@@ -94,8 +52,50 @@
         "componentChunkName": "component---src-templates-post-template-js",
         "layout": "layout---index",
         "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "refactoring-from-j-query-to-angular-js.json",
+        "path": "/Refactoring-from-jQuery-to-Angular.js"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "the-myth-of-mandatory-trade-mark-enforcement.json",
+        "path": "/The-myth-of-mandatory-trade-mark-enforcement"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "digital-ocean-vps-nginx-express-apps.json",
+        "path": "/Digital-Ocean-VPS-Nginx-Express-apps"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "steps-to-improve-unity-ubuntu-on-chromebook-crouton-for-developer-purposes.json",
+        "path": "/Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
         "jsonName": "react-based-contract-components.json",
         "path": "/react-based-contract-components"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "setting-up-https-with-express-apps-using-nginx-and-digital-ocean.json",
+        "path": "/Setting-up-HTTPS-with-Express-Apps-using-Nginx-and-Digital-Ocean"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-template-js",
+        "layout": "layout---index",
+        "layoutComponentChunkName": "component---src-layouts-index-js",
+        "jsonName": "a-comparison-of-drafting-legal-documents-vs-coding.json",
+        "path": "/A-comparison-of-drafting-legal-documents-vs-coding"
     },
     {
         "componentChunkName": "component---cache-dev-404-page-js",

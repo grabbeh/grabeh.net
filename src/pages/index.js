@@ -1,15 +1,15 @@
 import React from 'react'
 import Home from '../components/Home'
 
-const Index = ({ data: { site: { siteMetadata: { projects } } } }) => {
-  return <Home projects={projects} />
-}
+const Index = ({ data: { allProjectsJson: { edges } } }) => (
+  <Home projects={edges} />
+)
 
 export const query = graphql`
-  query indexQuery {
-    site {
-      siteMetadata {
-        projects {
+  query projectsQuery {
+    allProjectsJson {
+      edges {
+        node {
           projectName
           description
           imageUrl
@@ -22,7 +22,7 @@ export const query = graphql`
           }
           id
         }
-      }
+      } 
     }
   }
 `

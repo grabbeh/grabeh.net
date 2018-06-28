@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const PostList = ({ data: { site: { siteMetadata: { posts } } } }) => (
+const PostList = ({ data: { allPostsJson: { edges } } }) => (
   <div>
     <ul className='ma0 pa3 list'>
-      {posts.map(p => (
-        <li key={p.path} className='f4 pv2'>
-          <Link to={p.path}>{p.title}</Link>
+      {edges.map(({ node }) => (
+        <li key={node.path} className='f4 pv2'>
+          <Link to={node.path}>{node.title}</Link>
         </li>
       ))}
     </ul>
@@ -14,10 +14,10 @@ const PostList = ({ data: { site: { siteMetadata: { posts } } } }) => (
 )
 
 export const query = graphql`
-  query postsQuery {
-    site {
-      siteMetadata {
-        posts {
+query postsQuery {
+  allPostsJson {
+    edges {
+      node {
           title
           path
         }

@@ -1,0 +1,58 @@
+[
+  {
+    "title": "react-based contract components",
+    "path": "/react-based-contract-components"
+  },
+  {
+    "title": "A comparison of drafting legal documents vs coding",
+    "path": "/A-comparison-of-drafting-legal-documents-vs-coding"
+  },
+  {
+    "path": "/Adventures-with-CouchDB-Nano-and-Pjax",
+    "title": "Adventures with CouchDB, Nano and Pjax"
+  },
+  {
+    "path": "/Automated-publishing-on-a-VPS-using-Draftin-webhooks-and-Node.js",
+    "title": "Automated publishing on a VPS using Drafting webhooks and Node.js"
+  },
+  {
+    "path": "/Digital-Ocean-VPS-Nginx-Express-apps",
+    "title": "Digital Ocean VPS, Nginx and Express apps"
+  },
+  {
+    "path": "/Image-uploads-and-resizing-with-Transloadit",
+    "title": "Image uploads and resizing with Transloadit"
+  },
+  {
+    "path": "/Learnings-from-building-a-basic-Angular.js-app",
+    "title": "Learnings from building a basic Angular.js app"
+  },
+  {
+    "path": "/Moving-towards-object-oriented-JavaScript",
+    "title": "Moving towards object oriented JavaScript"
+  },
+  {
+    "path": "/Online-terms-better-with-notice",
+    "title": "Online terms - better with notice"
+  },
+  {
+    "path": "/Refactoring-from-jQuery-to-Angular.js",
+    "title": "Refactoring from jQuery to Angular"
+  },
+  {
+    "path": "/Setting-up-HTTPS-with-Express-Apps-using-Nginx-and-Digital-Ocean",
+    "title": "Setting up HTTPS with Express Apps using Nginx and Digital Ocean"
+  },
+  {
+    "path": "/Steps-to-improve-Unity-Ubuntu-on-Chromebook-Crouton-for-developer-purposes",
+    "title": "Steps to improve Unity Ubuntu on Chromebook Crouton for developer purposes"
+  },
+  {
+    "path": "/The-journey-from-curious-outsider-to-beginner",
+    "title": "The Journey from curious outside to beginner"
+  },
+  {
+    "path": "/The-myth-of-mandatory-trade-mark-enforcement",
+    "title": "The myth of mandatory trade mark enforcement"
+  }
+]

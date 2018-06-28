@@ -66,14 +66,10 @@ class Home extends Component {
             </p>
           </div>
           <div className='flex flex-wrap'>
-            {projects.map(project => {
+            {projects.map(({ node }) => {
               return (
-                <div key={project.id} className='w-33-l w-50-ns w-100'>
-                  <HomeSection
-                    toggle={toggle}
-                    key={project.id}
-                    project={project}
-                  />
+                <div key={node.id} className='w-33-l w-50-ns w-100'>
+                  <HomeSection toggle={toggle} key={node.id} project={node} />
                 </div>
               )
             })}
