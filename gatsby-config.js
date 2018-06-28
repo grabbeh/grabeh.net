@@ -61,6 +61,33 @@ module.exports = {
     ],
     projects: [
       {
+        projectName: 'Hilodoes',
+        description: 'A simple portfolio site for a very talented designer.',
+        imageUrl: '/hilodoes.png',
+        sourceUrl: 'https://github.com/grabbeh/kmiho',
+        siteUrl: 'https://amazing-volhard-4ebe7f.netlify.com/',
+        longDescription: "I stumbled across the concept of the JAMStack and mainly because it sounded new and cool I thought I'd build a site using it. I understand it has certain more tangible benefits also! This particular site is a wonderful marriage of Gatsby, Contentful and Netlify designed to make it easy for non-coders to update a site as they wish. Now if I could only convince my wife to use it!",
+        tools: [
+          {
+            tool: 'Gatsby',
+            id: 0
+          },
+          {
+            tool: 'React',
+            id: 1
+          },
+          {
+            tool: 'Contentful',
+            id: 2
+          },
+          {
+            tool: 'Netlify',
+            id: 3
+          }
+        ],
+        id: 0
+      },
+      {
         projectName: 'Attest',
         description: 'Open source contract management platform. Like an excel spreadsheet with less functionality but marginally prettier.',
         imageUrl: '/attest.png',
