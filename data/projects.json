@@ -1,7 +1,7 @@
 [
   {
     "projectName": "Hilodoes",
-    "description": "A simple portfolio site for a talented designer, featuring a API-based CMS and automated deployment.",
+    "description": "A simple portfolio site for a talented designer, featuring an API-based CMS and automated deployment.",
     "imageUrl": "/hilodoes.png",
     "sourceUrl": "https://github.com/grabbeh/kmiho",
     "siteUrl": "https://amazing-volhard-4ebe7f.netlify.com/",
@@ -156,7 +156,7 @@
   },
   {
     "projectName": "Geophoto",
-    "description": "satisfy your virtual wanderlust by looking at photos from places it'd be just dandy to go to",
+    "description": "Satisfy your virtual wanderlust by looking at photos from places it'd be just dandy to go to",
     "imageUrl": "/geophoto.jpg",
     "sourceUrl": "https://github.com/grabbeh/geophoto",
     "longDescription": "I think it's fair to say that Flickr provides identical functionality, but it gets lost in a swamp of other equally enticing functionality. Geophoto takes the maxim 'Do one thing and do it well' and puts it into overdrive. Find photos of places you'd like to go or definitely wouldn't want to go to but want to confirm your suspicions about just how turgid a place is before accidentally stumbling on a fixer-upper with your name written all over it.",
@@ -200,7 +200,7 @@
   },
   {
     "projectName": "Routebop",
-    "description": "shares routes with people you do or don't love or feel any kind of emotion for",
+    "description": "Share routes with people you do or don't love or feel any kind of emotion for",
     "imageUrl": "/routebop.jpg",
     "sourceUrl": "https://github.com/grabbeh/routebop",
     "longDescription": "Bopping is great but it reaches its peak with it's associated with routes. Routes that take you to places of joy, places of utter mediocrity or places where life may be imperilled (all liability fully disclaimed).",
