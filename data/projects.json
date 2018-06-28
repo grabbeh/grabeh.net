@@ -1,7 +1,7 @@
 [
   {
     "projectName": "Hilodoes",
-    "description": "A simple portfolio site for a talented designer.",
+    "description": "A simple portfolio site for a talented designer, featuring a API-based CMS and automated deployment.",
     "imageUrl": "/hilodoes.png",
     "sourceUrl": "https://github.com/grabbeh/kmiho",
     "siteUrl": "https://amazing-volhard-4ebe7f.netlify.com/",
