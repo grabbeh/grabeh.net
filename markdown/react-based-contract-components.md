@@ -10,7 +10,7 @@ React gives you the ability to create components that can be linked together to 
 
 An issue with existing contracts is that variable data and boilerplate are combined from the outset meaning that extracting and recording the data later can be time-consuming, and certain data may be missed.
 
-One objective of creating a React-baesd system would be to give more certainty and consistency in the type of data that goes into a contract. This data could be extracted from multiple contracts to give an aggregated view, say on liability exposure, non-solicitation or breach notification. 
+One objective of creating a React-based system would be to give more certainty and consistency in the type of data that goes into a contract. This data could be extracted from multiple contracts to give an aggregated view, say on liability exposure, non-solicitation or breach notification. 
 
 One aspect of React is that you can determine what is displayed to a user based on properties provided to a component. Here's an example of how this works, with you first defining a component, then using it to render the result of the base content combined with the introduced data:
 
