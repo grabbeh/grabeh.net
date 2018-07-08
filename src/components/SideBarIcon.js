@@ -1,7 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 
-export default ({ github, twitter, pencil, home }) => (
+const SideBarIcon = ({ github, twitter, pencil, home }) => (
   <i
     className={cn(
       'fl',
@@ -15,3 +15,5 @@ export default ({ github, twitter, pencil, home }) => (
     )}
   />
 )
+
+export default SideBarIcon
