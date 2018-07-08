@@ -1,4 +1,4 @@
-import HomeSection from './HomeSection'
+import Project from './Project'
 import React, { Component, Fragment } from 'react'
 import SidePage from './SidePage'
 import cn from 'classnames'
@@ -51,7 +51,7 @@ class Home extends Component {
           <SidePage toggle={this.toggle} project={project} />
         </MenuAnimation>
         <div className='mw8 center f4 pa3'>
-          <div className='mb4 mt3 font f3-ns f4'>
+          <div className='mb4 mt3 f3-ns pt-serif f4'>
             <p>
               Hi, my name's Michael. I work as an in-house lawyer in London. In my spare time I make Internet things.
             </p>
@@ -69,7 +69,7 @@ class Home extends Component {
             {projects.map(({ node }) => {
               return (
                 <div key={node.id} className='w-33-l w-50-ns w-100'>
-                  <HomeSection toggle={toggle} key={node.id} project={node} />
+                  <Project toggle={toggle} key={node.id} project={node} />
                 </div>
               )
             })}

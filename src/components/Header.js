@@ -1,28 +1,31 @@
-import SideBarIcon from './SideBarIcon'
 import SideBarItem from './SideBarItem'
 import ClearFix from './ClearFix'
 import React, { Fragment } from 'react'
+import FaGit from 'react-icons/lib/fa/github'
+import FaHome from 'react-icons/lib/fa/home'
+import FaPencil from 'react-icons/lib/fa/pencil'
 
-export default () => (
+const Header = () => (
   <Fragment>
     <div className='mt3 ml3 fr f4'>
       <SideBarItem item='Home' url='/'>
-        <SideBarIcon home />
+        <FaHome style={{ marginRight: '10px' }} size={20} />
       </SideBarItem>
       <div className='pointer fl br3 mt3 mt0-ns bg-light-yellow mr3 ph3 pv2'>
         <a
           href='https://github.com/grabbeh'
           className='underline-hover link dark-gray'
         >
-          <SideBarIcon github />
+          <FaGit style={{ marginRight: '10px' }} size={20} />
           Github
         </a>
       </div>
-
       <SideBarItem item='Writings' url='/posts'>
-        <SideBarIcon pencil />
+        <FaPencil style={{ marginRight: '10px' }} size={20} />
       </SideBarItem>
     </div>
     <ClearFix />
   </Fragment>
 )
+
+export default Header

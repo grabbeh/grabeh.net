@@ -1,13 +1,15 @@
 import React from 'react'
 import LazyLoad from 'react-lazyload'
-import { Image, Text, Link } from 'rebass'
+import { Image, Link } from 'rebass'
 import Tool from './Tool'
 import ClearFix from './ClearFix'
 
-export default ({ project, toggle }) => (
+const HomeSection = ({ project, toggle }) => (
   <div className='mr5-ns bt b--black-30 bw1 pb3'>
-    <div className='b pv2 font f3 ttl'>{project.projectName}</div>
-    <Text className='lh-copy' children={project.description} />
+    <div className='b pv2 pt-serif f3 ttl'>{project.projectName}</div>
+    <div className='lh-copy'>
+      {project.description}
+    </div>
     <div className='mt2'>
       <Link
         className='underline pointer dark-blue'
@@ -34,3 +36,5 @@ export default ({ project, toggle }) => (
     <ClearFix />
   </div>
 )
+
+export default HomeSection

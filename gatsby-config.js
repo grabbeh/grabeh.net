@@ -1,6 +1,5 @@
 module.exports = {
   pathPrefix: `/public`,
-  siteMetadata: {},
   plugins: [
     {
       resolve: `gatsby-transformer-remark`,
@@ -27,6 +26,12 @@ module.exports = {
       options: {
         path: `${__dirname}/data`,
         name: 'data'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`PT Serif`, `Roboto`]
       }
     },
     `gatsby-transformer-json`,

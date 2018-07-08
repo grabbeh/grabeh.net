@@ -1,24 +1,27 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
+import MdClose from 'react-icons/lib/md/close'
 
-class SidePage extends Component {
-  render () {
-    let { project, toggle } = this.props
-    return (
-      <Fragment>
-        {project &&
-          <div>
-            <div onClick={toggle}>
-              <i className='pointer fr pb2 fa fa-times fa-lg' />
-            </div>
-            <div className='ttl b bb bw1 b--black-30 pb2 mb3 font f3'>
-              {project.projectName}
-            </div>
-            <img src={project.imageUrl} />
-            <div className='pt2 pb4 f4 lh-copy'>{project.longDescription}</div>
-          </div>}
-      </Fragment>
-    )
-  }
-}
+const SidePage = ({ project, toggle }) => (
+  <Fragment>
+    {project &&
+      <div>
+        <div onClick={toggle}>
+          <MdClose
+            size={24}
+            style={{
+              paddingBottom: '10px',
+              float: 'right',
+              fontWeight: 'bold'
+            }}
+          />
+        </div>
+        <div className='ttl b bb bw1 b--black-30 pb2 mb3 pt-serif f3'>
+          {project.projectName}
+        </div>
+        <img src={project.imageUrl} />
+        <div className='pt2 pb4 f4 lh-copy'>{project.longDescription}</div>
+      </div>}
+  </Fragment>
+)
 
 export default SidePage

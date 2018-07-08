@@ -1,20 +1,14 @@
 body {
-  font-family: 'Roboto', serif;
   background: #fff1e0;
+  font-family: 'Roboto', sans-serif;
 }
 
+.pt-serif {
+  font-family: 'PT Serif', serif;
+}
 
-
-.font {
+bold {
   font-family: 'PT Serif';
-}
-
-strong {
-  font-family: 'PT Serif'
-}
-
-.bg-ft {
-  background: #fff1e0;
 }
 
 .off-screen {
