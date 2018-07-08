@@ -7,8 +7,8 @@ body {
   font-family: 'PT Serif', serif;
 }
 
-bold {
-  font-family: 'PT Serif';
+bold, strong {
+  font-family: 'PT Serif', serif;
 }
 
 .off-screen {
