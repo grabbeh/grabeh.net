@@ -8,6 +8,7 @@
     "express": "^4.16.3",
     "fs": "0.0.1-security",
     "gatsby": "^1.9.247",
+    "gatsby-image": "1.0.54",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-react-helmet": "^2.0.10",
@@ -16,15 +17,12 @@
     "gatsby-transformer-json": "^1.0.20",
     "gatsby-transformer-remark": "^1.7.42",
     "glamor": "^2.20.40",
-    "marked": "^0.3.19",
     "prismjs": "^1.14.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "react-lazyload": "^2.3.0",
-    "read-file": "^0.2.0",
-    "rebass": "^1.0.7",
     "tachyons": "^4.10.0"
   },
   "devDependencies": {
