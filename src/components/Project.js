@@ -1,6 +1,6 @@
 import React from 'react'
 import LazyLoad from 'react-lazyload'
-import { Image, Link } from 'rebass'
+import Image from 'gatsby-image'
 import Tool from './Tool'
 import ClearFix from './ClearFix'
 
@@ -30,7 +30,7 @@ const HomeSection = ({ project, toggle }) => (
       <div className='pv2'>
         <Link href={project.siteUrl} children='Site' />
       </div>}
-    <Link className='pv2' href={project.sourceUrl} children='Source' />
+    <a className='pv2' href={project.sourceUrl} children='Source'>Source</a>
     <div className='pt2'>Tools</div>
     {project.tools.map(t => <Tool key={t.id}>{t.tool}</Tool>)}
     <ClearFix />
