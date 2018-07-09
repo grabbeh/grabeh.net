@@ -1,6 +1,5 @@
 import React from 'react'
 import LazyLoad from 'react-lazyload'
-import Link from 'gatsby-link'
 import Tool from './Tool'
 import ClearFix from './ClearFix'
 
@@ -11,12 +10,12 @@ const HomeSection = ({ project, toggle }) => (
       {project.description}
     </div>
     <div className='mv2'>
-      <Link
+      <div
         className='underline pointer dark-blue'
         onClick={() => toggle(project)}
       >
         More
-      </Link>
+      </div>
     </div>
     <LazyLoad height={200}>
       <img
