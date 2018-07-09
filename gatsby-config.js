@@ -29,9 +29,11 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [`PT Serif`, `Roboto`]
+        google: {
+          families: ['PT Serif', 'Roboto']
+        }
       }
     },
     `gatsby-transformer-json`,

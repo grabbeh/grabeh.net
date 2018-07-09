@@ -12,6 +12,7 @@
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-google-fonts": "0.0.4",
     "gatsby-plugin-react-helmet": "^2.0.10",
+    "gatsby-plugin-web-font-loader": "^1.0.2",
     "gatsby-remark-prismjs": "^2.0.3",
     "gatsby-source-filesystem": "^1.5.36",
     "gatsby-transformer-json": "^1.0.20",
