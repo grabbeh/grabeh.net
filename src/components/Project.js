@@ -1,7 +1,6 @@
 import React from 'react'
 import LazyLoad from 'react-lazyload'
 import Link from 'gatsby-link'
-import Image from 'gatsby-image'
 import Tool from './Tool'
 import ClearFix from './ClearFix'
 
@@ -20,7 +19,7 @@ const HomeSection = ({ project, toggle }) => (
       </Link>
     </div>
     <LazyLoad height={200}>
-      <Image
+      <img
         onClick={() => toggle(project)}
         className='mb2'
         mt={2}
