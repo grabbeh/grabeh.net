@@ -17,20 +17,25 @@ const HomeSection = ({ project, toggle }) => (
         More
       </div>
     </div>
-    <LazyLoad height={200}>
-      <img
-        className="img-shadow"
-        onClick={() => toggle(project)}
-        src={project.imageUrl}
-      />
-    </LazyLoad>
+    <div>
+      <LazyLoad height={200}>
+        <img
+          className='img-shadow'
+          onClick={() => toggle(project)}
+          src={project.imageUrl}
+        />
+      </LazyLoad>
+    </div>
+
     {project.siteUrl &&
       <div className='pv2'>
-        <a href={project.siteUrl} >
+        <a href={project.siteUrl}>
           Site
         </a>
       </div>}
-    <a className='pv2' href={project.sourceUrl} children='Source'>Source</a>
+    <div className='pt2'>
+      <a href={project.sourceUrl} children='Source'>Source</a>
+    </div>
     <div className='pt2'>Tools</div>
     {project.tools.map(t => <Tool key={t.id}>{t.tool}</Tool>)}
     <ClearFix />
