@@ -10,7 +10,7 @@ const HomeSection = ({ project, toggle }) => (
     <div className='lh-copy'>
       {project.description}
     </div>
-    <div className='mt2'>
+    <div className='mv2'>
       <Link
         className='underline pointer dark-blue'
         onClick={() => toggle(project)}
