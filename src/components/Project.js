@@ -1,5 +1,6 @@
 import React from 'react'
 import LazyLoad from 'react-lazyload'
+import Link from 'gatsby-link'
 import Image from 'gatsby-image'
 import Tool from './Tool'
 import ClearFix from './ClearFix'
@@ -28,7 +29,9 @@ const HomeSection = ({ project, toggle }) => (
     </LazyLoad>
     {project.siteUrl &&
       <div className='pv2'>
-        <Link href={project.siteUrl} children='Site' />
+        <a href={project.siteUrl} >
+          Site
+        </a>
       </div>}
     <a className='pv2' href={project.sourceUrl} children='Source'>Source</a>
     <div className='pt2'>Tools</div>
