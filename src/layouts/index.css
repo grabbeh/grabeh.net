@@ -7,6 +7,10 @@ body {
   font-family: 'PT Serif', serif;
 }
 
+.img-shadow {
+  box-shadow: lightgray 5px 5px;
+}
+
 bold, strong {
   font-family: 'PT Serif', serif;
 }
