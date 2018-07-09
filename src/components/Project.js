@@ -20,8 +20,6 @@ const HomeSection = ({ project, toggle }) => (
     <LazyLoad height={200}>
       <img
         onClick={() => toggle(project)}
-        className='mb2'
-        mt={2}
         src={project.imageUrl}
       />
     </LazyLoad>
