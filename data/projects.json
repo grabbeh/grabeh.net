@@ -3,6 +3,7 @@
   {
     "projectName": "React-contracts",
     "description": "Write contracts using React (it made sense at the time).",
+    "imageUrl": "/react.png",
     "sourceUrl": "https://github.com/grabbeh/react-contracts",
     "longDescription": "React helps to separate data from boilerplate and so I thought it would be interesting to experiment with how that could be applied to the world of contracts.",
     "tools": [
