@@ -28,7 +28,7 @@ const HomeSection = ({ project, toggle }) => (
     </div>
 
     {project.siteUrl &&
-      <div className='pv2'>
+      <div className='pt2'>
         <a href={project.siteUrl}>
           Site
         </a>
