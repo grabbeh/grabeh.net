@@ -32,7 +32,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['PT Serif', 'Roboto']
+          families: ['PT Serif', 'Karla']
         }
       }
     },
