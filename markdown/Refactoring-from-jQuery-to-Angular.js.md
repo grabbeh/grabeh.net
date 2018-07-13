@@ -52,22 +52,20 @@ Using promises in services basically allows you to create a 'thennable' methods.
 
 ```javascript
 .factory('geoCoder', ['$q', function($q){
-            geocoder = new google.maps.Geocoder();
-            geocodeAddress: function(address){
-                    var deferred = $q.defer();
-                    geocoder.geocode({
-                    address: address
-                    }, function(results, status){
-                    if (status == google.maps.GeocoderStatus.OK){
-                        return deferred.resolve(results);
-                    }
-                    return deferred.reject();
-                    })
-                    return deferred.promise;
+    geocoder = new google.maps.Geocoder();
+    geocodeAddress: function(address){
+        var deferred = $q.defer();
+        geocoder.geocode({ address: address }, function(results, status){
+            if (status == google.maps.GeocoderStatus.OK){
+                return deferred.resolve(results);
             }
+            return deferred.reject();
+        })
+        return deferred.promise;
         }
-        return geoCoder;
-    }])
+    }
+    return geoCoder;
+}])
 ```
 
 **geolocation via $window**
