@@ -50,8 +50,8 @@ class Home extends Component {
         >
           <SidePage toggle={this.toggle} project={project} />
         </MenuAnimation>
-        <div className='mw8 center pa3'>
-          <div className='mb4 pt-serif mt3 f3'>
+        <div className='mw8 center pa3 f4'>
+          <div className='mb4 pt-serif mt3'>
             <p>
               Hi, my name's Michael. I work as an in-house lawyer in London. In my spare time I make Internet things.
             </p>
