@@ -6,7 +6,7 @@ import ClearFix from './ClearFix'
 const HomeSection = ({ project, toggle }) => (
   <div className='mr5-ns bt b--black-30 bw1 pb3'>
     <div className='b pv2 pt-serif f3 ttl'>{project.projectName}</div>
-    <div className='lh-copy'>
+    <div className='dark-gray lh-copy'>
       {project.description}
     </div>
     <div className='mv2'>
