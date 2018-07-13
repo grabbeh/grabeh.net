@@ -1,5 +1,9 @@
 [
   {
+    "title": "Acronym based contracts",
+    "path": "/acronym-based-contracts"
+  },
+  {
     "title": "react-based contract components",
     "path": "/react-based-contract-components"
   },
