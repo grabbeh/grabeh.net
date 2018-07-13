@@ -11,7 +11,7 @@ const Header = () => (
       <SideBarItem item='Home' url='/'>
         <FaHome style={{ marginRight: '10px' }} size={20} />
       </SideBarItem>
-      <div className='pointer fl mt3 mt0-ns mr3 ph3 pv2'>
+      <div className='pointer fl mt3 mt0-ns mr4'>
         <a
           href='https://github.com/grabbeh'
           className='underline-hover link dark-gray'
