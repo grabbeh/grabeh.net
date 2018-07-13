@@ -18,7 +18,7 @@ const Layout = ({ children }) => (
     </Helmet>
     <div>
       <Header />
-      <div className='dark-gray'>
+      <div>
         {children()}
       </div>
     </div>
