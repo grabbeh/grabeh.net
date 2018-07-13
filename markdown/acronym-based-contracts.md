@@ -3,7 +3,7 @@ title: 'Acronym based contracts'
 path: '/acronym-based-contracts'
 ---
 
-HTML forms the basic building blocks of the web (<div>s, <li>s, <form>s). CSS can be used to style HTML to make it come to life. In CSS you write classes and apply them to html to apply styles like color, width, padding, and margin. 
+HTML forms the basic building blocks of the web. CSS can be used to style HTML to make it come to life. In CSS you write classes and apply them to html to apply styles like color, width, padding, and margin. 
 Tachyons is a CSS library giving access to a range of pre-set CSS classes to apply those styles. Tachyons uses Atomic CSS meaning
 that the classes describe the style that is being applied. The alternative is that a CSS class describes what the HTML element that the style is being applied to does.
 
