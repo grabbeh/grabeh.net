@@ -6,7 +6,7 @@ export default class extends React.Component {
     const { frontmatter, html } = markdownRemark
 
     return (
-      <div className='mw7 f4 mt2 center pa3'>
+      <div className='mw7 f4 mt3 center pa3'>
         <div className='b pt-serif ttu'>{frontmatter.title}</div>
         <div className='fr'>{frontmatter.date}</div>
         <div className='cf' />
