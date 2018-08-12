@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react'
 import SidePage from './SidePage'
 import cn from 'classnames'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 
 class Home extends Component {
   constructor (props) {
