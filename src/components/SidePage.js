@@ -15,10 +15,10 @@ const SidePage = ({ project, toggle }) => (
             }}
           />
         </div>
-        <div className='ttl b bb bw1 b--black-30 pb2 mb3 pt-serif f3'>
+        <div className='ttl  b bb-ft pb2 mb3 pt-serif f3'>
           {project.projectName}
         </div>
-        <img src={project.imageUrl} />
+        <img alt='' src={project.imageUrl} />
         <div className='pt2 pb4 f4 lh-copy'>{project.longDescription}</div>
       </div>}
   </Fragment>

@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 
 const SideBarItem = ({ children, url, item }) => (
   <div className='pointer fl mt3 mt0-ns mr4'>
-    <Link className='underline-hover link dark-gray' to={url}>
+    <Link className='dim dark-gray' to={url}>
       {children}
       {item}
     </Link>

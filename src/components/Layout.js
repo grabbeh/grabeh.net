@@ -1,10 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/Header'
-import 'tachyons'
-import './index.css'
-import './react.css'
+import '../index.css'
+import '../react.css'
 
 const Layout = ({ children }) => (
   <div>
@@ -16,18 +14,14 @@ const Layout = ({ children }) => (
       <meta name='viewport' content='width=device-width' />
       <title>grabeh.net</title>
     </Helmet>
-    <div className='bg-light-green'>
+    <div className='bg-ft'>
       <Header />
       <div>
-        {children()}
+        {children}
       </div>
     </div>
 
   </div>
 )
-
-Layout.propTypes = {
-  children: PropTypes.func
-}
 
 export default Layout

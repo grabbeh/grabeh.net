@@ -4,14 +4,15 @@ import Tool from './Tool'
 import ClearFix from './ClearFix'
 
 const HomeSection = ({ project, toggle }) => (
-  <div className='mr5-ns bt b--black-30 bw1 pb3'>
-    <div className='b pv2 pt-serif f3 ttl'>{project.projectName}</div>
+  <div>
+    <div className='b bb-ft pb2 mb2
+    f3 ttl'>{project.projectName}</div>
     <div className='dark-gray lh-copy'>
       {project.description}
     </div>
     <div className='mv2'>
       <div
-        className='underline pointer dark-blue'
+        className='underline pointer dark-gray dim'
         onClick={() => toggle(project)}
       >
         More
@@ -19,24 +20,22 @@ const HomeSection = ({ project, toggle }) => (
     </div>
     <div>
       <LazyLoad height={200}>
-        <img
-          className='img-shadow'
-          onClick={() => toggle(project)}
-          src={project.imageUrl}
-        />
+        <img alt='' onClick={() => toggle(project)} src={project.imageUrl} />
       </LazyLoad>
     </div>
 
     {project.siteUrl &&
       <div className='pt2'>
-        <a href={project.siteUrl}>
+        <a className='dim dark-gray' href={project.siteUrl}>
           Site
         </a>
       </div>}
     <div className='pt2'>
-      <a href={project.sourceUrl} children='Source'>Source</a>
+      <a className='dim dark-gray' href={project.sourceUrl} children='Source'>
+        Source
+      </a>
     </div>
-    <div className='pt2'>Tools</div>
+    <div className='b pt2'>Tools</div>
     {project.tools.map(t => <Tool key={t.id}>{t.tool}</Tool>)}
     <ClearFix />
   </div>

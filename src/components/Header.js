@@ -12,10 +12,7 @@ const Header = () => (
         <FaHome style={{ marginRight: '10px' }} size={20} />
       </SideBarItem>
       <div className='pointer fl mt3 mt0-ns mr4'>
-        <a
-          href='https://github.com/grabbeh'
-          className='underline-hover link dark-gray'
-        >
+        <a href='https://github.com/grabbeh' className='dim dark-gray'>
           <FaGit style={{ marginRight: '10px' }} size={20} />
           Github
         </a>

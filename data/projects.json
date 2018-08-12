@@ -1,5 +1,4 @@
 [
-  
   {
     "projectName": "React-contracts",
     "description": "Write contracts using React (it made sense at the time).",
@@ -47,7 +46,7 @@
   },
   {
     "projectName": "Attest",
-    "description": "Open source contract management platform. Like an excel spreadsheet with less functionality but marginally prettier.",
+    "description": "Open source contract management platform. Like an Excel spreadsheet with less functionality but marginally prettier.",
     "imageUrl": "/attest.png",
     "sourceUrl": "https://github.com/grabbeh/attest",
     "siteUrl": "https://tryattest.com",
@@ -149,13 +148,13 @@
   },
   {
     "projectName": "Instok",
-    "description": "send reminders to customers when stock is back in",
+    "description": "Send reminders to customers when stock is back in",
     "imageUrl": "/instok.jpg",
     "sourceUrl": "https://github.com/grabbeh/instok",
     "longDescription": "When I went to a shop they told me something was out of stock. Neurons fired in my head. The idea for Instok was born! People can buy credits using Stripe, set reminders, and trigger SMSs to delighted customers when stock is back in. We may never know where the name came from.",
     "tools": [
       {
-        "tool": "stripe API",
+        "tool": "Stripe API",
         "id": 0
       },
       {

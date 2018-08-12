@@ -1,23 +1,24 @@
 import React from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
 
-export default class extends React.Component {
-  render () {
-    const { markdownRemark } = this.props.data
-    const { frontmatter, html } = markdownRemark
-
-    return (
+const postTemplate = props => {
+  const { markdownRemark } = props.data
+  const { frontmatter, html } = markdownRemark
+  return (
+    <Layout>
       <div className='mw7 f4 mt2 center pa3'>
-        <div className='b pt-serif ttu'>{frontmatter.title}</div>
+        <div className='b bb-ft pb2 ttu'>{frontmatter.title}</div>
         <div className='fr'>{frontmatter.date}</div>
         <div className='cf' />
         <div className='lh-copy' dangerouslySetInnerHTML={{ __html: html }} />
       </div>
-    )
-  }
+    </Layout>
+  )
 }
 
 export const pageQuery = graphql`
-  query CreativeByPath($path: String!) {
+  query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
@@ -28,3 +29,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default postTemplate

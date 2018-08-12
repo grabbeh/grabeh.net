@@ -60,20 +60,23 @@ class Home extends Component {
             </p>
             <p> Here's some of my work:</p>
             <p>
-              <Link to='/react-based-contract-components'>
+              <Link
+                className='dark-gray dim'
+                to='/react-based-contract-components'
+              >
                 React-based contract components
               </Link>
             </p>
           </div>
-          <div className='flex flex-wrap'>
-            {projects.map(({ node }) => {
-              return (
-                <div key={node.id} className='w-33-l w-50-ns w-100'>
+          <ul className='list ma0 pa0 flex flex-wrap'>
+            {projects.map(({ node }) => (
+              <div key={node.id} className='mb4 w-50-l w-50-ns w-100'>
+                <li className='h-100 mr4-ns mr0 bg-dark-ft pa3'>
                   <Project toggle={toggle} key={node.id} project={node} />
-                </div>
-              )
-            })}
-          </div>
+                </li>
+              </div>
+            ))}
+          </ul>
           <div className='mt4'>
             I also wrote some stuff <Link to='/posts'>here</Link>
           </div>
