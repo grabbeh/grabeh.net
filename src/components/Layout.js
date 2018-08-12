@@ -14,7 +14,11 @@ const Layout = ({ children }) => (
       <meta name='viewport' content='width=device-width' />
       <title>grabeh.net</title>
     </Helmet>
+<<<<<<< HEAD:src/components/Layout.js
     <div className='bg-ft'>
+=======
+    <div>
+>>>>>>> 4c255d24dc1a7d22ae00e38b4c9bd1972bfc0558:src/layouts/index.js
       <Header />
       <div>
         {children}
