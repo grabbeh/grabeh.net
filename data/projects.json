@@ -22,7 +22,7 @@
     "description": "A simple portfolio site for a talented designer, featuring an API-based CMS and automated deployment.",
     "imageUrl": "/hilodoes.png",
     "sourceUrl": "https://github.com/grabbeh/kmiho",
-    "siteUrl": "https://amazing-volhard-4ebe7f.netlify.com/",
+    "siteUrl": "https://hilodoes.com/",
     "longDescription": "I stumbled across the concept of the JAMStack and mainly because it sounded new and cool I thought I'd build a site using it. I understand it has certain more tangible benefits also! This particular site is a wonderful marriage of Gatsby, Contentful and Netlify designed to make it easy for non-coders to update a site as they wish. Now if I could only convince my wife to use it!",
     "tools": [
       {
