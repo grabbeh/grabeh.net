@@ -11,7 +11,7 @@ const HomeSection = ({ project, toggle }) => (
     </div>
     <div className='mv2'>
       <div
-        className='underline pointer dark-gray dim'
+        className='underline pointer dark-gray'
         onClick={() => toggle(project)}
       >
         More
