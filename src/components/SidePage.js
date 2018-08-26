@@ -15,7 +15,7 @@ const SidePage = ({ project, toggle }) => (
             }}
           />
         </div>
-        <div className='ttl  b bb-ft pb2 mb3 pt-serif f3'>
+        <div className='ttl b mb3 pt-serif f3'>
           {project.projectName}
         </div>
         <img alt='' src={project.imageUrl} />

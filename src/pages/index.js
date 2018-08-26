@@ -25,6 +25,8 @@ export const query = graphql`
             id
           }
           id
+          mainColor
+          shadowColor
         }
       } 
     }

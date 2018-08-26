@@ -25,6 +25,15 @@ class Home extends Component {
     }
   }
 
+  getStyle (mainColor, shadowColor) {
+    let boxShadow = `10px 10px 0px 0px ${shadowColor}`
+    console.log(boxShadow)
+    return {
+      backgroundColor: mainColor,
+      boxShadow: boxShadow
+    }
+  }
+
   render () {
     let { projects } = this.props
     let { project } = this.state
@@ -69,13 +78,19 @@ class Home extends Component {
             </p>
           </div>
           <ul className='list ma0 pa0 flex flex-wrap'>
-            {projects.map(({ node }) => (
-              <div key={node.id} className='mb4 w-50-l w-50-ns w-100'>
-                <li className='h-100 mr4-ns mr0 bg-dark-ft pa3'>
-                  <Project toggle={toggle} key={node.id} project={node} />
-                </li>
-              </div>
-            ))}
+            {projects.map(({ node }) => {
+              console.log(this.getStyle(node.mainColor, node.shadowColor))
+              return (
+                <div key={node.id} className='mb4 w-50-l w-50-ns w-100'>
+                  <li
+                    style={this.getStyle(node.mainColor, node.shadowColor)}
+                    className='h-100 mr4-ns mr0 pa3'
+                  >
+                    <Project toggle={toggle} key={node.id} project={node} />
+                  </li>
+                </div>
+              )
+            })}
           </ul>
           <div className='mt4'>
             I also wrote some stuff <Link to='/posts'>here</Link>

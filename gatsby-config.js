@@ -28,14 +28,6 @@ module.exports = {
         name: 'data'
       }
     },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Libre Franklin']
-        }
-      }
-    },
     `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`
   ]

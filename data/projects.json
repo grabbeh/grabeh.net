@@ -1,7 +1,7 @@
 [
   {
     "projectName": "React-contracts",
-    "description": "Write contracts using React (it made sense at the time).",
+    "description": "Write contracts using React (it made sense at the time). Contracts in code can help to minimise duplication, keep on top of boilerplate and facilitate non-legal teams work on contracts whilst still giving legal control.",
     "imageUrl": "/react.PNG",
     "sourceUrl": "https://github.com/grabbeh/react-contracts",
     "longDescription": "React helps to separate data from boilerplate and so I thought it would be interesting to experiment with how that could be applied to the world of contracts.",
@@ -15,7 +15,9 @@
         "id": 1
       }
     ],
-    "id": "0"
+    "id": "0",
+    "mainColor": "#9eebcf",
+    "shadowColor": "#19a974"
   },
   {
     "projectName": "Hilodoes",
@@ -42,7 +44,9 @@
         "id": 3
       }
     ],
-    "id": "1"
+    "id": "1",
+    "mainColor": "#cdecff",
+    "shadowColor": "#357edd"
   },
   {
     "projectName": "Attest",
@@ -73,11 +77,13 @@
         "id": 4
       }
     ],
-    "id": "2"
+    "id": "2",
+    "mainColor": "#F5F0FE",
+    "shadowColor": "#a463f2"
   },
   {
     "projectName": "OTTGNaaS",
-    "description": "Turn online terms into graphic novels at the flick of a switch (results may vary!)",
+    "description": "Turn online terms into graphic novels at the flick of a switch (results may vary!).",
     "imageUrl": "/demo.jpg",
     "sourceUrl": "https://github.com/grabbeh/OTTGNaaS",
     "longDescription": "Consumers don't read terms and conditions but some enjoy graphic novels. This project sought to make terms of use palatable to a broader audience by shoehorning them into random graphic novels. The success of the project is largely dependent on legislators obliging companies to make terms of use available in comic form. Lobbying efforts to this end are continuing.",
@@ -95,7 +101,9 @@
         "id": 2
       }
     ],
-    "id": "3"
+    "id": "3",
+    "mainColor": "#F5F0E3",
+    "shadowColor": "#fcb045"
   },
   {
     "projectName": "Case law emoji bot",
@@ -122,7 +130,9 @@
         "id": 3
       }
     ],
-    "id": "4"
+    "id": "4",
+    "mainColor": "#eee",
+    "shadowColor": "#777"
   },
   {
     "projectName": "Fennec",
@@ -144,7 +154,9 @@
         "id": 2
       }
     ],
-    "id": "5"
+    "id": "5",
+    "mainColor": "#eee",
+    "shadowColor": "#777"
   },
   {
     "projectName": "Instok",
@@ -170,7 +182,9 @@
         "id": 3
       }
     ],
-    "id": "6"
+    "id": "6",
+    "mainColor": "#eee",
+    "shadowColor": "#777"
   },
   {
     "projectName": "Geophoto",
@@ -192,7 +206,9 @@
         "id": 2
       }
     ],
-    "id": "7"
+    "id": "7",
+    "mainColor": "#eee",
+    "shadowColor": "#777"
   },
   {
     "projectName": "Mapopho",
@@ -214,7 +230,9 @@
         "id": 2
       }
     ],
-    "id": "8"
+    "id": "8",
+    "mainColor": "#eee",
+    "shadowColor": "#777"
   },
   {
     "projectName": "Routebop",
@@ -236,6 +254,8 @@
         "id": 2
       }
     ],
-    "id": "9"
+    "id": "9",
+    "mainColor": "#eee",
+    "shadowColor": "#777"
   }
 ]

@@ -5,11 +5,12 @@ import Layout from '../components/Layout'
 const postTemplate = props => {
   const { markdownRemark } = props.data
   const { frontmatter, html } = markdownRemark
+  const { date, title } = frontmatter
   return (
     <Layout>
       <div className='mw7 f4 mt2 center pa3'>
-        <div className='b bb-ft pb2 ttu'>{frontmatter.title}</div>
-        <div className='fr'>{frontmatter.date}</div>
+        <div className='b pb2 ttu'>{title}</div>
+        {date && <div className='mt2 fr'>{date}</div>}
         <div className='cf' />
         <div className='lh-copy' dangerouslySetInnerHTML={{ __html: html }} />
       </div>
