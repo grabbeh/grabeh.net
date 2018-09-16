@@ -82,7 +82,7 @@ class Home extends Component {
                 <div key={node.id} className='mb4 w-50-l w-50-ns w-100'>
                   <li
                     style={this.getStyle(node.mainColor, node.shadowColor)}
-                    className='h-100 mr4-ns mr0 pa3'
+                    className='h-100 mr5-ns mr0 pa3'
                   >
                     <Project toggle={toggle} key={node.id} project={node} />
                   </li>

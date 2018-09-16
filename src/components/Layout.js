@@ -6,11 +6,7 @@ import '../react.css'
 
 const Layout = ({ children }) => (
   <div>
-
     <Helmet>
-      <meta name='theme-color' content='#fff1e0' />
-      <meta name='msapplication-navbutton-color' content='#fff1e0' />
-      <meta name='apple-mobile-web-app-status-bar-style' content='#fff1e0' />
       <meta charSet='utf-8' />
       <meta name='viewport' content='width=device-width' />
       <title>grabeh.net</title>
