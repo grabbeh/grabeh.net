@@ -1,7 +1,7 @@
 [ {
     "projectName": "Docs",
     "description": "A not very original name for something like a design system for my work",
-    "imageUrl": "/docs.PNG",
+    "imageUrl": "/docs.png",
     "sourceUrl": "https://github.com/grabbeh/docs.grabeh.net",
     "siteUrl": "http://docs.grabeh.net/",
     "longDescription": "Design systems are all the rage so I thought I'd build something which may or may not be an approximation of one!",
@@ -16,7 +16,7 @@
       }
     ],
     "id": "0",
-    "mainColor": "#ff4136",
+    "mainColor": "#ffdfdf",
     "shadowColor": "#ff725c"
   },
   {
