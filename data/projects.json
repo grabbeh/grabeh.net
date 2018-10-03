@@ -1,7 +1,7 @@
 [ {
     "projectName": "Docs",
     "description": "A not very original name for something like a design system for my work",
-    "imageUrl": "/docs.png",
+    "imageUrl": "/docs2.png",
     "sourceUrl": "https://github.com/grabbeh/docs.grabeh.net",
     "siteUrl": "http://docs.grabeh.net/",
     "longDescription": "Design systems are all the rage so I thought I'd build something which may or may not be an approximation of one!",
