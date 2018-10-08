@@ -1,18 +1,27 @@
-[ {
-    "projectName": "Docs",
-    "description": "A not very original name for something like a design system for my work",
-    "imageUrl": "/docs2.png",
-    "sourceUrl": "https://github.com/grabbeh/docs.grabeh.net",
-    "siteUrl": "http://docs.grabeh.net/",
-    "longDescription": "Design systems are all the rage so I thought I'd build something which may or may not be an approximation of one!",
+[
+  {
+    "projectName": "Shipper",
+    "description": "Shipper can extract the good content from your favourited tweets and email it to you",
+    "imageUrl": "/shipper.png",
+    "sourceUrl": "https://github.com/grabbeh/shipper",
+    "siteUrl": "http://shipper.grabeh.net/",
+    "longDescription": "I frequently use favouriting tweets as a way to bookmark content and store for future reference. The only problem is I rarely go back and unfortunately tweet to brain osmosis is not a thing yet. I struck upon the idea of generating weekly emails with content from my favourited tweets as a way to have great content in my inbox.",
     "tools": [
       {
-        "tool": "Docz",
+        "tool": "React",
         "id": 0
       },
       {
-        "tool": "Styled-system",
+        "tool": "Next.js",
         "id": 1
+      },
+      {
+        "tool": "Graphql",
+        "id": 2
+      },
+      {
+        "tool": "MongoDB",
+        "id": 3
       }
     ],
     "id": "0",
