@@ -50,8 +50,8 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
               )})}
             </Flex>
           </Box>
-          <Box>
-            <Box bg={backgroundColor} pt={3} pl={3}>
+          <Box bg={backgroundColor}>
+            <Box pt={3} pl={3}>
               <Text color={textColor} fontWeight='bold' fontSize={7}>
                 Michael
               </Text>
