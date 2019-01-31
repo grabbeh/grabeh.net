@@ -41,7 +41,12 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
           <Box>
             <Box mt={3} pl={3}>
               <Text color='black' fontWeight='bold' fontSize={7}>
-                MBG CODES
+                Michael
+              </Text>
+            </Box>
+            <Box mt={3} pl={3}>
+              <Text color='black' fontSize={5}>
+                Lawyer/coder. Based in London, UK
               </Text>
             </Box>
             <Box>
