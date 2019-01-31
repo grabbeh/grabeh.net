@@ -57,10 +57,13 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
               </Box>
               <Box>
                 <Flex flexWrap='wrap'>
-                  {allProjectsJson.edges.map(({ node: { imageUrl } }, i) => {
+                  {allProjectsJson.edges.map(({ node: { imageUrl, projectName } }, i) => {
                     return (
-                      <Box key={i} width={[1, 0.3, 0.2]}>
+                      <Box position='relative' key={i} width={[1, 0.3, 0.2]}>
                         <Image src={imageUrl} />
+                        <Box bg='white' position='absolute' bottom={0} p={2}>
+                          <Text color='black' fontWeight='bold' fontSize={3}>{projectName}</Text>
+                        </Box>
                       </Box>
                     )
                   })}
