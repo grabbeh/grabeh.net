@@ -41,7 +41,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
                 let color = colors[k]                      
                 return (
                 <Box
-                  onClick={(color) => {changeColors(color)}}
+                  onClick={() => {changeColors(color)}}
                   fontSize={5}
                   height={20}
                   width={100}
