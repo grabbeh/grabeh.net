@@ -28,9 +28,8 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
             <Flex flexWrap='wrap'>
               {Object.keys(colors).map((k, i) => (
                 <Box
-                  className='fl'
                   fontSize={5}
-                  height={40}
+                  height={20}
                   width={100}
                   key={i}
                   bg={colors[k]}
