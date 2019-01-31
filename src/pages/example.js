@@ -134,6 +134,8 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
 }
 
 const colors = {
+  white: '#ffffff',
+  black: '#000000',
   'dark-red': '#e7040f',
   red: '#ff4136',
   'light-red': '#ff725c',
