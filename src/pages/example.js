@@ -44,7 +44,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
                   onClick={() => {changeColors(color)}}
                   fontSize={5}
                   height={20}
-                  width={100}
+                  width={[1/3, 0.2, 0.1]}
                   key={i}
                   bg={color}
                 />
