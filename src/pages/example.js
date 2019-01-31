@@ -9,6 +9,7 @@ import { graphql } from 'gatsby'
 import FaGit from 'react-icons/lib/fa/github'
 import FaTwitter from 'react-icons/lib/fa/twitter'
 import _ from 'lodash'
+import hexRgb from 'hex-rgb'
 
 const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   let tools = allProjectsJson.edges.map(({ node }) => {
@@ -20,7 +21,14 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
     })
   ).sort()
   
-  //const [backgroundColor, setBackgroundColor] = useState('white')
+  const [backgroundColor, setBackgroundColor] = useState('white')
+  const [textColor, setTextColor] = useState('black')
+  
+  const changeColors = (color) => {
+    setBackgroundColor(color)
+    let text = getTextColor(color)
+    setTextColor(text)
+  }
   
   return (
     <Layout>
@@ -32,7 +40,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
                  let color = colors[k]                      
                 return (
                 <Box
-                  //onClick={setBackgroundColor(color)}
+                  onClick={() => {changeColors(color)}}
                   fontSize={5}
                   height={20}
                   width={100}
@@ -43,19 +51,19 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
             </Flex>
           </Box>
           <Box>
-            <Box mt={3} pl={3}>
-              <Text color='black' fontWeight='bold' fontSize={7}>
+            <Box bg={backgroundColor} pt={3} pl={3}>
+              <Text color={textColor} fontWeight='bold' fontSize={7}>
                 Michael
               </Text>
             </Box>
             <Box mt={3} pl={3}>
-              <Text color='black' fontSize={5}>
+              <Text color={textColor} fontSize={5}>
                 Lawyer/coder. Based in London, UK
               </Text>
             </Box>
             <Box>
               <Box pl={3} my={3}>
-                <Text color='black' fontSize={5} fontWeight='bold'>
+                <Text color={textColor} fontSize={5} fontWeight='bold'>
                   PROJECTS
                 </Text>
               </Box>
@@ -184,4 +192,15 @@ export const query = graphql`
   }
 `
 
+const getTextColor = hex => {
+  let rgb = hexRgb(hex, { format: 'array' })
+  let a = 1 - (0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]) / 255
+  let textColor = a < 0.5 ? 'black' : 'white'
+  return textColor
+}
+
+export default getTextColor
+
 export default Example
+
+
