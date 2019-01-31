@@ -20,7 +20,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
     })
   ).sort()
   
-  const [backgroundColor, setBackgroundColor] = useState('white')
+  //const [backgroundColor, setBackgroundColor] = useState('white')
   
   return (
     <Layout>
@@ -32,7 +32,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
                  let color = colors[k]                      
                 return (
                 <Box
-                  onClick={setBackgroundColor(color)}
+                  //onClick={setBackgroundColor(color)}
                   fontSize={5}
                   height={20}
                   width={100}
