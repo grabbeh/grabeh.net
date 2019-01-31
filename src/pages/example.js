@@ -24,7 +24,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   const [backgroundColor, setBackgroundColor] = useState('white')
   const [textColor, setTextColor] = useState('black')
   
-  const changeColors = (color) => {
+  function changeColors(color) {
     setBackgroundColor(color)
     let text = getTextColor(color)
     setTextColor(text)
@@ -198,8 +198,6 @@ const getTextColor = hex => {
   let textColor = a < 0.5 ? 'black' : 'white'
   return textColor
 }
-
-export default getTextColor
 
 export default Example
 
