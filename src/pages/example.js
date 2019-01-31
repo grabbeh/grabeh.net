@@ -65,7 +65,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
             <Box py={3} bg='g-red'>
               <Box pl={3} mb={3}>
                 <Text color='black' fontSize={5} fontWeight='bold'>
-                  TOOLS
+                  TOOLS & INTEGRATIONS
                 </Text>
               </Box>
               <Box pl={3}>
