@@ -25,6 +25,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   const [textColor, setTextColor] = useState('black')
   
   function changeColors(color) {
+    console.log(color)
     setBackgroundColor(color)
     let text = getTextColor(color)
     setTextColor(text)
@@ -51,23 +52,23 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
             </Flex>
           </Box>
           <Box bg={backgroundColor}>
-            <Box pt={3} pl={3}>
+            <Box bg={backgroundColor} pt={3} pl={3}>
               <Text color={textColor} fontWeight='bold' fontSize={7}>
                 Michael
               </Text>
             </Box>
-            <Box mt={3} pl={3}>
+            <Box bg={backgroundColor} mt={3} pl={3}>
               <Text color={textColor} fontSize={5}>
                 Lawyer/coder. Based in London, UK
               </Text>
             </Box>
-            <Box>
+            <Box bg={backgroundColor}>
               <Box pl={3} my={3}>
                 <Text color={textColor} fontSize={5} fontWeight='bold'>
                   PROJECTS
                 </Text>
               </Box>
-              <Box>
+              <Box bg={backgroundColor}>
                 <Flex flexWrap='wrap'>
                   {allProjectsJson.edges.map(({ node: { imageUrl, projectName } }, i) => {
                     return (
