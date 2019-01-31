@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box from '../components/Box'
 import Flex from '../components/Flex'
 import Text from '../components/Text'
@@ -19,25 +19,35 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
       return i.tool
     })
   ).sort()
-
+  
+  const [backgroundColor, setBackgroundColor] = useState('white')
+  
+  const changeColor = (color) => {
+    console.log(color)
+    setBackgroundColor(color)
+  }
+  
   return (
     <Layout>
       <Box>
         <Box>
           <Box>
             <Flex flexWrap='wrap'>
-              {Object.keys(colors).map((k, i) => (
+              {Object.keys(colors).map((k, i) => {
+                 let color = colors[k]                      
+                return (
                 <Box
+                  onClick={changeColor(color)}
                   fontSize={5}
                   height={20}
                   width={100}
                   key={i}
-                  bg={colors[k]}
+                  bg={color}
                 />
-              ))}
+              )})}
             </Flex>
           </Box>
-          <Box>
+          <Box bg={backgroundColor}>
             <Box mt={3} pl={3}>
               <Text color='black' fontWeight='bold' fontSize={7}>
                 Michael
