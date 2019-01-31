@@ -11,13 +11,7 @@ const Layout = ({ children }) => (
       <meta name='viewport' content='width=device-width' />
       <title>grabeh.net</title>
     </Helmet>
-    <div>
-      <Header />
-      <div>
-        {children}
-      </div>
-    </div>
-
+    <div>{children}</div>
   </div>
 )
 

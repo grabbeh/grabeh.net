@@ -4,6 +4,7 @@ import Flex from '../components/Flex'
 import Text from '../components/Text'
 import Image from '../components/Image'
 import Link from '../components/Link'
+import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import FaGit from 'react-icons/lib/fa/github'
 import FaTwitter from 'react-icons/lib/fa/twitter'
@@ -17,23 +18,25 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
     _.flatten(tools).map(i => {
       return i.tool
     })
-  )
-  console.log(uniq)
+  ).sort()
+
   return (
-    <Box>
+    <Layout>
       <Box>
-        <Flex flexWrap='wrap'>
+        <Box>
           <Box>
-            {Object.keys(colors).map((k, i) => (
-              <Box
-                className='fl'
-                fontSize={5}
-                height={40}
-                width={100}
-                key={i}
-                bg={colors[k]}
-              />
-            ))}
+            <Flex flexWrap='wrap'>
+              {Object.keys(colors).map((k, i) => (
+                <Box
+                  className='fl'
+                  fontSize={5}
+                  height={40}
+                  width={100}
+                  key={i}
+                  bg={colors[k]}
+                />
+              ))}
+            </Flex>
           </Box>
           <Box>
             <Box mt={3} pl={3}>
@@ -103,9 +106,9 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
               </Box>
             </Box>
           </Box>
-        </Flex>
+        </Box>
       </Box>
-    </Box>
+    </Layout>
   )
 }
 

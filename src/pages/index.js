@@ -1,10 +1,16 @@
 import React from 'react'
 import Home from '../components/Home'
 import Layout from '../components/Layout'
+import Header from '../components/Layout'
 import { graphql } from 'gatsby'
 
-const Index = ({ data: { allProjectsJson: { edges } } }) => (
+const Index = ({
+  data: {
+    allProjectsJson: { edges }
+  }
+}) => (
   <Layout>
+    <Header />
     <Home projects={edges} />
   </Layout>
 )
@@ -28,7 +34,7 @@ export const query = graphql`
           mainColor
           shadowColor
         }
-      } 
+      }
     }
   }
 `
