@@ -37,10 +37,10 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
           <Box>
             <Flex flexWrap='wrap'>
               {Object.keys(colors).map((k, i) => {
-                 let color = colors[k]                      
+                let color = colors[k]                      
                 return (
                 <Box
-                  onClick={() => {changeColors(color)}}
+                  onClick={(color) => {changeColors(color)}}
                   fontSize={5}
                   height={20}
                   width={100}
