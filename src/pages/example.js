@@ -22,11 +22,6 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   
   const [backgroundColor, setBackgroundColor] = useState('white')
   
-  const changeColor = (color) => {
-    console.log(color)
-    setBackgroundColor(color)
-  }
-  
   return (
     <Layout>
       <Box>
@@ -37,7 +32,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
                  let color = colors[k]                      
                 return (
                 <Box
-                  onClick={changeColor(color)}
+                  onClick={setBackgroundColor(color)}
                   fontSize={5}
                   height={20}
                   width={100}
