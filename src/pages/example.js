@@ -61,7 +61,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
                       <Box position='relative' key={i} width={[1, 0.3, 0.2]}>
                         <Image src={imageUrl} />
                         <Box bg='white' position='absolute' right={0} top={0} p={2}>
-                          <Text color='black' fontWeight='bold' fontSize={3}>{projectName}</Text>
+                          <Text color='black' fontSize={2}>{projectName}</Text>
                         </Box>
                       </Box>
                     )
