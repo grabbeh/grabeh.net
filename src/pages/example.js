@@ -35,7 +35,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
     <Layout>
       <Box>
         <Box>
-          <Box>
+          <Box bg={backgroundColor}>
             <Flex flexWrap='wrap'>
               {Object.keys(colors).map((k, i) => {
                 let color = colors[k]                      
