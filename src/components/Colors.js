@@ -29,12 +29,13 @@ const colors = {
   navy: '#001b44',
   'dark-blue': '#00449e',
   blue: '#357edd',
-  katie: '#ffefd5',
+
   'light-blue': '#96ccff',
   'lightest-blue': '#cdecff',
   'washed-blue': '#f6fffe',
   'washed-green': '#e8fdf5',
   'washed-yellow': '#fffceb',
+  katie: '#ffefd5',
   'washed-red': '#ffdfdf'
 }
 
