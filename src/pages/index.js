@@ -59,7 +59,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
             </Flex>
           </Box>
           <Box>
-            <Box py={4} px={3}>
+            <Box pt={5} pb={4} px={3}>
               <Text color={textColor} fontWeight='bold' fontSize={5}>
                 Hi, my name's Michael, I live and work in London. 
               </Text>
@@ -67,7 +67,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
                  Stackoverflow, until I can get my code to run. Currently I love using React, GraphQL, Gatsby, Next and styled-system.</Text>
             </Box>
             <Box>
-              <Box pl={3} mb={1} mt={3}>
+              <Box pl={3} mb={1}>
                 <Text color={textColor} fontSize={5} fontWeight='bold'>
                   PROJECTS
                 </Text>
