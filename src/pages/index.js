@@ -59,7 +59,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
             </Flex>
           </Box>
           <Box>
-            <Box pt={3} pl={3}>
+            <Box pt={3} px={3}>
               <Text color={textColor} fontWeight='bold' fontSize={5}>
                 Hi, my name's Michael, I live and work in London. 
               </Text>
