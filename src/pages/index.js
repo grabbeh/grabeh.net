@@ -63,8 +63,8 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
               <Text color={textColor} fontWeight='bold' fontSize={7}>
                 Hi, my name's Michael, I live and work in London. 
               </Text>
-               <Text fontSize={5}>In my spare time I like to craft artisanal javascript applications. I mean browse Github issues and 
-                 Stackoverflow until I can get a programme to run (often not understanding what changes to make it run. Sometimes I git pull straight into production, build, and say to hell with the conse 
+               <Text fontSize={5}>In my spare time I like to <strike>craft artisanal javascript applications</strike> write bad JavaScript, browse Github issues and 
+                 Stackoverflow until I can get my code to run (often not understanding what changes to make it run). Sometimes I git pull straight into production, build, and say to hell with the conse 
                  consequences. Still, I enjoy myself most of the time...</Text>
             </Box>
             <Box mt={3} pl={3}>
