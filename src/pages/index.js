@@ -60,19 +60,14 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
           </Box>
           <Box>
             <Box pt={3} pl={3}>
-              <Text color={textColor} fontWeight='bold' fontSize={7}>
+              <Text color={textColor} fontWeight='bold' fontSize={5}>
                 Hi, my name's Michael, I live and work in London. 
               </Text>
-               <Text fontSize={5}>In my spare time I like to <strike>craft artisanal JavaScript applications</strike> write bad JavaScript, and scour Github issues and 
+               <Text fontSize={3}>In my spare time I like to <strike>craft artisanal JavaScript applications</strike> write bad JavaScript, and scour Github issues and 
                  Stackoverflow, until I can get my code to run.</Text>
             </Box>
-            <Box mt={3} pl={3}>
-              <Text color={textColor} fontSize={5}>
-                Lawyer/coder. Based in London, UK
-              </Text>
-            </Box>
             <Box>
-              <Box pl={3} my={3}>
+              <Box pl={3} mb={1} mt={3}>
                 <Text color={textColor} fontSize={5} fontWeight='bold'>
                   PROJECTS
                 </Text>
@@ -103,7 +98,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
               </Box>
             </Box>
             <Box pl={3} py={3} bg='g-red'>
-              <Box mb={3}>
+              <Box mb={1}>
                 <Text color='black' fontSize={5} fontWeight='bold'>
                   TOOLS & INTEGRATIONS
                 </Text>
@@ -121,7 +116,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
               </Box>
             </Box>
             <Box p={3}>
-              <Box mb={3}>
+              <Box mb={1}>
                 <Text color='black' fontSize={5} fontWeight='bold'>
                   WRITING
                 </Text>
@@ -138,7 +133,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
             </Box>
             <Box bg='black'>
               <Box py={3} pl={3}>
-                <Box mb={3}>
+                <Box mb={1}>
                   <Text color='white' fontWeight='bold' fontSize={5}>
                     LINKS
                   </Text>
