@@ -50,7 +50,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
                     }}
                     fontSize={5}
                     height={20}
-                    width={[1 / 3, 0.2, 0.05]}
+                    width={[0.2, 0.05]}
                     key={i}
                     bg={color}
                   />
