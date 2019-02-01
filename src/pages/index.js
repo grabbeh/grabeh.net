@@ -117,7 +117,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
             </Box>
             <Box p={3}>
               <Box mb={1}>
-                <Text color='black' fontSize={5} fontWeight='bold'>
+                <Text color={textColor} fontSize={5} fontWeight='bold'>
                   WRITING
                 </Text>
               </Box>
