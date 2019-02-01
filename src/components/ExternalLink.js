@@ -1,25 +1,24 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import theme from './theme'
-import { Link } from 'gatsby'
 
-const InternalLink = styled(Link)`
+const Link = styled.a`
   cursor: pointer;
   text-decoration: none;
-  color: black;
+  color: white;
   &:hover {
     text-decoration: underline;
   }
 `
 
-InternalLink.displayName = 'Link'
+Link.displayName = 'Link'
 
-InternalLink.propTypes = {
+Link.propTypes = {
   color: PropTypes.string
 }
 
-InternalLink.defaultProps = {
+Link.defaultProps = {
   theme: theme
 }
 
-export default InternalLink
+export default Link

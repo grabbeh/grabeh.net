@@ -1,6 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import Flex from '../components/Flex'
+import Box from '../components/Box'
+import Text from '../components/Text'
 
 const postTemplate = props => {
   const { markdownRemark } = props.data
@@ -8,12 +11,23 @@ const postTemplate = props => {
   const { date, title } = frontmatter
   return (
     <Layout>
-      <div className='mw7 f4 mt2 center pa3'>
-        <div className='b pb2 ttu'>{title}</div>
-        {date && <div className='mt2 fr'>{date}</div>}
-        <div className='cf' />
-        <div className='lh-copy' dangerouslySetInnerHTML={{ __html: html }} />
-      </div>
+      <Flex justifyContent='center'>
+        <Box mt={2} p={3} width={[1, 0.8, 0.6]} maxWidth={1200}>
+          <Text fontSize={5} fontWeight='bold'>
+            {title}
+          </Text>
+          {date && (
+            <Flex justifyContent='flex-end'>
+              <Box mt={2}>{date}</Box>
+            </Flex>
+          )}
+          <Text
+            lineHeight='1.5'
+            fontSize={3}
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </Box>
+      </Flex>
     </Layout>
   )
 }
