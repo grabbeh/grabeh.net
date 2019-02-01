@@ -64,7 +64,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
                 Hi, my name's Michael, I live and work in London. 
               </Text>
                <Text color={textColor} fontSize={3}>In my spare time I like to <strike>craft artisanal JavaScript applications</strike> write bad JavaScript, and scour Github issues and 
-                 Stackoverflow, until I can get my code to run. Currently I love React, GraphQL, Gatsby, Next and styled-system.</Text>
+                 Stackoverflow, until I can get my code to run. Currently I love using React, GraphQL, Gatsby, Next and styled-system.</Text>
             </Box>
             <Box>
               <Box pl={3} mb={1} mt={3}>
