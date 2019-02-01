@@ -80,7 +80,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
                   {allProjectsJson.edges.map(
                     ({ node: { imageUrl, projectName } }, i) => {
                       return (
-                        <Box position='relative' key={i} width={[1, 0.5, 1/3]}>
+                        <Box position='relative' key={i} width={[1, 0.5, 1/4]}>
                           <Image src={imageUrl} />
                           <Box
                             bg='white'
