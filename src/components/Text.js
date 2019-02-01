@@ -6,21 +6,9 @@ import {
   fontWeight,
   color,
   textAlign,
-  lineHeight,
-  style
+  lineHeight
 } from 'styled-system'
 import theme from './theme'
-
-const skew = style({
-  prop: 'transform',
-  cssProperty: 'transform',
-  key: 'skew',
-  transformValue: n => {
-    return `skewY(${n}deg)`
-  },
-  // add a fallback scale object or array, if theme is not present
-  scale: [10, 20, 30, 40, 50, 60, 70, 80]
-})
 
 export const bold = props =>
   props.bold ? { fontWeight: props.theme.bold } : null
@@ -36,7 +24,7 @@ export const caps = props =>
     : null
 
 const Text = styled.div`
-  ${space} ${fontSize} ${fontWeight} ${color} ${textAlign} ${lineHeight} ${skew} ${caps} ${regular} ${bold};
+  ${space} ${fontSize} ${fontWeight} ${color} ${textAlign} ${lineHeight} ${caps} ${regular} ${bold};
 `
 
 Text.displayName = 'Text'

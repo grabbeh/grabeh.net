@@ -1,22 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import hexRgb from 'hex-rgb'
 
 function useColors (color) {
   const [backgroundColor, setBackgroundColor] = useState('white')
   const [textColor, setTextColor] = useState('black')
 
-  function changeColors (color) {
-    setBackgroundColor(color)
-    let text = getTextColor(color)
-    setTextColor(text)
-  }
-  useEffect(() => {
-    return () => {
-      changeColors(color)
-    }
-  })
+  setBackgroundColor(color)
+  setTextColor(getTextColor(color))
 
-  return { backgroundColor, textColor }
+  return { textColor, backgroundColor }
 }
 
 export default useColors

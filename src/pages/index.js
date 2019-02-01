@@ -11,6 +11,8 @@ import FaGit from 'react-icons/lib/fa/github'
 import FaTwitter from 'react-icons/lib/fa/twitter'
 import _ from 'lodash'
 import hexRgb from 'hex-rgb'
+import colors from '../components/Colors'
+import Masonry from 'react-masonry-component'
 
 const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   let tools = allProjectsJson.edges.map(({ node }) => {
@@ -22,6 +24,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
     })
   ).sort()
 
+  let hexValues = _.values(colors)
   let posts = allPostsJson.edges.map(({ node }) => {
     return node
   })
@@ -35,14 +38,28 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
     setTextColor(text)
   }
 
+  let childItems = allProjectsJson.edges.map(
+    ({ node: { imageUrl, projectName } }, i) => {
+      return (
+        <Box position='relative' key={i} width={[1, 0.5, 1 / 4]}>
+          <Image src={imageUrl} />
+          <Box bg='yellow' position='absolute' right={0} top={0} p={1}>
+            <Text fontWeight='bold' color='black' fontSize={2}>
+              {projectName}
+            </Text>
+          </Box>
+        </Box>
+      )
+    }
+  )
+
   return (
     <Layout>
       <Box>
         <Box bg={backgroundColor}>
           <Box>
-            <Flex flexWrap='wrap'>
-              {Object.keys(colors).map((k, i) => {
-                let color = colors[k]
+            <Flex justifyContent='center' flexWrap='wrap'>
+              {hexValues.map((color, i) => {
                 return (
                   <Box
                     onClick={() => {
@@ -50,7 +67,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
                     }}
                     fontSize={5}
                     height={20}
-                    width={[0.2, 0.05]}
+                    width={[0.2, 0.04]}
                     key={i}
                     bg={color}
                   />
@@ -61,10 +78,15 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
           <Box>
             <Box pt={5} pb={4} px={3}>
               <Text color={textColor} fontWeight='bold' fontSize={5}>
-                Hi, my name's Michael, I live and work in London. 
+                Hi, my name's Michael, I live and work in London.
               </Text>
-               <Text color={textColor} fontSize={3}>In my spare time I like to <strike>craft artisanal JavaScript applications</strike> write bad JavaScript, and scour Github issues and 
-                 Stackoverflow, until my code, often for reasons I cannot fathom, runs. Currently I love using React, GraphQL, Gatsby, Next and styled-system.</Text>
+              <Text color={textColor} fontSize={3}>
+                In my spare time I like to{' '}
+                <strike>craft artisanal JavaScript applications</strike> write
+                bad JavaScript, and scour Github issues and Stackoverflow, until
+                my code, often for reasons I cannot fathom, runs. Currently I
+                love using React, GraphQL, Gatsby, Next and styled-system.
+              </Text>
             </Box>
             <Box>
               <Box pl={3} mb={1}>
@@ -73,28 +95,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
                 </Text>
               </Box>
               <Box>
-                <Flex flexWrap='wrap'>
-                  {allProjectsJson.edges.map(
-                    ({ node: { imageUrl, projectName } }, i) => {
-                      return (
-                        <Box position='relative' key={i} width={[1, 0.5, 1/4]}>
-                          <Image src={imageUrl} />
-                          <Box
-                            bg='white'
-                            position='absolute'
-                            right={0}
-                            top={0}
-                            p={2}
-                          >
-                            <Text fontWeight='bold' color='black' fontSize={2}>
-                              {projectName}
-                            </Text>
-                          </Box>
-                        </Box>
-                      )
-                    }
-                  )}
-                </Flex>
+                <Masonry>{childItems}</Masonry>
               </Box>
             </Box>
             <Box pl={3} py={3} bg='g-red'>
@@ -165,46 +166,6 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
       </Box>
     </Layout>
   )
-}
-
-const colors = {
-  katie: '#ffefd5',
-  black: '#000',
-  'near-black': '#111',
-  'dark-gray': '#333',
-  'mid-gray': '#555',
-  gray: '#777',
-  silver: '#999',
-  'light-silver': '#aaa',
-  'moon-gray': '#ccc',
-  'light-gray': '#eee',
-  'near-white': '#f4f4f4',
-  white: '#fff',
-  'dark-red': '#e7040f',
-  red: '#ff4136',
-  'light-red': '#ff725c',
-  orange: '#ff6300',
-  gold: '#ffb700',
-  yellow: '#ffd700',
-  'light-yellow': '#fbf1a9',
-  purple: '#5e2ca5',
-  'light-purple': '#a463f2',
-  'dark-pink': '#d5008f',
-  'hot-pink': '#ff41b4',
-  pink: '#ff80cc',
-  'light-pink': '#ffa3d7',
-  'dark-green': '#137752',
-  green: '#19a974',
-  'light-green': '#9eebcf',
-  navy: '#001b44',
-  'dark-blue': '#00449e',
-  blue: '#357edd',
-  'light-blue': '#96ccff',
-  'lightest-blue': '#cdecff',
-  'washed-blue': '#f6fffe',
-  'washed-green': '#e8fdf5',
-  'washed-yellow': '#fffceb',
-  'washed-red': '#ffdfdf'
 }
 
 export const query = graphql`
