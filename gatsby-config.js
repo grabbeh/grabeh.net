@@ -28,6 +28,7 @@ module.exports = {
         name: 'data'
       }
     },
+    `gatsby-plugin-styled-components`,
     `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`
   ]
