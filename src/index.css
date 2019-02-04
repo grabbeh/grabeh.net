@@ -12,8 +12,8 @@ body {
 box-shadow: 10px 10px 0px 0px rgba(47,176,255,1);
 }
 
-.off-screen {
-  margin-left: -100%;
+.dn {
+   display: none; 
 }
 
 img {
