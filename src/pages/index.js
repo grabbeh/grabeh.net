@@ -79,7 +79,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
       setBackgroundColor(savedBG)
       setTextColor(getTextColor(savedBG))
     }
-  })
+  }, [])
   
   let images = allProjectsJson.edges.map(
     ({ node: { imageUrl, projectName } }, i) => {
