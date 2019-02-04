@@ -1,6 +1,7 @@
 import React from 'react'
 import Box from './Box'
 import Text from './Text'
+import Flex from './Flex'
 import MdClose from 'react-icons/lib/md/close'
 
 const Toast = (props) =>  (
