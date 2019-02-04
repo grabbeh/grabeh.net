@@ -37,13 +37,13 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   const [job, storeJob] = useState(null)
   const [cycling, setCycling] = useState(false)
 
-  function changeColors (color) {
+  const changeColors = (color) => {
     setBackgroundColor(color)
     let text = getTextColor(color)
     setTextColor(text)
   }
 
-  function stop () {
+  const stop = () => {
     clearInterval(job)
     setCycling(false)
   }
@@ -66,7 +66,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
     }
   }
   
-  function save () {
+  const save = async () => {
     await localStorage.setItem(
       'background-color',
       JSON.stringify(backgroundColor)
