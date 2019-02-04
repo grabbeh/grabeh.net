@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react'
 import posed from 'react-pose'
 import BasicBox from './Box'
+import cn from 'classnames'
 
 
 const Box = forwardRef((props, ref) => {
-    console.log(props)
     return (
-    <div ref={ref}>
+    <div className={cn(!props.active && 'dn')} ref={ref}>
       <BasicBox {...props}/>
     </div>
   )})
