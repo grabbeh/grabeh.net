@@ -25,10 +25,11 @@ const TweenBox = posed(Box)({
 
 TweenBox.displayName = 'TweenBox'
 
-const AnimatedBox = ({ active, children }) => {
+const AnimatedBox = (props) => {
+    console.log(props)
   return (
-    <TweenBox active={active} pose={active ? 'show' : 'hide'}>
-      {children}
+    <TweenBox active={props.active} pose={props.active ? 'show' : 'hide'}>
+      {props.children}
     </TweenBox>
   )
 }
