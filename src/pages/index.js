@@ -47,13 +47,17 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
     let text = getTextColor(color)
     setTextColor(text)
   }
+  
+  const remove = () => {
+      setActiveNotification(false)
+  }
 
   const stop = () => {
     clearInterval(job)
     setCycling(false)
   }
 
-  function cycle () {
+  const cycle = () => {
     let counter = 0
     if (!cycling) {
       let job = setInterval(() => {
@@ -116,8 +120,8 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
 
   return (
     <Fragment>
-      <Slide active={active}>
-      <Toast message={notification} />
+     <Slide active={active}>
+       <Toast remove={remove} message={notification} />
     </Slide>
     <Layout>
       <Box bg={backgroundColor}>
