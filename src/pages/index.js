@@ -82,6 +82,8 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
     )
     setBackgroundColor('#FFFFFF')
     setTextColor('#000000')
+    setActiveNotification(true)
+    setNotification("Preference deleted ¬_¬")
   }
   
   const save = async () => {
@@ -90,7 +92,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
       JSON.stringify(backgroundColor)
     )
     setActiveNotification(true)
-    setNotification("Preference saved!!")
+    setNotification("Preference saved \o>")
   }
   
   useEffect(() => {
