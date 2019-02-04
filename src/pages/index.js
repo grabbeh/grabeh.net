@@ -75,9 +75,10 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   
   useEffect(() => {
     const savedBG = JSON.parse(localStorage.getItem('background-color'))
-    console.log(savedBG)
-    setBackgroundColor(savedBG)
-    setTextColor(getTextColor(savedBG))
+    if (savedBG) {
+      setBackgroundColor(savedBG)
+      setTextColor(getTextColor(savedBG))
+    }
   })
   
   let images = allProjectsJson.edges.map(
