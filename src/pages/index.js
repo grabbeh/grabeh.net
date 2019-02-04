@@ -85,7 +85,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   return (
     <Layout>
       <Box bg={backgroundColor}>
-        <Box maxWidth={1200}>
+        <Box>
           <Flex justifyContent='center' flexWrap='wrap'>
             {hexValues.map((color, i) => {
               return (
@@ -114,7 +114,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
           </Flex>
         </Box>
 
-        <Box>
+        <Box maxWidth={1200}>
           <Box pt={5} pb={4} px={3}>
             <Text color={textColor} fontWeight='bold' fontSize={5}>
               Hi, my name's Michael, I live and work in London.
