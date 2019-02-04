@@ -3,13 +3,11 @@ import posed from 'react-pose'
 import BasicBox from './Box'
 
 
-const Box = forwardRef((props, ref) => {
-    console.log(props)
-    return (
+const Box = forwardRef((props, ref) => (
     <div ref={ref}>
       <BasicBox {...props}/>
     </div>
-  )})
+  ))
 
 
 const TweenBox = posed(Box)({
@@ -27,13 +25,10 @@ const TweenBox = posed(Box)({
 
 TweenBox.displayName = 'TweenBox'
 
-const AnimatedBox = (props) => {
-    console.log(props)
-  return (
+const AnimatedBox = (props) => (
     <TweenBox active={props.active} pose={props.active ? 'show' : 'hide'}>
       {props.children}
     </TweenBox>
   )
-}
 
 export default AnimatedBox
