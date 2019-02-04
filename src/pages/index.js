@@ -66,6 +66,15 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
     }
   }
   
+  const trash = async () => {
+    await localStorage.setItem(
+      'background-color',
+      JSON.stringify('#FFFFFF')
+    )
+    setBackgroundColor('#FFFFFF')
+    setTextColor('#000000')
+  }
+  
   const save = async () => {
     await localStorage.setItem(
       'background-color',
