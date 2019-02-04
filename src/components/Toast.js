@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from './Box'
 import Text from './Text'
-import MdClose from 'react-icons/md/close'
+import MdClose from 'react-icons/lib/md/close'
 
 const Toast = (props) =>  (
   <Box zIndex={999} p={3} bg='yellow' position='absolute' top={10} right={10}>
