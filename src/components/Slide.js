@@ -7,7 +7,7 @@ const Box = forwardRef((props, ref) => (
     <div ref={ref}>
       <BasicBox />
     </div>
-  )
+  ))
 
 
 const TweenBox = posed(Box)({
