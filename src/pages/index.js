@@ -11,6 +11,7 @@ import FaGit from 'react-icons/lib/fa/github'
 import FaTwitter from 'react-icons/lib/fa/twitter'
 import FaPlay from 'react-icons/lib/fa/play'
 import FaStop from 'react-icons/lib/fa/stop'
+import MdSave from 'react-icons/lib/md/save'
 import _ from 'lodash'
 import hexRgb from 'hex-rgb'
 import colors from '../components/Colors'
@@ -64,7 +65,21 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
       setCycling(true)
     }
   }
-
+  
+  function save () {
+    await localStorage.setItem(
+      'background-color',
+      JSON.stringify(backgroundColor)
+    )
+  }
+  
+  useEffect(() => {
+    const savedBG = JSON.parse(localStorage.getItem('background-color'))
+    console.log(savedBG)
+    setBackgroundColor(savedBG)
+    setTextColor(getTextColor(savedBG))
+  })
+  
   let images = allProjectsJson.edges.map(
     ({ node: { imageUrl, projectName } }, i) => {
       return (
@@ -109,6 +124,11 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
             <Box ml={3} onClick={stop} height={20}>
               <Text color={textColor}>
                 <FaStop />
+              </Text>
+            </Box>
+             <Box ml={3} onClick={save} height={20}>
+              <Text color={textColor}>
+                <MdSave />
               </Text>
             </Box>
           </Flex>
