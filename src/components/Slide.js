@@ -3,11 +3,13 @@ import posed from 'react-pose'
 import BasicBox from './Box'
 
 
-const Box = forwardRef((props, ref) => (
+const Box = forwardRef((props, ref) => {
+    console.log(props)
+    return (
     <div ref={ref}>
       <BasicBox {...props}/>
     </div>
-  ))
+  )})
 
 
 const TweenBox = posed(Box)({
