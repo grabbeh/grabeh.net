@@ -11,6 +11,7 @@ import FaGit from 'react-icons/lib/fa/github'
 import FaTwitter from 'react-icons/lib/fa/twitter'
 import FaPlay from 'react-icons/lib/fa/play'
 import FaStop from 'react-icons/lib/fa/stop'
+import FaTrash from 'react-icons/lib/fa/trash'
 import MdSave from 'react-icons/lib/md/save'
 import _ from 'lodash'
 import hexRgb from 'hex-rgb'
@@ -139,6 +140,11 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
              <Box ml={3} onClick={save} height={20}>
               <Text color={textColor}>
                 <MdSave />
+              </Text>
+            </Box>
+            <Box ml={3} onClick={trash} height={20}>
+              <Text color={textColor}>
+                <FaTrash />
               </Text>
             </Box>
           </Flex>
