@@ -5,9 +5,7 @@ import BasicBox from './Box'
 
 const Box = forwardRef((props, ref) => (
     <div ref={ref}>
-      <BasicBox>
-        {children}
-      </BasicBox>
+      <BasicBox />
     </div>
   )
 
