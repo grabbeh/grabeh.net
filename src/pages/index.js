@@ -17,6 +17,8 @@ import _ from 'lodash'
 import hexRgb from 'hex-rgb'
 import colors from '../components/Colors'
 import Masonry from 'react-masonry-component'
+import Slide from '../components/Slide'
+import Toast from '../components/Toast'
 
 const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   let tools = allProjectsJson.edges.map(({ node }) => {
@@ -37,6 +39,8 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   const [textColor, setTextColor] = useState('black')
   const [job, storeJob] = useState(null)
   const [cycling, setCycling] = useState(false)
+  const [active, setActiveNotification] = useState(false)
+  const [notification, setNotification] = useState(null)
 
   const changeColors = (color) => {
     setBackgroundColor(color)
@@ -81,6 +85,8 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
       'background-color',
       JSON.stringify(backgroundColor)
     )
+    setActiveNotification(true)
+    setNotification("Preference saved!!")
   }
   
   useEffect(() => {
@@ -109,6 +115,10 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   )
 
   return (
+    <Fragment>
+      <Slide active={active}>
+      <Toast message={notification} />
+    </Slide>
     <Layout>
       <Box bg={backgroundColor}>
         <Box>
@@ -243,6 +253,7 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
         </Box>
       </Box>
     </Layout>
+</Fragment>
   )
 }
 
