@@ -5,11 +5,10 @@ import Flex from './Flex'
 import MdClose from 'react-icons/lib/md/close'
 
 const Toast = (props) =>  (
-
     <Box zIndex={999}  p={3} bg='yellow' position='absolute' top={10} right={10}>
       <Flex flexWrap='wrap'>
       <Flex justifyContent='flex-start'>
-        <Box p={3} width={0.8}>
+        <Box width={0.8}>
            <Text color='black' fontWeight='bold' fontSize={4}>{props.message}</Text>
         </Box>
         </Flex>
