@@ -15,7 +15,7 @@ const Slide = posed(Box)({
   },
   hide: {
     opacity: 0,
-    y: -200
+    y: -1000
   }
 })
 

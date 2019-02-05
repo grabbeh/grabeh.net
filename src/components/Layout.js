@@ -3,15 +3,17 @@ import Helmet from 'react-helmet'
 import '../index.css'
 import '../react.css'
 
-const Layout = ({ children }) => (
-  <div>
-    <Helmet>
-      <meta charSet='utf-8' />
-      <meta name='viewport' content='width=device-width' />
-      <title>mbg.codes</title>
-    </Helmet>
-    <div>{children}</div>
-  </div>
-)
+const Layout = props => {
+  return (
+    <div>
+      <Helmet>
+        <meta charSet='utf-8' />
+        <meta name='viewport' content='width=device-width' />
+        <title>mbg.codes</title>
+      </Helmet>
+      <div>{props.children}</div>
+    </div>
+  )
+}
 
 export default Layout

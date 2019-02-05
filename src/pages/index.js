@@ -47,9 +47,10 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   const [project, setProject] = useState(null)
 
   const changeColors = color => {
-    setBackgroundColor(color)
-    let text = getTextColor(color)
-    setTextColor(text)
+    if (color !== backgroundColor) {
+      setBackgroundColor(color)
+      setTextColor(getTextColor(color))
+    }
   }
 
   const remove = () => {
@@ -97,12 +98,15 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   }
 
   const save = async () => {
-    await localStorage.setItem(
-      'background-color',
-      JSON.stringify(backgroundColor)
-    )
-    setActiveNotification(true)
-    setNotification('Preference saved o>')
+    const saved = JSON.parse(localStorage.getItem('background-color'))
+    if (saved !== backgroundColor) {
+      await localStorage.setItem(
+        'background-color',
+        JSON.stringify(backgroundColor)
+      )
+      setActiveNotification(true)
+      setNotification('Preference saved!')
+    }
   }
 
   useEffect(() => {
@@ -134,16 +138,20 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
     )
   })
 
-  return (
-    <Fragment>
-      <ToastSlide active={activeNotification}>
-        <Toast remove={remove} message={notification} />
-      </ToastSlide>
-      <SideBarSlide active={activeSideBar}>
-        <SlideContent toggle={toggle} project={project} />
-      </SideBarSlide>
+  const FullSlide = () => (
+    <SideBarSlide active={activeSideBar}>
+      <SlideContent toggle={toggle} project={project} />
+    </SideBarSlide>
+  )
 
+  return (
+    
       <Layout>
+        <Fragment>
+        <ToastSlide active={activeNotification}>
+          <Toast remove={remove} message={notification} />
+        </ToastSlide>
+
         <Box bg={backgroundColor}>
           <Box>
             <Flex justifyContent='center' flexWrap='wrap'>
@@ -276,8 +284,9 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
             </Box>
           </Box>
         </Box>
+        </Fragment>
       </Layout>
-    </Fragment>
+   
   )
 }
 
