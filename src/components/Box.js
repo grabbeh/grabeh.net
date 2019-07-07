@@ -1,37 +1,21 @@
 import styled from 'styled-components'
-import {
-  space,
-  width,
-  height,
-  color,
-  fontSize,
-  fontFamily,
-  fontWeight,
-  borders,
-  borderColor,
-  borderRadius,
-  maxWidth,
-  minHeight,
-  minWidth,
-  size,
-  position,
-  top,
-  right,
-  bottom,
-  left,
-  zIndex
-} from 'styled-system'
+import { layout, space, shadow, position, color, border } from 'styled-system'
+import propTypes from '@styled-system/prop-types'
 import * as React from 'react'
 import PropTypes from 'prop-types'
 import theme from './theme'
 
-const boxShadow = props => ({
-  boxShadow: `${props.theme.boxShadow[props.boxShadow]}`
-})
-
-const StyledBox = styled.div`
-  ${boxShadow} ${borders} ${space} ${size} ${maxWidth} ${minWidth} ${minHeight} ${width} ${height} ${fontWeight} ${fontSize} ${fontFamily} ${color} ${borderRadius} ${position} ${top} ${bottom} ${left} ${right} ${zIndex} ${borderColor};
-`
+const StyledBox = styled('div')(
+  {
+    boxSizing: 'border-box'
+  },
+  space,
+  shadow,
+  layout,
+  color,
+  border,
+  position
+)
 
 // To recognise propTypes, we have to create new Box to wrap StyledBox
 const Box = props => {
@@ -51,18 +35,11 @@ Box.defaultProps = {
 }
 
 Box.propTypes = {
-  ...space.PropTypes,
-  ...borders.PropTypes,
-  ...color.propTypes,
-  ...width.propTypes,
-  ...fontSize.propTypes,
-  ...size.propTypes,
-  ...position.propTypes,
-  borderColor: numberStringOrArray,
-  boxShadow: numberStringOrArray,
-  fontWeight: numberStringOrArray,
-  height: numberStringOrArray,
-  borderRadius: PropTypes.number
+  ...propTypes.space,
+  ...propTypes.border,
+  ...propTypes.color,
+  ...propTypes.layout,
+  ...propTypes.position
 }
 
 export default Box

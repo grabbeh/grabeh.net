@@ -7,13 +7,8 @@ import ExternalLink from '../components/ExternalLink'
 import StyledLink from '../components/Link'
 import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
-import FaGit from 'react-icons/lib/fa/github'
-import FaTwitter from 'react-icons/lib/fa/twitter'
-import FaPlay from 'react-icons/lib/fa/play'
-import FaStop from 'react-icons/lib/fa/stop'
-import FaTrash from 'react-icons/lib/fa/trash'
-import MdClose from 'react-icons/lib/md/close'
-import MdSave from 'react-icons/lib/md/save'
+import { FaPlay, FaTwitter, FaGit, FaStop, FaTrash } from 'react-icons/fa'
+import { MdClose, MdSave } from 'react-icons/md'
 import _ from 'lodash'
 import hexRgb from 'hex-rgb'
 import colors from '../components/Colors'
@@ -145,9 +140,8 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
   )
 
   return (
-    
-      <Layout>
-        <Fragment>
+    <Layout>
+      <Fragment>
         <ToastSlide active={activeNotification}>
           <Toast remove={remove} message={notification} />
         </ToastSlide>
@@ -284,9 +278,8 @@ const Example = ({ data: { allProjectsJson, allPostsJson } }) => {
             </Box>
           </Box>
         </Box>
-        </Fragment>
-      </Layout>
-   
+      </Fragment>
+    </Layout>
   )
 }
 

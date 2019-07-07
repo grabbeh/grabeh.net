@@ -1,33 +1,16 @@
 import styled from 'styled-components'
-import {
-  space,
-  width,
-  color,
-  alignItems,
-  justifyContent,
-  flexWrap,
-  flexDirection,
-  propTypes
-} from 'styled-system'
+import { flexbox } from 'styled-system'
+import propTypes from '@styled-system/prop-types'
 import theme from './theme'
 
-const Flex = styled.div`
-  display: flex;
-  ${space} ${width} ${color} ${alignItems} ${justifyContent} ${flexWrap} ${flexDirection};
-`
+const Flex = styled('div')({ display: 'flex' }, flexbox)
 
 Flex.defaultProps = {
   theme
 }
 
 Flex.propTypes = {
-  ...propTypes.space,
-  ...propTypes.width,
-  ...propTypes.color,
-  ...propTypes.alignItems,
-  ...propTypes.justifyContent,
-  ...propTypes.flexWrap,
-  ...propTypes.flexDirection
+  ...propTypes.flexbox
 }
 
 Flex.displayName = 'Flex'
