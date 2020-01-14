@@ -7,6 +7,8 @@ import theme from '../../gatsby-plugin-theme-ui/index'
 import '../index.css'
 import { Link, Box, Flex } from '../components/general'
 import { List, ListItem, OrderedList, Table } from '../components/mdx'
+require('typeface-source-serif-pro')
+require('typeface-source-sans-pro')
 
 const components = {
   a: Link,
@@ -34,7 +36,7 @@ const Wrapper = props => {
       </Helmet>
       <Global styles={styles} />
       <ThemeProvider components={components} theme={theme}>
-        <Box bg='yellow'>
+        <Box bg='light-blue'>
           <Flex justifyContent='center'>
             <Box maxWidth={1024} width={1} px={[2, 3]}>
               {props.children}

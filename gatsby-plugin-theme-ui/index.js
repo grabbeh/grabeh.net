@@ -98,8 +98,7 @@ export default {
   },
   radii: [0, 2, 4, 16, 9999, '100%'],
   fonts: {
-    heading:
-      'Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+    heading: 'Source Sans Pro',
     body:
       'Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'
   },
@@ -120,9 +119,11 @@ export default {
     heavy: '90px'
   },
   styles: {
+    div: {},
     p: {
-      ...BodyText,
-      color: 'dark-gray'
+      fontFamily: 'body',
+      color: 'dark-gray',
+      fontSize: 4
     },
     h1: {
       fontSize: 8,
