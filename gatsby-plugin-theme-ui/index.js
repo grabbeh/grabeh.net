@@ -1,47 +1,20 @@
-const theme = {
-  breakpoints: ['32em', '48em', '64em'],
+import prism from '@theme-ui/prism/presets/prism.json'
+
+const Heading = {
+  fontFamily: 'heading',
+  fontWeight: 'bold',
+  mt: 4,
+  mb: 2
+}
+
+const BodyText = {
+  fontFamily: 'body'
+}
+
+export default {
+  breakpoints: ['40em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  fontSizes: [8, 12, 16, 20, 24, 36, 48, 80, 96],
-  fontWeights: { bold: 700 },
-  borderWidths: [0, 1, 2, 4, 8, 16, 32],
-  radii: [0, 2, 4, 16, 9999, '100%'],
-  fonts: {
-    serif: 'athelas, georgia, times, serif',
-    sansSerif:
-      "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif"
-  },
-  rotation: [45, 90, 120, 150],
-  skew: [5, 10, 15, 20, 25, 30],
-  boxShadow: [
-    `0 0 2px 0 rgba(0,0,0,.08),0 1px 4px 0 rgba(0,0,0,.16)`,
-    `0 0 2px 0 rgba(0,0,0,.08),0 2px 8px 0 rgba(0,0,0,.16)`,
-    `0 0 2px 0 rgba(0,0,0,.08),0 4px 16px 0 rgba(0,0,0,.16)`,
-    `0 0 2px 0 rgba(0,0,0,.08),0 8px 32px 0 rgba(0,0,0,.16)`
-  ],
-  duration: {
-    fast: `150ms`,
-    normal: `300ms`,
-    slow: `450ms`,
-    slowest: `600ms`
-  },
-  timingFunctions: {
-    easeInOut: 'cubic-bezier(0.5, 0, 0.25, 1)',
-    easeOut: 'cubic-bezier(0, 0, 0.25, 1)',
-    easeIn: 'cubic-bezier(0.5, 0, 1, 1)'
-  },
-  transitionDelays: {
-    small: `60ms`,
-    medium: `160ms`,
-    large: `260ms`,
-    xLarge: `360ms`
-  },
   colors: {
-    'g-pink': '#F0DBBC',
-    'g-red': '#FF6A56',
-    petrol: '#31505F',
-    'light-petrol': '#415C69',
-    'go-orange': '#C77038',
-    'go-light-peach': '#FDF1E3',
     katie: 'papayawhip',
     black: '#000',
     'near-black': '#111',
@@ -104,7 +77,78 @@ const theme = {
     'washed-green': '#e8fdf5',
     'washed-yellow': '#fffceb',
     'washed-red': '#ffdfdf'
+  },
+  modes: {
+    white: {
+      color: '#37AEE3',
+      bg: '#fff'
+    },
+    light: {
+      color: '#37AEE3',
+      bg: '#F9F9F9'
+    },
+    blue: {
+      color: '#fff',
+      bg: '#37AEE3'
+    },
+    green: {
+      color: '#fff',
+      bg: '#00A880'
+    }
+  },
+  radii: [0, 2, 4, 16, 9999, '100%'],
+  fonts: {
+    heading:
+      "'Source Serif Pro', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+    body:
+      "'Source Sans Pro', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
+  },
+  fontSizes: [12, 14, 16, 18, 22, 26, 36, 48, 60, 72, 100],
+  fontWeights: {
+    light: 250,
+    body: 300,
+    subtitle: 600,
+    bold: 700,
+    heavy: 900
+  },
+  lineHeights: {
+    text: '24px',
+    subtitle: '30px',
+    medium: '36px',
+    tagline: '46px',
+    heading: '68px',
+    heavy: '90px'
+  },
+  styles: {
+    p: {
+      ...BodyText,
+      color: 'dark-gray'
+    },
+    h1: {
+      fontSize: 8,
+      textDecoration: 'underline',
+      textDecorationColor: 'red',
+      ...Heading
+    },
+    h2: {
+      fontSize: 6,
+      ...Heading
+    },
+    h3: {
+      fontSize: 4,
+      ...Heading
+    },
+    code: {
+      p: 3,
+      mt: 3,
+      overflowX: 'auto',
+      fontSize: 3
+    },
+    pre: {
+      ...prism
+    },
+    a: {
+      color: 'blue'
+    }
   }
 }
-
-export default theme

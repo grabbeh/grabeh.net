@@ -21,6 +21,16 @@ module.exports = {
         name: 'markdown-pages'
       }
     },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`
+      }
+    },
+    `gatsby-plugin-mdx`,
+    'gatsby-plugin-theme-ui',
     {
       resolve: `gatsby-source-filesystem`,
       options: {

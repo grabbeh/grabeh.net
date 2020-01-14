@@ -1,13 +1,9 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { flexbox } from 'styled-system'
+import Box from './Box'
 import propTypes from '@styled-system/prop-types'
-import theme from './theme'
 
-const Flex = styled('div')({ display: 'flex' }, flexbox)
-
-Flex.defaultProps = {
-  theme
-}
+const Flex = styled(Box)({ display: 'flex' }, flexbox)
 
 Flex.propTypes = {
   ...propTypes.flexbox

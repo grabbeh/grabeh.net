@@ -1,5 +1,16 @@
 [
   {
+    "projectName": "License checker",
+    "description": "Recursively map over package.json dependencies to get license information",
+    "siteUrl": "https://license-checker.mbg.codes",
+    "tools": [
+      {
+        "tool": "Next.js"
+      }
+    ],
+    "id": 12
+  },
+  {
     "projectName": "Shipper",
     "description": "Shipper can extract the good content from your favourited tweets and email it to you",
     "imageUrl": "/shipper.png",

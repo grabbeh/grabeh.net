@@ -1,10 +1,8 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { layout, space, shadow, position, color, border } from 'styled-system'
 import propTypes from '@styled-system/prop-types'
-import * as React from 'react'
-import theme from './theme'
 
-const StyledBox = styled('div')(
+const Box = styled('div')(
   {
     boxSizing: 'border-box'
   },
@@ -16,16 +14,7 @@ const StyledBox = styled('div')(
   position
 )
 
-// To recognise propTypes, we have to create new Box to wrap StyledBox
-const Box = props => {
-  return <StyledBox {...props}>{props.children}</StyledBox>
-}
-
 Box.displayName = 'Box'
-
-Box.defaultProps = {
-  theme: theme
-}
 
 Box.propTypes = {
   ...propTypes.space,
