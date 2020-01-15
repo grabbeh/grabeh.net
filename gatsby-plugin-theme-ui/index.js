@@ -122,7 +122,6 @@ export default {
     div: {},
     p: {
       fontFamily: 'body',
-      color: 'dark-gray',
       fontSize: 4
     },
     h1: {
