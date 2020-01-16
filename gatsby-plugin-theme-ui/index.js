@@ -175,7 +175,7 @@ export default {
       fontFamily: 'heading',
       fontWeight: 'bold',
       fontSize: 6,
-      textDecoration: 'red underline'
+      textDecoration: 'underline red'
     }
   }
 }
