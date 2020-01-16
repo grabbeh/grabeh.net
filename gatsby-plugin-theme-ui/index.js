@@ -14,6 +14,9 @@ const BodyText = {
 export default {
   breakpoints: ['40em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  sizes: {
+    container: 1024
+  },
   colors: {
     katie: 'papayawhip',
     black: '#000',
@@ -122,7 +125,6 @@ export default {
     div: {},
     p: {
       fontFamily: 'body',
-      color: 'dark-gray',
       fontSize: 4
     },
     h1: {
@@ -150,6 +152,30 @@ export default {
     },
     a: {
       color: 'blue'
+    }
+  },
+  cards: {
+    primary: {
+      py: 3
+    }
+  },
+  badges: {
+    primary: {
+      bg: 'dark-blue',
+      color: 'white',
+      flex: '0 0 auto',
+      flexWrap: 'wrap',
+      mb: 2,
+      p: 2,
+      mr: 2
+    }
+  },
+  text: {
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'bold',
+      fontSize: 6,
+      textDecoration: 'red underline'
     }
   }
 }

@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
@@ -5,8 +7,9 @@ import { Global } from '@emotion/core'
 import { ThemeProvider, css } from 'theme-ui'
 import theme from '../../gatsby-plugin-theme-ui/index'
 import '../index.css'
-import { Link, Box, Flex } from '../components/general'
+import { Link, Box } from '../components/general'
 import { List, ListItem, OrderedList, Table } from '../components/mdx'
+import { Container } from '@theme-ui/components'
 require('typeface-source-serif-pro')
 require('typeface-source-sans-pro')
 
@@ -37,11 +40,9 @@ const Wrapper = props => {
       <Global styles={styles} />
       <ThemeProvider components={components} theme={theme}>
         <Box bg='light-blue'>
-          <Flex justifyContent='center'>
-            <Box maxWidth={1024} width={1} px={[2, 3]}>
-              {props.children}
-            </Box>
-          </Flex>
+          <Container sx={{ width: '1', px: [2, 3] }}>
+            {props.children}
+          </Container>
         </Box>
       </ThemeProvider>
     </Fragment>
