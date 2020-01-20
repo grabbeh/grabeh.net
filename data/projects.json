@@ -16,7 +16,6 @@
     "description": "Shipper can extract the good content from your favourited tweets and email it to you",
     "imageUrl": "/shipper.png",
     "sourceUrl": "https://github.com/grabbeh/shipper",
-    "siteUrl": "http://shipper.grabeh.net/",
     "longDescription": "I frequently use favouriting tweets as a way to bookmark content and store for future reference. The only problem is I rarely go back and unfortunately tweet to brain osmosis is not a thing yet. I struck upon the idea of generating weekly emails with content from my favourited tweets as a way to have great content in my inbox.",
     "tools": [
       {
@@ -102,7 +101,7 @@
     "description": "Open source contract management platform. Like an Excel spreadsheet with less functionality but marginally prettier.",
     "imageUrl": "/attest.png",
     "sourceUrl": "https://github.com/grabbeh/attest",
-    "siteUrl": "https://tryattest.com",
+    "siteUrl": "https://attest.mbg.codes",
     "longDescription": "Contracts are like a flock of sheep. On occasion they can exude a pungent smell. Oh, and they can benefit from someone keeping an eye on them! Many people historically use Excel spreadsheets. However it's 2018 and organisations should be introducing additional points of failure into their organisation. Consequently I decided to create Attest, an open source contract management platform. Oh, and if you want, you can self-host it and build on top of it to your heart's delight because it's licensed under Apache 2.0.",
     "tools": [
       {
