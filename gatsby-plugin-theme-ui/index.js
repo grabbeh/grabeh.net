@@ -1,14 +1,10 @@
 import prism from '@theme-ui/prism/presets/prism.json'
 
 const Heading = {
+  color: 'donut',
   fontFamily: 'heading',
   fontWeight: 'bold',
-  mt: 4,
-  mb: 2
-}
-
-const BodyText = {
-  fontFamily: 'body'
+  my: 0
 }
 
 export default {
@@ -18,6 +14,7 @@ export default {
     container: 1024
   },
   colors: {
+    donut: '#1a102e',
     katie: 'papayawhip',
     black: '#000',
     'near-black': '#111',
@@ -62,7 +59,7 @@ export default {
     gold: '#ffb700',
     yellow: '#ffd700',
     'light-yellow': '#fbf1a9',
-    purple: '#5e2ca5',
+    purple: '#946dff',
     'light-purple': '#a463f2',
     'dark-pink': '#d5008f',
     'hot-pink': ' #ff41b4',
@@ -70,12 +67,13 @@ export default {
     'light-pink': '#ffa3d7',
     'dark-green': '#137752',
     green: '#19a974',
-    'light-green': '#9eebcf',
+    'light-green': '#6dffa8',
     navy: '#001b44',
     'dark-blue': '#00449e',
     blue: '#357edd',
     'light-blue': '#96ccff',
     'lightest-blue': '#cdecff',
+    turquoise: '#6de2ff',
     'washed-blue': '#f6fffe',
     'washed-green': '#e8fdf5',
     'washed-yellow': '#fffceb',
@@ -101,9 +99,10 @@ export default {
   },
   radii: [0, 2, 4, 16, 9999, '100%'],
   fonts: {
-    heading: 'Source Sans Pro',
+    heading:
+      'Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
     body:
-      'Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'
+      'Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'
   },
   fontSizes: [12, 14, 16, 18, 22, 26, 36, 48, 60, 72, 100],
   fontWeights: {
@@ -125,20 +124,16 @@ export default {
     div: {},
     p: {
       fontFamily: 'body',
-      fontSize: 4
+      fontSize: 5,
+      color: 'donut'
     },
     h1: {
-      fontSize: 8,
-      textDecoration: 'underline',
-      textDecorationColor: 'red',
       ...Heading
     },
     h2: {
-      fontSize: 6,
       ...Heading
     },
     h3: {
-      fontSize: 4,
       ...Heading
     },
     code: {
@@ -151,31 +146,30 @@ export default {
       ...prism
     },
     a: {
-      color: 'blue'
+      color: 'donut'
     }
   },
   cards: {
-    primary: {
-      py: 3
-    }
-  },
-  badges: {
-    primary: {
-      bg: 'dark-blue',
-      color: 'white',
-      flex: '0 0 auto',
-      flexWrap: 'wrap',
-      mb: 2,
-      p: 2,
-      mr: 2
-    }
+    primary: {}
   },
   text: {
     heading: {
       fontFamily: 'heading',
       fontWeight: 'bold',
-      fontSize: 6,
-      textDecoration: 'underline red'
+      fontSize: 4
+    }
+  },
+  links: {
+    a: {
+      color: 'donut'
+    },
+    bold: {
+      fontWeight: 'bold'
+    },
+    nav: {
+      fontWeight: 'bold',
+      color: 'inherit',
+      textDecoration: 'none'
     }
   }
 }

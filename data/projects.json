@@ -2,6 +2,7 @@
   {
     "projectName": "License checker",
     "description": "Recursively map over package.json dependencies to get license information",
+    "sourceUrl": "https://github.com/grabbeh/license-checker-next",
     "siteUrl": "https://license-checker.mbg.codes",
     "tools": [
       {
