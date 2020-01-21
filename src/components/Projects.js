@@ -15,7 +15,7 @@ const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
     >
       {projectName}
     </Text>
-    <Flex sx={{pb: 2, flexWrap: 'wrap', justifyContent:'flex-end'}}>
+    <Flex sx={{pb: 2, flexWrap: 'wrap' }}>
   {tools.map(t => (
     <Text sx={{ mr: 3, fontSize: 1, fontFamily:'body', color:'dark-gray', fontWeight:'bold', textTransform:'uppercase'}}>{t.tool}</Text>
   ))}
@@ -26,7 +26,7 @@ const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
       </Text>
     </Box>
 
-    <Flex sx={{ flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+    <Flex sx={{ flexWrap: 'wrap' }}>
       {siteUrl && (
         <Box sx={{ mr: 3 }}>
           <Link sx={{ fontSize: 6 }} href={siteUrl}>
