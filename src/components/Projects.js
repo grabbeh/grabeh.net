@@ -15,7 +15,7 @@ const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
     >
       {projectName}
     </Text>
-    <Flex sx={{pb: 2, flexWrap: 'wrap'}}>
+    <Flex sx={{pb: 2, flexWrap: 'wrap', justifyContent:'flex-end'}}>
   {tools.map(t => (
     <Text sx={{ mr: 3, fontSize: 1, fontFamily:'body', color:'dark-gray', fontWeight:'bold', textTransform:'uppercase'}}>{t.tool}</Text>
   ))}
