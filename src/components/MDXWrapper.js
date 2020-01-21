@@ -38,7 +38,7 @@ const Wrapper = props => {
       </Helmet>
       <Global styles={styles} />
       <ThemeProvider components={components} theme={theme}>
-        <Box bg='light-blue'>
+        <Box bg='light-green'>
           <Container sx={{ width: '1', height: '100%', p: [2, 5] }}>
             {props.children}
           </Container>
