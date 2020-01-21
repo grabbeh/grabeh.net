@@ -17,7 +17,7 @@ const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
     </Text>
     <Flex sx={{pb: 2, flexWrap: 'wrap'}}>
   {tools.map(t => (
-    <Text sx={{ mr: 3, fontSize: 1, fontFamily:'body', color:'donut', fontWeight:'bold', textTransform:'uppercase'}}>{t.tool}</Text>
+    <Text sx={{ mr: 3, fontSize: 1, fontFamily:'body', color:'dark-gray', fontWeight:'bold', textTransform:'uppercase'}}>{t.tool}</Text>
   ))}
   </Flex>
     <Box sx={{ mb: 3 }}>
