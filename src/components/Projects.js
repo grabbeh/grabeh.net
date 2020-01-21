@@ -26,7 +26,7 @@ const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
       </Text>
     </Box>
 
-    <Flex sx={{ flexWrap: 'wrap' }}>
+    <Flex sx={{ flexWrap: 'wrap', justifyContent: 'flex-end' }}>
       {siteUrl && (
         <Box sx={{ mr: 3 }}>
           <Link sx={{ fontSize: 6 }} href={siteUrl}>
