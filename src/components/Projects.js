@@ -20,7 +20,7 @@ const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
     <Text sx={{ mr: 3, fontSize: 1, fontFamily:'body', color:'donut', fontWeight:'bold', textDecoration:'underline'}}>{t.tool}</Text>
   ))}
   </Flex>
-    <Box sx={{ mb: 3 }}>
+    <Box sx={{ pb:2, mb: 3 }}>
       <Text sx={{ fontSize: 4, color: 'dark-gray', fontFamily: 'body' }}>
         {description}
       </Text>
