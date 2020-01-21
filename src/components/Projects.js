@@ -21,7 +21,7 @@ const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
   ))}
   </Flex>
     <Box sx={{ mb: 3 }}>
-      <Text sx={{ fontSize: 4, color: 'dark-gray', fontFamily: 'body' }}>
+      <Text sx={{ pb:1, fontSize: 4, color: 'dark-gray', fontFamily: 'body' }}>
         {description}
       </Text>
     </Box>
