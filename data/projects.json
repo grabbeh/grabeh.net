@@ -49,7 +49,7 @@
   },
   {
     "projectName": "React-contracts",
-    "description": "Write contracts using React (it made sense at the time). Contracts in code can help to minimise duplication, keep on top of boilerplate and facilitate non-legal teams work on contracts whilst still giving legal control.",
+    "description": "Write contracts using React (it made sense at the time)",
     "imageUrl": "/react.PNG",
     "sourceUrl": "https://github.com/grabbeh/react-contracts",
     "longDescription": "React helps to separate data from boilerplate and so I thought it would be interesting to experiment with how that could be applied to the world of contracts.",

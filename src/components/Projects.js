@@ -5,9 +5,22 @@ import { GoMarkGithub, GoHome } from 'react-icons/go'
 
 const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
   <Card variant='primary'>
-    <Text sx={{ fontSize: 7, fontWeight: 'bold', fontFamily: 'heading' }}>
+    <Text
+      sx={{
+        fontSize: 7,
+        fontStyle: 'italic',
+        fontWeight: 'bold',
+        fontFamily: 'heading'
+      }}
+    >
       {projectName}
     </Text>
+    <Box sx={{ mb: 3 }}>
+      <Text sx={{ fontSize: 4, color: 'dark-gray', fontFamily: 'body' }}>
+        {description}
+      </Text>
+    </Box>
+
     <Flex sx={{ flexWrap: 'wrap' }}>
       {siteUrl && (
         <Box sx={{ mr: 3 }}>
