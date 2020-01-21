@@ -17,7 +17,7 @@ const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
     </Text>
     <Box>
   {tools.map(t => {
-    <Text sx={{fontSize: 2, textDecoration:'underline'}}>{t.tool}</Text>
+    <Text sx={{fontSize: 2, fontWeight:'bold', textDecoration:'underline'}}>{t.tool}</Text>
   })}
   </Box>
     <Box sx={{ mb: 3 }}>
