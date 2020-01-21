@@ -1,8 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import { Box, Flex } from '../components/general'
-import { Text } from '../components/typography'
+import { Box, Flex, Text } from '@theme-ui/components'
 
 const PostTemplate = props => {
   const { markdownRemark } = props.data
@@ -12,20 +11,22 @@ const PostTemplate = props => {
   return (
     <Layout>
       <Box>
-        <Flex justifyContent='center'>
-          <Box mt={2} p={3} width={[1, 0.8, 0.6]} maxWidth={1200}>
-            <Text color='black' fontSize={5} fontWeight='bold'>
+        <Flex sx={{ justifyContent: 'center' }}>
+          <Box sx={{ mt: 2, p: 3, width: [1, 0.8, 0.6], maxWidth: 1200 }}>
+            <Text sx={{ color: 'black', fontSize: 5, fontWeight: 'bold' }}>
               {title}
             </Text>
             {date && (
-              <Flex justifyContent='flex-end'>
-                <Box mt={2}>{date}</Box>
+              <Flex sx={{ justifyContent: 'flex-end' }}>
+                <Box sx={{ mt: 2 }}>{date}</Box>
               </Flex>
             )}
             <Text
-              color='dark-gray'
-              lineHeight='1.5'
-              fontSize={3}
+              sx={{
+                color: 'dark-gray',
+                lineHeight: '1.5',
+                fontSize: 3
+              }}
               dangerouslySetInnerHTML={{ __html: html }}
             />
           </Box>

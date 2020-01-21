@@ -7,18 +7,8 @@ import { Global } from '@emotion/core'
 import { ThemeProvider, css } from 'theme-ui'
 import theme from '../../gatsby-plugin-theme-ui/index'
 import '../index.css'
-import { Link } from '../components/general'
-import { List, ListItem, OrderedList, Table } from '../components/mdx'
 import { Container, Box } from '@theme-ui/components'
 require('typeface-nunito')
-
-const components = {
-  a: Link,
-  ol: OrderedList,
-  table: Table,
-  ul: List,
-  li: ListItem
-}
 
 const styles = css`
   * {
@@ -35,10 +25,11 @@ const Wrapper = props => {
     <Fragment>
       <Helmet>
         <html lang='en' />
+        <title>mbg.codes</title>
       </Helmet>
       <Global styles={styles} />
-      <ThemeProvider components={components} theme={theme}>
-        <Box bg='light-green'>
+      <ThemeProvider theme={theme}>
+        <Box bg='turquoise'>
           <Container sx={{ width: '1', height: '100%', p: [2, 5] }}>
             {props.children}
           </Container>
