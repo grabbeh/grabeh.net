@@ -4,100 +4,29 @@
     "description": "Recursively map over package.json dependencies to get license information",
     "sourceUrl": "https://github.com/grabbeh/license-checker-next",
     "siteUrl": "https://license-checker.mbg.codes",
-    "tools": [
-      {
-        "tool": "Next.js"
-      },
-      {
-        "tool":"Tachyons"
-      }
-    ],
-    "id": 12
+    "tools": ["Next.js", "styled-system"]
+  },
+  {
+    "projectName": "Pathway Social Franchise",
+    "description": "Static site for a great charity",
+    "sourceUrl": "https://github.com/grabbeh/pathway",
+    "siteUrl": "https://pathwaysocialfranchise.org",
+    "tools": ["Gatsby", "Contentful", "Netlify"]
   },
   {
     "projectName": "Shipper",
-    "description": "Shipper can extract the good content from your favourited tweets and email it to you",
+    "description": "Shipper extracts the good content from your favourited tweets and email it to you",
     "imageUrl": "/shipper.png",
     "sourceUrl": "https://github.com/grabbeh/shipper",
     "longDescription": "I frequently use favouriting tweets as a way to bookmark content and store for future reference. The only problem is I rarely go back and unfortunately tweet to brain osmosis is not a thing yet. I struck upon the idea of generating weekly emails with content from my favourited tweets as a way to have great content in my inbox.",
     "tools": [
-      {
-        "tool": "React",
-        "id": 0
-      },
-      {
-        "tool": "Next.js",
-        "id": 1
-      },
-      {
-        "tool": "GraphQL",
-        "id": 2
-      },
-      {
-        "tool": "MongoDB",
-        "id": 3
-      },
-      {
-        "tool": "Twitter API",
-        "id": 4
-      },
-      {
-        "tool": "SendGrid",
-        "id": 5
-      }
-    ],
-    "id": "0",
-    "mainColor": "#ffdfdf",
-    "shadowColor": "#ff725c"
-  },
-  {
-    "projectName": "React-contracts",
-    "description": "Write contracts using React (it made sense at the time)",
-    "imageUrl": "/react.PNG",
-    "sourceUrl": "https://github.com/grabbeh/react-contracts",
-    "longDescription": "React helps to separate data from boilerplate and so I thought it would be interesting to experiment with how that could be applied to the world of contracts.",
-    "tools": [
-      {
-        "tool": "React",
-        "id": 0
-      },
-      {
-        "tool": "MDX",
-        "id": 1
-      }
-    ],
-    "id": "1",
-    "mainColor": "#9eebcf",
-    "shadowColor": "#19a974"
-  },
-  {
-    "projectName": "Hilodoes",
-    "description": "A simple portfolio site for a talented designer, featuring an API-based CMS and automated deployment.",
-    "imageUrl": "/hilodoes.png",
-    "sourceUrl": "https://github.com/grabbeh/kmiho",
-    "siteUrl": "https://hilodoes.com/",
-    "longDescription": "I stumbled across the concept of the JAMStack and mainly because it sounded new and cool I thought I'd build a site using it. I understand it has certain more tangible benefits also! This particular site is a wonderful marriage of Gatsby, Contentful and Netlify designed to make it easy for non-coders to update a site as they wish. Now if I could only convince my wife to use it!",
-    "tools": [
-      {
-        "tool": "Gatsby",
-        "id": 0
-      },
-      {
-        "tool": "React",
-        "id": 1
-      },
-      {
-        "tool": "Contentful",
-        "id": 2
-      },
-      {
-        "tool": "Netlify",
-        "id": 3
-      }
-    ],
-    "id": "2",
-    "mainColor": "#cdecff",
-    "shadowColor": "#357edd"
+      "React",
+      "Next.js",
+      "GraphQL",
+      "MongoDB",
+      "Twitter API",
+      "Sendgrid"
+    ]
   },
   {
     "projectName": "Attest",
@@ -105,56 +34,36 @@
     "imageUrl": "/attest.png",
     "sourceUrl": "https://github.com/grabbeh/attest",
     "siteUrl": "https://attest.mbg.codes",
-    "longDescription": "Contracts are like a flock of sheep. On occasion they can exude a pungent smell. Oh, and they can benefit from someone keeping an eye on them! Many people historically use Excel spreadsheets. However it's 2018 and organisations should be introducing additional points of failure into their organisation. Consequently I decided to create Attest, an open source contract management platform. Oh, and if you want, you can self-host it and build on top of it to your heart's delight because it's licensed under Apache 2.0.",
-    "tools": [
-      {
-        "tool": "Next.js",
-        "id": 0
-      },
-      {
-        "tool": "React",
-        "id": 1
-      },
-      {
-        "tool": "Node.js",
-        "id": 2
-      },
-      {
-        "tool": "MongoDB",
-        "id": 3
-      },
-      {
-        "tool": "GraphQL",
-        "id": 4
-      }
-    ],
-    "id": "3",
-    "mainColor": "#F5F0FE",
-    "shadowColor": "#a463f2"
+    "tools": ["Next.js", "React", "GraphQL", "Node.js", "MongoDB"]
   },
+  {
+    "projectName": "Legal form schema",
+    "description": "Create and save multi-step forms",
+    "sourceUrl": "https://github.com/grabbeh/legal-form-schema",
+    "tools": ["Next.js", "React", "GraphQL", "Node.js", "MongoDB"]
+  },
+  {
+    "projectName": "React-contracts",
+    "description": "Write contracts using React (it made sense at the time)",
+    "imageUrl": "/react.PNG",
+    "sourceUrl": "https://github.com/grabbeh/react-contracts",
+    "tools": ["React", "MDX"]
+  },
+  {
+    "projectName": "Hilodoes",
+    "description": "A simple portfolio site for a talented designer, featuring an API-based CMS and automated deployment.",
+    "imageUrl": "/hilodoes.png",
+    "sourceUrl": "https://github.com/grabbeh/kmiho",
+    "siteUrl": "https://hilodoes.com/",
+    "tools": ["Gatsby", "React", "Contentful", "Netlify"]
+  },
+
   {
     "projectName": "OTTGNaaS",
     "description": "Turn online terms into graphic novels at the flick of a switch (results may vary!).",
     "imageUrl": "/demo.jpg",
     "sourceUrl": "https://github.com/grabbeh/OTTGNaaS",
-    "longDescription": "Consumers don't read terms and conditions but some enjoy graphic novels. This project sought to make terms of use palatable to a broader audience by shoehorning them into random graphic novels. The success of the project is largely dependent on legislators obliging companies to make terms of use available in comic form. Lobbying efforts to this end are continuing.",
-    "tools": [
-      {
-        "tool": "Google Cloud Vision API",
-        "id": 0
-      },
-      {
-        "tool": "Node.js",
-        "id": 1
-      },
-      {
-        "tool": "React",
-        "id": 2
-      }
-    ],
-    "id": "4",
-    "mainColor": "#F5F0E3",
-    "shadowColor": "#fcb045"
+    "tools": ["Google Cloud Vision API", "Node.js", "React"]
   },
   {
     "projectName": "Case law emoji bot",
@@ -162,151 +71,41 @@
     "imageUrl": "/emoji.jpg",
     "sourceUrl": "https://github.com/grabbeh/case-law-emoji-bot",
     "siteUrl": "https://twitter.com/caselawemoji",
-    "longDescription": "To large swathes of youth today, the law is a distant mysterious prospect. Emojis on the other hand are almost over-used popping up everywhere. Conveying case law through emojis will lose nothing of the intricate complexities of the law (although it is strongly recommended that you do not rely on emoji summaries in a court of law), but will open up the law to a whole new audience.",
-    "tools": [
-      {
-        "tool": "Twitter API",
-        "id": 0
-      },
-      {
-        "tool": "IBM Watson",
-        "id": 1
-      },
-      {
-        "tool": "Dango",
-        "id": 2
-      },
-      {
-        "tool": "Node.js",
-        "id": 3
-      }
-    ],
-    "id": "5",
-    "mainColor": "#eee",
-    "shadowColor": "#777"
+    "tools": ["Twitter API", "IBM Watson", "Dango", "Node.js"]
   },
   {
     "projectName": "Fennec",
     "description": "Trade mark portfolio analysis and management",
     "imageUrl": "/fennec.jpg",
     "sourceUrl": "https://github.com/grabbeh/fennec",
-    "longDescription": "Managing a global trade mark portfolio is one of the every day tasks that people just have to do. Kind of like cleaning your teeth. This app takes the contents of an Excel spreadsheet, sprinkles them with magic, and spits out a dashboard to help you keep on top of things.",
-    "tools": [
-      {
-        "tool": "Angular",
-        "id": 0
-      },
-      {
-        "tool": "Node.js",
-        "id": 1
-      },
-      {
-        "tool": "MongoDB",
-        "id": 2
-      }
-    ],
-    "id": "6",
-    "mainColor": "#eee",
-    "shadowColor": "#777"
+    "tools": ["Angular", "Node.js", "MongoDB"]
   },
   {
     "projectName": "Instok",
     "description": "Send reminders to customers when stock is back in",
     "imageUrl": "/instok.jpg",
     "sourceUrl": "https://github.com/grabbeh/instok",
-    "longDescription": "When I went to a shop they told me something was out of stock. Neurons fired in my head. The idea for Instok was born! People can buy credits using Stripe, set reminders, and trigger SMSs to delighted customers when stock is back in. We may never know where the name came from.",
-    "tools": [
-      {
-        "tool": "Stripe API",
-        "id": 0
-      },
-      {
-        "tool": "Twilio API",
-        "id": 1
-      },
-      {
-        "tool": "Angular",
-        "id": 2
-      },
-      {
-        "tool": "Node.js",
-        "id": 3
-      }
-    ],
-    "id": "7",
-    "mainColor": "#eee",
-    "shadowColor": "#777"
+    "tools": ["Stripe API", "Twilio API", "Angular", "Node.js"]
   },
   {
     "projectName": "Geophoto",
     "description": "Satisfy your virtual wanderlust by looking at photos from places it'd be just dandy to go to",
     "imageUrl": "/geophoto.jpg",
     "sourceUrl": "https://github.com/grabbeh/geophoto",
-    "longDescription": "I think it's fair to say that Flickr provides identical functionality, but it gets lost in a swamp of other equally enticing functionality. Geophoto takes the maxim 'Do one thing and do it well' and puts it into overdrive. Find photos of places you'd like to go or definitely wouldn't want to go to but want to confirm your suspicions about just how turgid a place is before accidentally stumbling on a fixer-upper with your name written all over it.",
-    "tools": [
-      {
-        "tool": "Flickr API",
-        "id": 0
-      },
-      {
-        "tool": "Angular",
-        "id": 1
-      },
-      {
-        "tool": "Node.js",
-        "id": 2
-      }
-    ],
-    "id": "8",
-    "mainColor": "#eee",
-    "shadowColor": "#777"
+    "tools": ["Flickr API", "Angular", "Node.js"]
   },
   {
     "projectName": "Mapopho",
     "description": "Finally, a way to find out which part of the world has the best photos of subject matter X",
     "imageUrl": "/mapopho.jpg",
     "sourceUrl": "https://github.com/grabbeh/mapopho",
-    "longDescription": "Flying directly in the face of a Star Trek-esque utopia or perhaps promoting it, this app lets people finally determine the age-old question of which part of the world has the best photos of cats or whatever photo subjects you want (but definitely cats). With that thorny issue resolved people can focus on building bridges not arguing over the relative merits of the cat populations of Honduras and Laos.",
-    "tools": [
-      {
-        "tool": "Flickr API",
-        "id": 0
-      },
-      {
-        "tool": "Angular",
-        "id": 1
-      },
-      {
-        "tool": "Node.js",
-        "id": 2
-      }
-    ],
-    "id": "9",
-    "mainColor": "#eee",
-    "shadowColor": "#777"
+    "tools": ["Flickr API", "Angular", "Node.js"]
   },
   {
     "projectName": "Routebop",
     "description": "Share routes with people you do or don't love or feel any kind of emotion for",
     "imageUrl": "/routebop.jpg",
     "sourceUrl": "https://github.com/grabbeh/routebop",
-    "longDescription": "Bopping is great but it reaches its peak with it's associated with routes. Routes that take you to places of joy, places of utter mediocrity or places where life may be imperilled (all liability fully disclaimed).",
-    "tools": [
-      {
-        "tool": "jQuery",
-        "id": 0
-      },
-      {
-        "tool": "Node.js",
-        "id": 1
-      },
-      {
-        "tool": "MongoDB",
-        "id": 2
-      }
-    ],
-    "id": "10",
-    "mainColor": "#eee",
-    "shadowColor": "#777"
+    "tools": ["jQuery", "Node.js", "MongoDB"]
   }
 ]

@@ -17,8 +17,9 @@ const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
       {projectName}
     </Text>
     <Flex sx={{ pb: 2, flexWrap: 'wrap' }}>
-      {tools.map(t => (
+      {tools.map((tool, i) => (
         <Text
+          key={i}
           sx={{
             mr: 3,
             fontSize: 1,
@@ -28,7 +29,7 @@ const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
             textTransform: 'uppercase'
           }}
         >
-          {t.tool}
+          {tool}
         </Text>
       ))}
     </Flex>
@@ -56,10 +57,12 @@ const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
 
 const Projects = ({ projects }) => (
   <Grid gap={4} columns={[1, 2, 2]}>
-    {projects.map(p => (
-      <Animation>
-        <Project key={p.projectName} {...p} />
-      </Animation>
+    {projects.map((project, i) => (
+      <Box key={i}>
+        <Animation>
+          <Project key={project.projectName} {...project} />
+        </Animation>
+      </Box>
     ))}
   </Grid>
 )
