@@ -7,6 +7,9 @@
     "tools": [
       {
         "tool": "Next.js"
+      },
+      {
+        "tool":"Tachyons"
       }
     ],
     "id": 12
