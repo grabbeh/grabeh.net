@@ -4,14 +4,16 @@
     "description": "Recursively map over package.json dependencies to get license information",
     "sourceUrl": "https://github.com/grabbeh/license-checker-next",
     "siteUrl": "https://license-checker.mbg.codes",
-    "tools": ["Next.js", "styled-system"]
+    "tools": ["Next.js", "styled-system"],
+    "timePeriod": "2019-2020"
   },
   {
     "projectName": "Pathway Social Franchise",
     "description": "Static site for a great charity",
     "sourceUrl": "https://github.com/grabbeh/pathway",
     "siteUrl": "https://pathwaysocialfranchise.org",
-    "tools": ["Gatsby", "Contentful", "Netlify"]
+    "tools": ["Gatsby", "Contentful", "Netlify"],
+    "timePeriod": "2019"
   },
   {
     "projectName": "Shipper",
@@ -26,7 +28,8 @@
       "MongoDB",
       "Twitter API",
       "Sendgrid"
-    ]
+    ],
+    "timePeriod": "2018"
   },
   {
     "projectName": "Attest",
@@ -34,20 +37,23 @@
     "imageUrl": "/attest.png",
     "sourceUrl": "https://github.com/grabbeh/attest",
     "siteUrl": "https://attest.mbg.codes",
-    "tools": ["Next.js", "React", "GraphQL", "Node.js", "MongoDB"]
+    "tools": ["Next.js", "React", "GraphQL", "Node.js", "MongoDB"],
+    "timePeriod": "2017-2020"
   },
   {
     "projectName": "Legal form schema",
     "description": "Create and save multi-step forms",
     "sourceUrl": "https://github.com/grabbeh/legal-form-schema",
-    "tools": ["Next.js", "React", "GraphQL", "Node.js", "MongoDB"]
+    "tools": ["Next.js", "React", "GraphQL", "Node.js", "MongoDB"],
+    "timePeriod": "2018"
   },
   {
     "projectName": "React-contracts",
     "description": "Write contracts using React (it made sense at the time)",
     "imageUrl": "/react.PNG",
     "sourceUrl": "https://github.com/grabbeh/react-contracts",
-    "tools": ["React", "MDX"]
+    "tools": ["React", "MDX"],
+    "timePeriod": "2018"
   },
   {
     "projectName": "Hilodoes",
@@ -55,7 +61,8 @@
     "imageUrl": "/hilodoes.png",
     "sourceUrl": "https://github.com/grabbeh/kmiho",
     "siteUrl": "https://hilodoes.com/",
-    "tools": ["Gatsby", "React", "Contentful", "Netlify"]
+    "tools": ["Gatsby", "React", "Contentful", "Netlify"],
+    "timePeriod": "2018"
   },
 
   {
@@ -63,7 +70,8 @@
     "description": "Turn online terms into graphic novels at the flick of a switch (results may vary!).",
     "imageUrl": "/demo.jpg",
     "sourceUrl": "https://github.com/grabbeh/OTTGNaaS",
-    "tools": ["Google Cloud Vision API", "Node.js", "React"]
+    "tools": ["Google Cloud Vision API", "Node.js", "React"],
+    "timePeriod": "2017"
   },
   {
     "projectName": "Case law emoji bot",
@@ -71,41 +79,47 @@
     "imageUrl": "/emoji.jpg",
     "sourceUrl": "https://github.com/grabbeh/case-law-emoji-bot",
     "siteUrl": "https://twitter.com/caselawemoji",
-    "tools": ["Twitter API", "IBM Watson", "Dango", "Node.js"]
+    "tools": ["Twitter API", "IBM Watson", "Dango", "Node.js"],
+    "timePeriod": "2016-2019"
   },
   {
     "projectName": "Fennec",
     "description": "Trade mark portfolio analysis and management",
     "imageUrl": "/fennec.jpg",
     "sourceUrl": "https://github.com/grabbeh/fennec",
-    "tools": ["Angular", "Node.js", "MongoDB"]
+    "tools": ["Angular", "Node.js", "MongoDB"],
+    "timePeriod": "2014-2016"
   },
   {
     "projectName": "Instok",
     "description": "Send reminders to customers when stock is back in",
     "imageUrl": "/instok.jpg",
     "sourceUrl": "https://github.com/grabbeh/instok",
-    "tools": ["Stripe API", "Twilio API", "Angular", "Node.js"]
+    "tools": ["Stripe API", "Twilio API", "Angular", "Node.js"],
+    "timePeriod": "2013"
   },
   {
     "projectName": "Geophoto",
     "description": "Satisfy your virtual wanderlust by looking at photos from places it'd be just dandy to go to",
     "imageUrl": "/geophoto.jpg",
     "sourceUrl": "https://github.com/grabbeh/geophoto",
-    "tools": ["Flickr API", "Angular", "Node.js"]
+    "tools": ["Flickr API", "Angular", "Node.js"],
+    "timePeriod": "2013-2014"
   },
   {
     "projectName": "Mapopho",
     "description": "Finally, a way to find out which part of the world has the best photos of subject matter X",
     "imageUrl": "/mapopho.jpg",
     "sourceUrl": "https://github.com/grabbeh/mapopho",
-    "tools": ["Flickr API", "Angular", "Node.js"]
+    "tools": ["Flickr API", "Angular", "Node.js"],
+    "timePeriod": "2013-2014"
   },
   {
     "projectName": "Routebop",
     "description": "Share routes with people you do or don't love or feel any kind of emotion for",
     "imageUrl": "/routebop.jpg",
     "sourceUrl": "https://github.com/grabbeh/routebop",
-    "tools": ["jQuery", "Node.js", "MongoDB"]
+    "tools": ["jQuery", "Node.js", "MongoDB"],
+    "timePeriod": "2013-2014"
   }
 ]

@@ -29,7 +29,7 @@ const Wrapper = props => {
       </Helmet>
       <Global styles={styles} />
       <ThemeProvider theme={theme}>
-        <Box bg='turquoise'>
+        <Box bg='light-green'>
           <Container sx={{ width: '1', height: '100%', p: [2, 5] }}>
             {props.children}
           </Container>

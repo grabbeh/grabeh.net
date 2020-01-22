@@ -2,9 +2,16 @@
 import { jsx } from 'theme-ui'
 import { Grid, Card, Box, Flex, Text, Link } from '@theme-ui/components'
 import Animation from '../components/animations/ScrollAnimation'
-import { GoMarkGithub, GoHome } from 'react-icons/go'
+import { GoMarkGithub, GoHome, GoCalendar } from 'react-icons/go'
 
-const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
+const Project = ({
+  projectName,
+  description,
+  tools,
+  sourceUrl,
+  siteUrl,
+  timePeriod
+}) => (
   <Card variant='primary'>
     <Text
       sx={{
@@ -41,15 +48,30 @@ const Project = ({ projectName, description, tools, sourceUrl, siteUrl }) => (
     <Flex sx={{ flexWrap: 'wrap' }}>
       {siteUrl && (
         <Box sx={{ mr: 3 }}>
-          <Link sx={{ fontSize: 6 }} href={siteUrl}>
+          <Link sx={{ color: 'dark-gray', fontSize: 6 }} href={siteUrl}>
             <GoHome />
           </Link>
         </Box>
       )}
       {sourceUrl && (
-        <Link sx={{ fontSize: 6 }} href={sourceUrl}>
+        <Link sx={{ color: 'dark-gray', fontSize: 6, mr: 3 }} href={sourceUrl}>
           <GoMarkGithub />
         </Link>
+      )}
+      <Text sx={{ color: 'dark-gray', fontSize: 6, mr: 2 }}>
+        <GoCalendar />
+      </Text>
+      {timePeriod && (
+        <Text
+          sx={{
+            color: 'dark-gray',
+            fontSize: 5,
+            flex: '1 1 auto',
+            fontFamily: 'body'
+          }}
+        >
+          {timePeriod}
+        </Text>
       )}
     </Flex>
   </Card>
