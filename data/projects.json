@@ -4,15 +4,22 @@
     "description": "Recursively map over package.json dependencies to get license information",
     "sourceUrl": "https://github.com/grabbeh/license-checker-next",
     "siteUrl": "https://license-checker.mbg.codes",
-    "tools": ["Next.js", "styled-system"],
+    "tools": ["React", "Next.js", "styled-system"],
     "timePeriod": "2019-2020"
   },
   {
     "projectName": "Pathway Social Franchise",
-    "description": "Static site for a great charity",
+    "description": "JAMStack site for a great charity",
     "sourceUrl": "https://github.com/grabbeh/pathway",
     "siteUrl": "https://pathwaysocialfranchise.org",
-    "tools": ["Gatsby", "Contentful", "Netlify"],
+    "tools": [
+      "React",
+      "Gatsby",
+      "styled-system",
+      "Theme-ui",
+      "Contentful",
+      "Netlify"
+    ],
     "timePeriod": "2019"
   },
   {

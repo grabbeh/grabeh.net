@@ -125,7 +125,7 @@ export default {
     p: {
       fontFamily: 'body',
       fontSize: 5,
-      color: 'donut'
+      color: 'dark-gray'
     },
     h1: {
       ...Heading
