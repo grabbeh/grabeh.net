@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { ThemeProvider, css } from 'theme-ui'
 import theme from '../../gatsby-plugin-theme-ui/index'
 import { Global } from '@emotion/core'

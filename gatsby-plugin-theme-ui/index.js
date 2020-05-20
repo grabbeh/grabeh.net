@@ -85,7 +85,7 @@ export default {
   fonts: {
     sansSerif:
       'Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
-    serif: 'Domine, Times New Roman'
+    serif: 'Domine, Times New Roman, Georgia'
   },
   fontSizes: [12, 14, 16, 18, 22, 26, 36, 48, 60, 72, 100],
   fontWeights: {
