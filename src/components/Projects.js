@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Grid, Card, Box, Flex, Text, Link } from '@theme-ui/components'
+import { jsx, Grid, Card, Box, Flex, Text, Link } from 'theme-ui'
 import Animation from '../components/animations/ScrollAnimation'
 import { GoMarkGithub, GoHome, GoCalendar } from 'react-icons/go'
 

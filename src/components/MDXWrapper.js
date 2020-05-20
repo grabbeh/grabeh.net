@@ -17,6 +17,7 @@ const styles = css`
   body {
     margin: 0;
     padding: 0;
+    background: white;
   }
 `
 
@@ -30,7 +31,14 @@ const Wrapper = props => {
       <Global styles={styles} />
       <ThemeProvider theme={theme}>
         <Box bg='light-green'>
-          <Container sx={{ width: '1', height: '100%', p: [2, 5] }}>
+          <Container
+            sx={{
+              fontFamily: 'sansSerif',
+              width: '1',
+              height: '100%',
+              p: [2, 5]
+            }}
+          >
             {props.children}
           </Container>
         </Box>

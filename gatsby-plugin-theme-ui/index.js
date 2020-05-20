@@ -14,6 +14,8 @@ export default {
     container: 1024
   },
   colors: {
+    text: 'red',
+    background: 'papayawhip',
     donut: '#1a102e',
     katie: 'papayawhip',
     black: '#000',
@@ -79,30 +81,14 @@ export default {
     'washed-yellow': '#fffceb',
     'washed-red': '#ffdfdf'
   },
-  modes: {
-    white: {
-      color: '#37AEE3',
-      bg: '#fff'
-    },
-    light: {
-      color: '#37AEE3',
-      bg: '#F9F9F9'
-    },
-    blue: {
-      color: '#fff',
-      bg: '#37AEE3'
-    },
-    green: {
-      color: '#fff',
-      bg: '#00A880'
-    }
-  },
   radii: [0, 2, 4, 16, 9999, '100%'],
   fonts: {
-    heading:
+    sansSerif:
       'Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+    heading:
+      'Domine, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
     body:
-      'Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'
+      'Domine, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'
   },
   fontSizes: [12, 14, 16, 18, 22, 26, 36, 48, 60, 72, 100],
   fontWeights: {
@@ -121,6 +107,9 @@ export default {
     heavy: '90px'
   },
   styles: {
+    root: {
+      background: 'white'
+    },
     div: {},
     p: {
       fontFamily: 'body',
