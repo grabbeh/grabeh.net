@@ -91,7 +91,7 @@ const Project = ({
 )
 
 const Projects = ({ projects }) => (
-  <Box sx={{ my: 5 }}>
+  <Box sx={{ my:[3, 5] }}>
     <Grid gap={[3, 4]} columns={[1, 2, 2]}>
       {projects.map((project, i) => (
         <Box key={i}>
