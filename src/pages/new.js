@@ -26,7 +26,7 @@ const NewYorkTimes = () => {
           <Container sx={{ pt: 6, width: '700px' }}>
             <Flex>
               <Box sx={{ flex: '0 1 auto' }}>
-                <Text sx={{ fontSize: 5, fontFamily: 'Domine' }} as='span'>
+                <Text sx={{ fontSize: 5, fontFamily: 'serif' }} as='span'>
                   Michael Goulbourn.
                 </Text>
                 <ActiveText color='#6dffa8' active={textIndex === 0}>

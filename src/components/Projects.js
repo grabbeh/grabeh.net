@@ -18,7 +18,6 @@ const Project = ({
         fontSize: [5, 7],
         fontStyle: 'italic',
         fontWeight: 'bold',
-        fontFamily: 'heading',
         color: 'donut'
       }}
     >
@@ -31,7 +30,6 @@ const Project = ({
           sx={{
             mr: 3,
             fontSize: '12px',
-            fontFamily: 'body',
             color: 'dark-gray',
             fontWeight: 'heavy',
             textTransform: 'uppercase'
@@ -46,8 +44,7 @@ const Project = ({
         sx={{
           lineHeight: '30px',
           fontSize: [3, 4],
-          color: 'dark-gray',
-          fontFamily: 'body'
+          color: 'dark-gray'
         }}
       >
         {description}
@@ -78,8 +75,7 @@ const Project = ({
             sx={{
               color: 'dark-gray',
               fontSize: [3, 5],
-              flex: '1 1 auto',
-              fontFamily: 'body'
+              flex: '1 1 auto'
             }}
           >
             {timePeriod}
@@ -91,7 +87,7 @@ const Project = ({
 )
 
 const Projects = ({ projects }) => (
-  <Box sx={{ my:[3, 5] }}>
+  <Box sx={{ my: [3, 5] }}>
     <Grid gap={[3, 4]} columns={[1, 2, 2]}>
       {projects.map((project, i) => (
         <Box key={i}>

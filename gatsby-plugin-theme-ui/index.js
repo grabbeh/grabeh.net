@@ -2,7 +2,7 @@ import prism from '@theme-ui/prism/presets/prism.json'
 
 const Heading = {
   color: 'donut',
-  fontFamily: 'heading',
+
   fontWeight: 'bold',
   my: 0
 }
@@ -85,10 +85,7 @@ export default {
   fonts: {
     sansSerif:
       'Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
-    heading:
-      'Domine, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
-    body:
-      'Domine, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'
+    serif: 'Domine, Times New Roman'
   },
   fontSizes: [12, 14, 16, 18, 22, 26, 36, 48, 60, 72, 100],
   fontWeights: {
@@ -112,7 +109,7 @@ export default {
     },
     div: {},
     p: {
-      fontFamily: 'body',
+      fontFamily: 'sansSerif',
       fontSize: 5,
       color: 'dark-gray'
     },

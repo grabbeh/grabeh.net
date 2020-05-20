@@ -7,7 +7,7 @@ import { Global } from '@emotion/core'
 import { ThemeProvider, css } from 'theme-ui'
 import theme from '../../gatsby-plugin-theme-ui/index'
 import '../index.css'
-import { Container, Box } from '@theme-ui/components'
+import { Container, Box } from 'theme-ui'
 require('typeface-nunito')
 
 const styles = css`
@@ -30,10 +30,9 @@ const Wrapper = props => {
       </Helmet>
       <Global styles={styles} />
       <ThemeProvider theme={theme}>
-        <Box bg='light-green'>
+        <Box sx={{ fontFamily: 'sansSerif' }} bg='light-green'>
           <Container
             sx={{
-              fontFamily: 'sansSerif',
               width: '1',
               height: '100%',
               p: [2, 5]
