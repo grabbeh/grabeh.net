@@ -25,7 +25,7 @@ const NewYorkTimes = () => {
       <Container>
         <Flex sx={{ justifyContent: 'center' }}>
           <Animation>
-            <Container sx={{ width: '600px' }}>
+            <Container sx={{ width: ['100%', '75%'] }}>
               <NormalText>
                 Michael Goulbourn. Copy and pastin', trial and errorin'{' '}
                 <FullActiveLink
@@ -96,7 +96,7 @@ const FullActiveLink = props => (
   <ActiveLink
     sx={{
       fontFamily: 'serif',
-      fontSize: 5,
+      fontSize: [3, 5],
       fontWeight: 'bold',
       lineHeight: '1.5em',
       py: 1,
@@ -149,7 +149,7 @@ const NormalText = props => (
     as='p'
     sx={{
       fontFamily: 'serif',
-      fontSize: 5,
+      fontSize: [3, 5],
       lineHeight: '1.5em',
       py: 1
     }}
