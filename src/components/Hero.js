@@ -47,7 +47,7 @@ const NewYorkTimes = () => {
                 <FullActiveLink
                   activeBackground='#FCEEAC'
                   active={textIndex === 2}
-                  href='https:/linkedin.com/in/mgoulbourn'
+                  href='https://linkedin.com/in/mgoulbourn'
                 >
                   lawyer
                 </FullActiveLink>{' '}
