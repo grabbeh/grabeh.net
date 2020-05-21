@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import Animation from '../components/animations/ScrollAnimation'
-import { Box, Flex, Text, Container, Image } from 'theme-ui'
+import { Box, Flex, Text, Container, Image, Link } from 'theme-ui'
 import styled, { css } from 'styled-components'
 
 const NewYorkTimes = () => {
@@ -22,48 +22,37 @@ const NewYorkTimes = () => {
   }, [textIndex])
   return (
     <Layout>
-      <Container sx={{ px: 3 }}>
+      <Container>
         <Flex sx={{ justifyContent: 'center' }}>
           <Animation>
-            <Container sx={{ pt: 6 }}>
-              <Flex sx={{ flexWrap: 'wrap' }}>
-                <Box sx={{ pr: 2, py: 1 }}>
-                  <Text
-                    sx={{
-                      fontSize: 5,
-                      fontFamily: 'serif',
-                      lineHeight: '1.5em'
-                    }}
-                  >
-                    Michael Goulbourn.
-                  </Text>
-                </Box>
-                <Box>
-                  <FullActiveText
-                    activeBackground='#6dffa8'
-                    active={textIndex === 0}
-                  >
-                    Lover.
-                  </FullActiveText>
-                </Box>
-                <Box>
-                  <FullActiveText
-                    activeBackground='#96ccff'
-                    active={textIndex === 1}
-                    sx={{ ml: 2 }}
-                  >
-                    Fighter.
-                  </FullActiveText>
-                </Box>
-                <Box>
-                  <FullActiveText
-                    activeBackground='#FCEEAC'
-                    active={textIndex === 2}
-                  >
-                    Lawyer.
-                  </FullActiveText>
-                </Box>
-              </Flex>
+            <Container sx={{ width: '600px' }}>
+              <NormalText>
+                Michael Goulbourn. Copy and pastin', trial and errorin'{' '}
+                <FullActiveLink
+                  activeBackground='#6dffa8'
+                  active={textIndex === 0}
+                  href='https://github.com/grabbeh'
+                >
+                  coder
+                </FullActiveLink>{' '}
+                with a number of dubious{' '}
+                <FullActiveLink
+                  activeBackground='#96ccff'
+                  active={textIndex === 1}
+                  href='/'
+                >
+                  projects
+                </FullActiveLink>
+                . Journeyman{' '}
+                <FullActiveLink
+                  activeBackground='#FCEEAC'
+                  active={textIndex === 2}
+                  href='https:/linkedin.com/in/mgoulbourn'
+                >
+                  lawyer
+                </FullActiveLink>{' '}
+                for Zopa.
+              </NormalText>
             </Container>
             <Flex sx={{ justifyContent: 'center' }}>
               <Box sx={{ py: 4 }}>
@@ -85,30 +74,88 @@ const NewYorkTimes = () => {
   )
 }
 
-const ActiveText = styled(Text)`
+const ActiveLink = styled(Link)`
   transition: background-color 0.5s ease-in-out;
+  &:hover & {
+    text-decoration: underline;
+  }
   ${props =>
     props.active &&
     css`
       background-color: ${props.activeBackground};
     `}
+  ${props =>
+    css`
+      &:hover {
+        background-color: ${props.activeBackground};
+      }
+    `}
 `
 
-const FullActiveText = props => (
-  <ActiveText
+const FullActiveLink = props => (
+  <ActiveLink
     sx={{
       fontFamily: 'serif',
       fontSize: 5,
       fontWeight: 'bold',
       bg: 'white',
       lineHeight: '1.5em',
-      px: [0, 2],
+      py: 1,
+      textDecoration: 'none'
+    }}
+    {...props}
+  >
+    {props.children}
+  </ActiveLink>
+)
+
+const ActiveText = styled(Text)`
+  transition: background-color 0.5s ease-in-out;
+  :hover & {
+    color: red;
+  }
+  ${props =>
+    props.active &&
+    css`
+      background-color: ${props.activeBackground};
+    `}
+  ${props =>
+    css`
+      &:hover {
+        background-color: ${props.activeBackground};
+      }
+    `}
+`
+
+const FullActiveText = props => (
+  <ActiveText
+    as='span'
+    sx={{
+      fontFamily: 'serif',
+      fontSize: 5,
+      fontWeight: 'bold',
+      bg: 'white',
+      lineHeight: '1.5em',
       py: 1
     }}
     {...props}
   >
     {props.children}
   </ActiveText>
+)
+
+const NormalText = props => (
+  <Text
+    as='p'
+    sx={{
+      fontFamily: 'serif',
+      fontSize: 5,
+      lineHeight: '1.5em',
+      py: 1
+    }}
+  >
+    {props.children}
+  </Text>
 )
 
 const ActivePhoto = styled.div`

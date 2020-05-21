@@ -109,9 +109,10 @@ export default {
     },
     div: {},
     p: {
-      fontFamily: 'sansSerif',
+      fontFamily: 'serif',
       fontSize: 5,
-      color: 'dark-gray'
+      color: 'dark-gray',
+      textAlign: 'center'
     },
     h1: {
       ...Heading
