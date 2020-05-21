@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Box, Flex, Text, Container, Image } from 'theme-ui'
 import { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import Animation from '../components/animations/ScrollAnimation'
-import { Box, Flex, Text, Container, Image } from 'theme-ui'
-import styled, { css } from 'styled-components'
+import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 const NewYorkTimes = () => {
   const [textIndex, setTextIndex] = useState(0)

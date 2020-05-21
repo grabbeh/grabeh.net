@@ -21,7 +21,6 @@ module.exports = {
         name: 'markdown-pages'
       }
     },
-
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,15 +30,6 @@ module.exports = {
     },
     `gatsby-plugin-mdx`,
     'gatsby-plugin-theme-ui',
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/data`,
-        name: 'data'
-      }
-    },
-    `gatsby-plugin-styled-components`,
-    `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`
   ]
 }

@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Box, Flex, Text, Container, Image, Link } from 'theme-ui'
+import { css } from '@emotion/core'
 import { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import Animation from '../components/animations/ScrollAnimation'
-import { Box, Flex, Text, Container, Image, Link } from 'theme-ui'
-import styled, { css } from 'styled-components'
+import styled from '@emotion/styled'
 
 const NewYorkTimes = () => {
   const [textIndex, setTextIndex] = useState(0)
@@ -74,22 +74,22 @@ const NewYorkTimes = () => {
   )
 }
 
+const backgroundColor = props =>
+  props.active &&
+  css`
+    background-color: ${props.activeBackground};
+  `
+
+const hover = props => css`
+  &:hover {
+    background-color: ${props.activeBackground};
+  }
+`
+
 const ActiveLink = styled(Link)`
   transition: background-color 0.5s ease-in-out;
-  &:hover & {
-    text-decoration: underline;
-  }
-  ${props =>
-    props.active &&
-    css`
-      background-color: ${props.activeBackground};
-    `}
-  ${props =>
-    css`
-      &:hover {
-        background-color: ${props.activeBackground};
-      }
-    `}
+  ${backgroundColor};
+  ${hover}
 `
 
 const FullActiveLink = props => (
@@ -98,7 +98,6 @@ const FullActiveLink = props => (
       fontFamily: 'serif',
       fontSize: 5,
       fontWeight: 'bold',
-      bg: 'white',
       lineHeight: '1.5em',
       py: 1,
       textDecoration: 'none'
@@ -109,6 +108,7 @@ const FullActiveLink = props => (
   </ActiveLink>
 )
 
+/*
 const ActiveText = styled(Text)`
   transition: background-color 0.5s ease-in-out;
   :hover & {
@@ -142,7 +142,7 @@ const FullActiveText = props => (
   >
     {props.children}
   </ActiveText>
-)
+)*/
 
 const NormalText = props => (
   <Text
