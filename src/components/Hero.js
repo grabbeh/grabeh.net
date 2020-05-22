@@ -22,7 +22,7 @@ const NewYorkTimes = () => {
       <Container>
         <Flex sx={{ justifyContent: 'center' }}>
           <Animation>
-            <Container sx={{ width: ['100%', '75%'] }}>
+            <Container sx={{ my: [2, 4], width: ['100%', '75%'] }}>
               <NormalText>
                 Michael Goulbourn. Copy and pastin', trial and errorin'{' '}
                 <FullActiveLink
@@ -51,36 +51,27 @@ const NewYorkTimes = () => {
                 for Zopa, interested in fintech, data protection and contracts.
               </NormalText>
             </Container>
-            <Flex sx={{ justifyContent: 'center' }}>
-              <Box
-                sx={{
-                  height: '100vh',
-                  width: ['100%', '300px'],
-                  position: 'relative',
-                  mt: 4
-                }}
-              >
-                <ActivePhoto active={textIndex === 0}>
-                  <Image
-                    sx={{ imageOrientation: 'from-image' }}
-                    src='/norway.jpeg'
-                  />
-                </ActivePhoto>
-
-                <ActivePhoto active={textIndex === 1}>
-                  <Image
-                    sx={{ imageOrientation: 'from-image' }}
-                    src='/cabin.jpg'
-                  />
-                </ActivePhoto>
-                <ActivePhoto active={textIndex === 2}>
-                  <Image
-                    sx={{ imageOrientation: 'from-image' }}
-                    src='/beach.jpg'
-                  />
-                </ActivePhoto>
-              </Box>
-            </Flex>
+            <Container>
+              <Flex sx={{ justifyContent: 'center' }}>
+                <Box
+                  sx={{
+                    height: ['100vh', '400px'],
+                    width: ['100%', '300px'],
+                    position: 'relative'
+                  }}
+                >
+                  <ActivePhoto active={textIndex === 0}>
+                    <Image src='/norway.jpeg' />
+                  </ActivePhoto>
+                  <ActivePhoto active={textIndex === 1}>
+                    <Image src='/cabin.jpg' />
+                  </ActivePhoto>
+                  <ActivePhoto active={textIndex === 2}>
+                    <Image src='/beach.jpg' />
+                  </ActivePhoto>
+                </Box>
+              </Flex>
+            </Container>
           </Animation>
         </Flex>
       </Container>
@@ -110,7 +101,7 @@ const FullActiveLink = props => (
   <ActiveLink
     sx={{
       fontFamily: 'serif',
-      fontSize: [3, 5],
+      fontSize: [4, 5],
       fontWeight: 'bold',
       lineHeight: '1.5em',
       py: 1,
@@ -127,7 +118,7 @@ const NormalText = props => (
     as='p'
     sx={{
       fontFamily: 'serif',
-      fontSize: [3, 5],
+      fontSize: [4, 5],
       lineHeight: '1.5em',
       py: 1
     }}
@@ -141,6 +132,7 @@ const ActivePhoto = styled.div`
   left: 0;
   top: 0;
   opacity: 0;
+  height: 100%;
   transition: opacity 0.5s ease-in;
   ${props =>
     props.active &&

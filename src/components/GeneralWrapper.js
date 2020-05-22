@@ -14,7 +14,11 @@ const styles = css`
   * {
     box-sizing: border-box;
   }
+  html {
+    100%;
+  }
   body {
+    height: 100%;
     margin: 0;
     padding: 0;
     background: white;
@@ -33,9 +37,9 @@ const Wrapper = props => {
         <Box sx={{ fontFamily: 'serif' }}>
           <Container
             sx={{
-              width: '1',
+              width: '100%',
               height: '100%',
-              p: [2, 5]
+              px: [2, 5]
             }}
           >
             {props.children}
