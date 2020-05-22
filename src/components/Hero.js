@@ -48,8 +48,7 @@ const NewYorkTimes = () => {
                 >
                   lawyer
                 </FullActiveLink>{' '}
-                for Zopa, mainly interested in fintech, data protection and
-                contracts.
+                for Zopa, interested in fintech, data protection and contracts.
               </NormalText>
             </Container>
             <Flex sx={{ justifyContent: 'center' }}>
@@ -65,10 +64,10 @@ const NewYorkTimes = () => {
                   <Image src='/norway.jpeg' />
                 </ActivePhoto>
                 <ActivePhoto active={textIndex === 1}>
-                  <Image src='/cabin.jpg' />
+                  <Image src='/beach.jpg' />
                 </ActivePhoto>
                 <ActivePhoto active={textIndex === 2}>
-                  <Image src='/beach.jpg' />
+                  <Image src='/cabin.jpg' />
                 </ActivePhoto>
               </Box>
             </Flex>
