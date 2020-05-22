@@ -1,25 +1,22 @@
 /** @jsx jsx */
 import { jsx, Box, Flex, Text, Container, Image, Link } from 'theme-ui'
 import { css } from '@emotion/core'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Layout from '../components/Layout'
 import Animation from '../components/animations/ScrollAnimation'
 import styled from '@emotion/styled'
+import useInterval from '../hooks/useInterval'
 
 const NewYorkTimes = () => {
   const [textIndex, setTextIndex] = useState(0)
-  const totalMessages = 3
-  useEffect(() => {
-    let timeout
-    if (textIndex < totalMessages) {
-      timeout = setTimeout(() => setTextIndex(textIndex + 1), 3000)
-    } else {
-      setTextIndex(0)
-    }
-    return () => {
-      clearTimeout(timeout)
-    }
-  }, [textIndex])
+  const totalMessages = 2
+
+  useInterval(() => {
+    //console.log(textIndex)
+    let index = textIndex < totalMessages ? textIndex + 1 : 0
+    setTextIndex(index)
+  }, 3000)
+
   return (
     <Layout>
       <Container>
@@ -34,8 +31,8 @@ const NewYorkTimes = () => {
                   href='https://github.com/grabbeh'
                 >
                   coder
-                </FullActiveLink>{' '}
-                with a number of dubious{' '}
+                </FullActiveLink>
+                . See some of my{' '}
                 <FullActiveLink
                   activeBackground='#96ccff'
                   active={textIndex === 1}
@@ -43,7 +40,7 @@ const NewYorkTimes = () => {
                 >
                   projects
                 </FullActiveLink>
-                . Journeyman{' '}
+                . Jack of all trades{' '}
                 <FullActiveLink
                   activeBackground='#FCEEAC'
                   active={textIndex === 2}
@@ -51,19 +48,27 @@ const NewYorkTimes = () => {
                 >
                   lawyer
                 </FullActiveLink>{' '}
-                for Zopa.
+                for Zopa, mainly interested in fintech, data protection and
+                contracts.
               </NormalText>
             </Container>
             <Flex sx={{ justifyContent: 'center' }}>
-              <Box sx={{ py: 4 }}>
+              <Box
+                sx={{
+                  height: '100vh',
+                  width: ['100%', '300px'],
+                  position: 'relative',
+                  my: 4
+                }}
+              >
                 <ActivePhoto active={textIndex === 0}>
-                  <Image sx={{ width: ['100%', '300px'] }} src='/norway.jpeg' />
+                  <Image src='/norway.jpeg' />
                 </ActivePhoto>
                 <ActivePhoto active={textIndex === 1}>
-                  <Image sx={{ width: ['100%', '300px'] }} src='/cabin.jpg' />
+                  <Image src='/cabin.jpg' />
                 </ActivePhoto>
                 <ActivePhoto active={textIndex === 2}>
-                  <Image sx={{ width: ['100%', '300px'] }} src='/beach.jpg' />
+                  <Image src='/beach.jpg' />
                 </ActivePhoto>
               </Box>
             </Flex>
@@ -108,42 +113,6 @@ const FullActiveLink = props => (
   </ActiveLink>
 )
 
-/*
-const ActiveText = styled(Text)`
-  transition: background-color 0.5s ease-in-out;
-  :hover & {
-    color: red;
-  }
-  ${props =>
-    props.active &&
-    css`
-      background-color: ${props.activeBackground};
-    `}
-  ${props =>
-    css`
-      &:hover {
-        background-color: ${props.activeBackground};
-      }
-    `}
-`
-
-const FullActiveText = props => (
-  <ActiveText
-    as='span'
-    sx={{
-      fontFamily: 'serif',
-      fontSize: 5,
-      fontWeight: 'bold',
-      bg: 'white',
-      lineHeight: '1.5em',
-      py: 1
-    }}
-    {...props}
-  >
-    {props.children}
-  </ActiveText>
-)*/
-
 const NormalText = props => (
   <Text
     as='p'
@@ -159,14 +128,15 @@ const NormalText = props => (
 )
 
 const ActivePhoto = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
   opacity: 0;
-  height: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in;
   ${props =>
     props.active &&
     css`
       opacity: 1;
-      height: 100%;
     `}
 `
 
