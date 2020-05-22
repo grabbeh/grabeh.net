@@ -61,10 +61,10 @@ const NewYorkTimes = () => {
                 }}
               >
                 <ActivePhoto active={textIndex === 0}>
-                  <Image src='/norway.jpeg' />
+                  <Image src='/beach.jpg' />
                 </ActivePhoto>
                 <ActivePhoto active={textIndex === 1}>
-                  <Image src='/beach.jpg' />
+                  <Image src='/norway.jpeg' />
                 </ActivePhoto>
                 <ActivePhoto active={textIndex === 2}>
                   <Image src='/cabin.jpg' />
