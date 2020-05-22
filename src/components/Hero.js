@@ -57,17 +57,27 @@ const NewYorkTimes = () => {
                   height: '100vh',
                   width: ['100%', '300px'],
                   position: 'relative',
-                  my: 4
+                  mt: 4
                 }}
               >
                 <ActivePhoto active={textIndex === 0}>
-                  <Image src='/beach.jpg' />
+                  <Image
+                    sx={{ imageOrientation: 'from-image' }}
+                    src='/norway.jpeg'
+                  />
                 </ActivePhoto>
+
                 <ActivePhoto active={textIndex === 1}>
-                  <Image src='/norway.jpeg' />
+                  <Image
+                    sx={{ imageOrientation: 'from-image' }}
+                    src='/cabin.jpg'
+                  />
                 </ActivePhoto>
                 <ActivePhoto active={textIndex === 2}>
-                  <Image src='/cabin.jpg' />
+                  <Image
+                    sx={{ imageOrientation: 'from-image' }}
+                    src='/beach.jpg'
+                  />
                 </ActivePhoto>
               </Box>
             </Flex>
