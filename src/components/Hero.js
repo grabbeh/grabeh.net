@@ -61,35 +61,11 @@ const NewYorkTimes = () => {
                   my: 4
                 }}
               >
-                <ActivePhoto
-                  sx={{
-                    height: '100vh',
-                    width: ['100%', '300px'],
-                    position: 'relative',
-                    my: 4
-                  }}
-                  active={textIndex === 0}
-                >
-                  <Image
-                    sx={{
-                      height: '100vh',
-                      width: ['100%', '300px'],
-                      position: 'relative',
-                      my: 4
-                    }}
-                    src='/norway.jpeg'
-                  />
+                <ActivePhoto active={textIndex === 0}>
+                  <Image src='/norway.jpeg' />
                 </ActivePhoto>
                 <ActivePhoto active={textIndex === 1}>
-                  <Image
-                    sx={{
-                      height: '100vh',
-                      width: ['100%', '300px'],
-                      position: 'relative',
-                      my: 4
-                    }}
-                    src='/cabin.jpg'
-                  />
+                  <Image src='/cabin.jpg' />
                 </ActivePhoto>
                 <ActivePhoto active={textIndex === 2}>
                   <Image src='/beach.jpg' />
