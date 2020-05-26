@@ -24,31 +24,31 @@ const NewYorkTimes = () => {
           <Animation>
             <Container sx={{ my: [2, 4], width: ['100%', '75%'] }}>
               <NormalText>
-                Michael Goulbourn. Copy and pastin', trial and errorin'{' '}
-                <FullActiveLink
-                  activeBackground='#6dffa8'
-                  active={textIndex === 0}
-                  href='https://github.com/grabbeh'
-                >
-                  coder
-                </FullActiveLink>
-                . See some of my{' '}
-                <FullActiveLink
-                  activeBackground='#96ccff'
-                  active={textIndex === 1}
-                  href='/'
-                >
-                  projects
-                </FullActiveLink>
-                . Jack of all trades{' '}
+                Hi, I'm Michael Goulbourn. My day job is as a{' '}
                 <FullActiveLink
                   activeBackground='#FCEEAC'
-                  active={textIndex === 2}
+                  active={textIndex === 0}
                   href='https://linkedin.com/in/mgoulbourn'
                 >
                   lawyer
                 </FullActiveLink>{' '}
-                for Zopa, interested in fintech, data protection and contracts.
+                for Zopa. In my spare time, I like{' '}
+                <FullActiveLink
+                  activeBackground='#6dffa8'
+                  active={textIndex === 1}
+                  href='https://github.com/grabbeh'
+                >
+                  writing bad JavaScript
+                </FullActiveLink>
+                . Here's some of my{' '}
+                <FullActiveLink
+                  activeBackground='#96ccff'
+                  active={textIndex === 2}
+                  href='/'
+                >
+                  projects
+                </FullActiveLink>{' '}
+                (other than the ones in stealth mode).
               </NormalText>
             </Container>
             <Container>

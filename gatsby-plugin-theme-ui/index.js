@@ -111,7 +111,6 @@ export default {
     p: {
       fontFamily: 'serif',
       fontSize: 5,
-      color: 'dark-gray',
       textAlign: 'center'
     },
     h1: {

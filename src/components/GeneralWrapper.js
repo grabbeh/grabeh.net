@@ -39,7 +39,8 @@ const Wrapper = props => {
             sx={{
               width: '100%',
               height: '100%',
-              px: [2, 5]
+              px: [2, 5],
+              pb: 5
             }}
           >
             {props.children}
