@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import Animation from '../components/animations/ScrollAnimation'
 import styled from '@emotion/styled'
 import useInterval from '../hooks/useInterval'
+import { RoughNotation } from 'react-rough-notation'
 
 const NewYorkTimes = () => {
   const [textIndex, setTextIndex] = useState(0)
@@ -22,33 +23,60 @@ const NewYorkTimes = () => {
       <Container>
         <Flex sx={{ justifyContent: 'center' }}>
           <Animation>
-            <Container sx={{ my: [2, 4], width: ['100%', '75%'] }}>
+            <Container sx={{ my: [2, 4] }}>
               <NormalText>
+                <span alt='wave' role='img'>
+                  🌊
+                </span>{' '}
                 Hi, I'm Michael Goulbourn. My day job is as a{' '}
-                <FullActiveLink
-                  activeBackground='#FCEEAC'
-                  active={textIndex === 0}
-                  href='https://linkedin.com/in/mgoulbourn'
+                <RoughNotation
+                  type='highlight'
+                  color='#FCEEAC'
+                  show={textIndex === 0}
                 >
-                  lawyer
-                </FullActiveLink>{' '}
+                  <Link
+                    sx={{ textDecoration: 'none' }}
+                    href='https://linkedin.com/in/mgoulbourn'
+                  >
+                    lawyer{' '}
+                    <span role='img' alt='lawyer'>
+                      🕴
+                    </span>
+                  </Link>
+                </RoughNotation>{' '}
                 for Zopa. In my spare time, I like{' '}
-                <FullActiveLink
-                  activeBackground='#6dffa8'
-                  active={textIndex === 1}
-                  href='https://github.com/grabbeh'
+                <RoughNotation
+                  type='highlight'
+                  color='#6dffa8'
+                  show={textIndex === 1}
                 >
-                  writing bad JavaScript
-                </FullActiveLink>
-                . Here's some of my{' '}
-                <FullActiveLink
-                  activeBackground='#96ccff'
-                  active={textIndex === 2}
-                  href='/'
+                  <Link
+                    sx={{ textDecoration: 'none' }}
+                    href='https://github.com/grabbeh'
+                  >
+                    coding{' '}
+                    <span role='img' alt='keyboard'>
+                      ⌨️
+                    </span>
+                  </Link>
+                </RoughNotation>
+                . Take a look at some of my{' '}
+                <RoughNotation
+                  color='#96ccff'
+                  padding={100}
+                  strokeWidth={5}
+                  type='highlight'
+                  show={textIndex === 2}
                 >
-                  projects
-                </FullActiveLink>{' '}
-                (other than the ones in stealth mode).
+                  <Link sx={{ textDecoration: 'none' }} href='/'>
+                    {' '}
+                    projects{' '}
+                    <span role='img' alt='construction in progress'>
+                      🚧
+                    </span>
+                  </Link>
+                </RoughNotation>{' '}
+                (apart from the ones in stealth mode).
               </NormalText>
             </Container>
             <Container>

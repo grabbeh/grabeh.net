@@ -110,8 +110,7 @@ export default {
     div: {},
     p: {
       fontFamily: 'serif',
-      fontSize: 5,
-      textAlign: 'center'
+      fontSize: 5
     },
     h1: {
       ...Heading
@@ -132,7 +131,8 @@ export default {
       ...prism
     },
     a: {
-      color: 'donut'
+      color: 'donut',
+      textDecoration: 'underline'
     }
   },
   cards: {
