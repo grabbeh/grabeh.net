@@ -10,6 +10,7 @@ import { RoughNotation } from 'react-rough-notation'
 
 const NewYorkTimes = () => {
   const [textIndex, setTextIndex] = useState(0)
+
   const totalMessages = 2
 
   useInterval(() => {
@@ -25,7 +26,7 @@ const NewYorkTimes = () => {
           <Animation>
             <Container sx={{ my: [2, 4] }}>
               <NormalText>
-                <span alt='wave' role='img'>
+                <span aria-label='wave' role='img'>
                   🌊
                 </span>{' '}
                 Hi, I'm Michael Goulbourn. My day job is as a{' '}
@@ -39,7 +40,7 @@ const NewYorkTimes = () => {
                     href='https://linkedin.com/in/mgoulbourn'
                   >
                     lawyer{' '}
-                    <span role='img' alt='lawyer'>
+                    <span role='img' aria-label='lawyer'>
                       🕴
                     </span>
                   </Link>
@@ -55,7 +56,7 @@ const NewYorkTimes = () => {
                     href='https://github.com/grabbeh'
                   >
                     coding{' '}
-                    <span role='img' alt='keyboard'>
+                    <span role='img' aria-label='keyboard'>
                       ⌨️
                     </span>
                   </Link>
@@ -71,7 +72,7 @@ const NewYorkTimes = () => {
                   <Link sx={{ textDecoration: 'none' }} href='/'>
                     {' '}
                     projects{' '}
-                    <span role='img' alt='construction in progress'>
+                    <span role='img' aria-label='construction in progress'>
                       🚧
                     </span>
                   </Link>

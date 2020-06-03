@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { Fragment } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import PropTypes from 'prop-types'
 import { Global } from '@emotion/core'
@@ -26,6 +26,11 @@ const styles = css`
 `
 
 const Wrapper = props => {
+  const [showChild, setShowChild] = useState(false)
+
+  useEffect(() => {
+    setShowChild(true)
+  }, [])
   return (
     <Fragment>
       <Helmet>
@@ -34,18 +39,20 @@ const Wrapper = props => {
       </Helmet>
       <Global styles={styles} />
       <ThemeProvider theme={theme}>
-        <Box sx={{ fontFamily: 'serif' }}>
-          <Container
-            sx={{
-              width: '100%',
-              height: '100%',
-              px: [2, 6],
-              pb: 5
-            }}
-          >
-            {props.children}
-          </Container>
-        </Box>
+        {showChild && (
+          <Box sx={{ fontFamily: 'serif' }}>
+            <Container
+              sx={{
+                width: '100%',
+                height: '100%',
+                px: [2, 6],
+                pb: 5
+              }}
+            >
+              {props.children}
+            </Container>
+          </Box>
+        )}
       </ThemeProvider>
     </Fragment>
   )
