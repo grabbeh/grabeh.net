@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment, useState, useLayoutEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import PropTypes from 'prop-types'
 import { Global } from '@emotion/core'
@@ -27,7 +27,7 @@ const styles = css`
 const Wrapper = props => {
   const [showChild, setShowChild] = useState(false)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setShowChild(true)
   }, [])
   return (
