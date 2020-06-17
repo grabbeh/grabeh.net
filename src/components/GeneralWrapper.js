@@ -4,10 +4,9 @@ import { Fragment, useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import PropTypes from 'prop-types'
 import { Global } from '@emotion/core'
-import { ThemeProvider, css } from 'theme-ui'
+import { ThemeProvider, css, Container, Box } from 'theme-ui'
 import theme from '../../gatsby-plugin-theme-ui/index'
 import '../index.css'
-import { Container, Box } from 'theme-ui'
 require('typeface-domine')
 
 const styles = css`
@@ -45,7 +44,7 @@ const Wrapper = props => {
               sx={{
                 width: '100%',
                 height: '100%',
-                px: [2, 6],
+                px: [2, 4, 6],
                 pb: 5
               }}
             >
