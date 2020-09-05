@@ -79,18 +79,6 @@ const NewYorkTimes = () => {
                 </NormalText>
               </RoughNotationGroup>
             </Container>
-  /*
-            <Container>
-              <Flex sx={{ justifyContent: 'center' }}>
-                <Grid gap={[3, 4]} columns={[1, 3]}>
-                  <Image src='/norway.jpeg' />
-
-                  <Image src='/cabin.jpg' />
-
-                  <Image src='/beach.jpg' />
-                </Grid>
-              </Flex>
-            </Container>*/
           </Animation>
         </Flex>
       </Container>
