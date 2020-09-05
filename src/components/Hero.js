@@ -79,6 +79,7 @@ const NewYorkTimes = () => {
                 </NormalText>
               </RoughNotationGroup>
             </Container>
+  /*
             <Container>
               <Flex sx={{ justifyContent: 'center' }}>
                 <Grid gap={[3, 4]} columns={[1, 3]}>
@@ -89,7 +90,7 @@ const NewYorkTimes = () => {
                   <Image src='/beach.jpg' />
                 </Grid>
               </Flex>
-            </Container>
+            </Container>*/
           </Animation>
         </Flex>
       </Container>
