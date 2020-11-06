@@ -1,29 +1,18 @@
 /** @jsx jsx */
-import { jsx, Grid, Flex, Text, Container, Image, Link } from 'theme-ui'
-import { css } from '@emotion/core'
+import { jsx, Flex, Text, Container, Link } from 'theme-ui'
 import useTimeout from 'use-timeout'
 import { useState } from 'react'
 import Layout from '../components/Layout'
-import Animation from '../components/animations/ScrollAnimation'
-import styled from '@emotion/styled'
 import { RoughNotation, RoughNotationGroup } from 'react-rough-notation'
 
 const NewYorkTimes = () => {
   const [show, setShow] = useState(false)
-
   useTimeout(() => setShow(true), 1000)
-  /*
-  useInterval(() => {
-    let index = textIndex < totalMessages ? textIndex + 1 : 0
-    setTextIndex(index)
-  }, 3000)*/
-
   return (
     <Layout>
       <Container>
         <Flex sx={{ justifyContent: 'center' }}>
-          <Animation>
-            <Container sx={{ my: [2, 4] }}>
+            <Container sx={{ mt:5 }}>
               <RoughNotationGroup show={show}>
                 <NormalText>
                   <span aria-label='wave' role='img'>
@@ -39,12 +28,13 @@ const NewYorkTimes = () => {
                       sx={{ textDecoration: 'none' }}
                       href='https://linkedin.com/in/mgoulbourn'
                     >
-                      lawyer{' '}
-                      <span role='img' aria-label='lawyer'>
-                        🕴
-                      </span>
+                      {' '}lawyer
+                     
                     </Link>
                   </RoughNotation>{' '}
+                  <span role='img' aria-label='lawyer'>
+                  {' '} 🕴{' '}
+                      </span>
                   for Zopa. In my spare time, I like{' '}
                   <RoughNotation
                     animationDuration={1500}
@@ -55,12 +45,12 @@ const NewYorkTimes = () => {
                       sx={{ textDecoration: 'none' }}
                       href='https://github.com/grabbeh'
                     >
-                      coding{' '}
-                      <span role='img' aria-label='keyboard'>
-                        ⌨️
-                      </span>
+                      {' '}coding
                     </Link>
                   </RoughNotation>
+                  <span role='img' aria-label='keyboard'>
+                  {' '} ⌨️{' '}
+                      </span>
                   . Take a look at some of my{' '}
                   <RoughNotation
                     animationDuration={1500}
@@ -68,29 +58,17 @@ const NewYorkTimes = () => {
                     type='highlight'
                   >
                     <Link sx={{ textDecoration: 'none' }} href='/projects'>
-                      {' '}
-                      projects{' '}
-                      <span role='img' aria-label='construction in progress'>
-                        🚧
-                      </span>
+                      {' '}projects
+            
                     </Link>
-                  </RoughNotation>{' '}
+                  </RoughNotation>
+                  <span role='img' aria-label='construction in progress'>
+                  {' '} 🚧{' '}
+                      </span>
                   (apart from the ones in stealth mode).
                 </NormalText>
               </RoughNotationGroup>
             </Container>
-            <Container>
-              <Flex sx={{ justifyContent: 'center' }}>
-                <Grid gap={[3, 4]} columns={[1, 3]}>
-                  <Image src='/norway.jpeg' />
-
-                  <Image src='/cabin.jpg' />
-
-                  <Image src='/beach.jpg' />
-                </Grid>
-              </Flex>
-            </Container>
-          </Animation>
         </Flex>
       </Container>
     </Layout>
