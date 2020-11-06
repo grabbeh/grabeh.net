@@ -1,4 +1,19 @@
-[
+[ {
+  "projectName": "Last Seven Days",
+  "description": "Get information about tweeters and echo chambers",
+  "sourceUrl": "https://github.com/grabbeh/tweeter-analyser",
+  "siteUrl": "https://lastsevendays.com",
+  "tools": ["React", "Next.js", "Theme-UI", "Twitter API"],
+  "timePeriod": "2020"
+},
+{
+  "projectName": "Water fountain chat",
+  "description": "Slackbot to add some serendipity",
+  "sourceUrl": "https://github.com/grabbeh/waterfountainchat",
+  "siteUrl": "https://waterfountainchat.com",
+  "tools": ["React", "Next.js", "Slack Bolt", "Theme-UI"],
+  "timePeriod": "2020"
+},
   {
     "projectName": "License checker",
     "description": "Recursively map over package.json dependencies to get license information",
