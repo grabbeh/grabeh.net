@@ -110,7 +110,7 @@ export default {
     div: {},
     p: {
       fontFamily: 'serif',
-      fontSize: 5
+      fontSize: [4,5]
     },
     h1: {
       ...Heading

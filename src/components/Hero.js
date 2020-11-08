@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, Text, Container, Link } from 'theme-ui'
+import { jsx, Box, Flex, Text, Container, Link } from 'theme-ui'
 import useTimeout from 'use-timeout'
 import { useState } from 'react'
 import Layout from '../components/Layout'
@@ -12,7 +12,10 @@ const NewYorkTimes = () => {
     <Layout>
       <Container>
         <Flex sx={{ justifyContent: 'center' }}>
-            <Container sx={{ mt:5 }}>
+            <Container sx={{ mt:[3,5] }}>
+              <Box sx={{mb:3}}><Text sx={{color:'red', fontWeight:'bold',fontSize:7
+            }}>Beep, boop, bop</Text></Box>
+            
               <RoughNotationGroup show={show}>
                 <NormalText>
                   <span aria-label='wave' role='img'>
