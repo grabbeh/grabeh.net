@@ -1,4 +1,11 @@
 [ {
+  "projectName": "Todo",
+  "description": "Slack clone for Todos",
+  "sourceUrl": "https://github.com/grabbeh/TO-DO",
+  "siteUrl": "https://todo.mbg.codes",
+  "tools": ["React", "Next.js", "Tailwind", "Apollo cache"],
+  "timePeriod": "2021"
+},{
   "projectName": "Last Seven Days",
   "description": "Get information about tweeters and echo chambers",
   "sourceUrl": "https://github.com/grabbeh/tweeter-analyser",
